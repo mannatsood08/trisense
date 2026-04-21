@@ -1,0 +1,377 @@
+2026-04-21 17:16:07,372 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 17:16:18,407 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2026-04-21 17:16:18,407 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 17:16:23,771 - INFO - Event Triggered: {"timestamp": 1776771983.771979, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:26,918 - INFO - Event Triggered: {"timestamp": 1776771986.9188678, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:27,342 - INFO - Event Triggered: {"timestamp": 1776771987.3429365, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:27,711 - INFO - Event Triggered: {"timestamp": 1776771987.711715, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:28,454 - INFO - Event Triggered: {"timestamp": 1776771988.4546297, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:29,374 - INFO - Event Triggered: {"timestamp": 1776771989.3740003, "source": "pose", "event": "FALL_DETECTED", "details": "", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 17:16:33,858 - INFO - Event Triggered: {"timestamp": 1776771993.8580303, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "EMERGENCY"}
+2026-04-21 17:16:34,034 - INFO - Event Triggered: {"timestamp": 1776771994.034441, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:35,365 - INFO - Event Triggered: {"timestamp": 1776771995.3653705, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:36,874 - INFO - Event Triggered: {"timestamp": 1776771996.8747563, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:39,899 - INFO - Event Triggered: {"timestamp": 1776771999.8998134, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:42,901 - INFO - Event Triggered: {"timestamp": 1776772002.9013436, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:45,903 - INFO - Event Triggered: {"timestamp": 1776772005.9036105, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:48,917 - INFO - Event Triggered: {"timestamp": 1776772008.9174638, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:54,966 - INFO - Event Triggered: {"timestamp": 1776772014.9669127, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:16:57,996 - INFO - Event Triggered: {"timestamp": 1776772017.9969187, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:17:01,010 - INFO - Event Triggered: {"timestamp": 1776772021.010706, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:17:10,069 - INFO - Event Triggered: {"timestamp": 1776772030.0697029, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:17:13,087 - INFO - Event Triggered: {"timestamp": 1776772033.0874026, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:17:19,139 - INFO - Event Triggered: {"timestamp": 1776772039.139087, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:17:48,839 - INFO - 127.0.0.1 - - [21/Apr/2026 17:17:48] "GET / HTTP/1.1" 200 -
+2026-04-21 17:17:48,897 - INFO - 127.0.0.1 - - [21/Apr/2026 17:17:48] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 17:17:49,094 - INFO - 127.0.0.1 - - [21/Apr/2026 17:17:49] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-21 17:17:49,289 - INFO - 127.0.0.1 - - [21/Apr/2026 17:17:49] "GET /events HTTP/1.1" 200 -
+2026-04-21 17:17:49,430 - INFO - 127.0.0.1 - - [21/Apr/2026 17:17:49] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 17:17:49,760 - INFO - 127.0.0.1 - - [21/Apr/2026 17:17:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 17:18:04,417 - INFO - Event Triggered: {"timestamp": 1776772084.416003, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:28,578 - INFO - Event Triggered: {"timestamp": 1776772108.57793, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:31,716 - INFO - Event Triggered: {"timestamp": 1776772111.7163227, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:32,682 - INFO - Event Triggered: {"timestamp": 1776772112.6823232, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:34,073 - INFO - Event Triggered: {"timestamp": 1776772114.073647, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:34,882 - INFO - Event Triggered: {"timestamp": 1776772114.8828475, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:36,807 - INFO - Event Triggered: {"timestamp": 1776772116.8076713, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:41,178 - INFO - Event Triggered: {"timestamp": 1776772121.1785834, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:41,367 - INFO - Event Triggered: {"timestamp": 1776772121.3661234, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:42,961 - INFO - Event Triggered: {"timestamp": 1776772122.9619386, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:44,897 - INFO - Event Triggered: {"timestamp": 1776772124.8972592, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:47,953 - INFO - Event Triggered: {"timestamp": 1776772127.9516287, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:53,305 - INFO - Event Triggered: {"timestamp": 1776772133.3059897, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:53,935 - INFO - Event Triggered: {"timestamp": 1776772133.9352865, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:57,456 - INFO - Event Triggered: {"timestamp": 1776772137.4547274, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:57,709 - INFO - Event Triggered: {"timestamp": 1776772137.7093244, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:18:59,403 - INFO - Event Triggered: {"timestamp": 1776772139.4026859, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:02,093 - INFO - Event Triggered: {"timestamp": 1776772142.0932024, "source": "pose", "event": "FALL_DETECTED", "details": "", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 17:19:02,232 - INFO - Event Triggered: {"timestamp": 1776772142.2324781, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:02,569 - INFO - Event Triggered: {"timestamp": 1776772142.569713, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:05,985 - INFO - Event Triggered: {"timestamp": 1776772145.985656, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:13,622 - INFO - Event Triggered: {"timestamp": 1776772153.622395, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:17,988 - INFO - Event Triggered: {"timestamp": 1776772157.9880311, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:18,452 - INFO - Event Triggered: {"timestamp": 1776772158.4525633, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:19,408 - INFO - Event Triggered: {"timestamp": 1776772159.408013, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:19,588 - INFO - Event Triggered: {"timestamp": 1776772159.5886986, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:21,620 - INFO - Event Triggered: {"timestamp": 1776772161.6200743, "source": "pose", "event": "FALL_DETECTED", "details": "", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 17:19:21,856 - INFO - Event Triggered: {"timestamp": 1776772161.85636, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:24,903 - INFO - Event Triggered: {"timestamp": 1776772164.9033818, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:27,698 - INFO - Event Triggered: {"timestamp": 1776772167.6988478, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:28,117 - INFO - Event Triggered: {"timestamp": 1776772168.1179497, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:28,201 - INFO - Event Triggered: {"timestamp": 1776772168.2018502, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:30,145 - INFO - Event Triggered: {"timestamp": 1776772170.145869, "source": "pose", "event": "FALL_DETECTED", "details": "", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 17:19:34,027 - INFO - Event Triggered: {"timestamp": 1776772174.0270965, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:37,034 - INFO - Event Triggered: {"timestamp": 1776772177.0340457, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:40,060 - INFO - Event Triggered: {"timestamp": 1776772180.060928, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:19:43,075 - INFO - Event Triggered: {"timestamp": 1776772183.0751884, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:26,015 - INFO - Event Triggered: {"timestamp": 1776772226.015008, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:26,252 - INFO - Event Triggered: {"timestamp": 1776772226.252048, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:26,385 - INFO - Event Triggered: {"timestamp": 1776772226.3854651, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:26,586 - INFO - Event Triggered: {"timestamp": 1776772226.5867329, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:26,688 - INFO - Event Triggered: {"timestamp": 1776772226.6883729, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:26,813 - INFO - Event Triggered: {"timestamp": 1776772226.813532, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:37,429 - INFO - Event Triggered: {"timestamp": 1776772237.4297993, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:41,471 - INFO - Event Triggered: {"timestamp": 1776772241.471018, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:41,672 - INFO - Event Triggered: {"timestamp": 1776772241.672401, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:20:41,803 - INFO - Event Triggered: {"timestamp": 1776772241.8033013, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:21:50,417 - INFO - Event Triggered: {"timestamp": 1776772310.417112, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:21:53,527 - INFO - Event Triggered: {"timestamp": 1776772313.527113, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:21:59,647 - INFO - Event Triggered: {"timestamp": 1776772319.6474297, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:22:06,257 - INFO - Event Triggered: {"timestamp": 1776772326.2571163, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:22:09,838 - INFO - Event Triggered: {"timestamp": 1776772329.8389266, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:22:13,025 - INFO - Event Triggered: {"timestamp": 1776772333.0256572, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:22:16,354 - INFO - Event Triggered: {"timestamp": 1776772336.3543603, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 17:22:19,354 - INFO - Event Triggered: {"timestamp": 1776772339.354416, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:36:07,064 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 18:36:18,026 - INFO - Event Triggered: {"timestamp": 1776776778.0265079, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:36:19,977 - INFO - Event Triggered: {"timestamp": 1776776779.9779277, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:36:20,473 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 18:36:20,474 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 18:36:21,042 - INFO - Event Triggered: {"timestamp": 1776776781.0423894, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:36:24,045 - INFO - Event Triggered: {"timestamp": 1776776784.0453284, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:36:27,071 - INFO - Event Triggered: {"timestamp": 1776776787.071915, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:36:33,127 - INFO - Event Triggered: {"timestamp": 1776776793.1277504, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:36:43,921 - INFO - 127.0.0.1 - - [21/Apr/2026 18:36:43] "GET / HTTP/1.1" 200 -
+2026-04-21 18:36:44,016 - INFO - 127.0.0.1 - - [21/Apr/2026 18:36:44] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 18:36:44,165 - INFO - 127.0.0.1 - - [21/Apr/2026 18:36:44] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-21 18:36:44,565 - INFO - 127.0.0.1 - - [21/Apr/2026 18:36:44] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 18:36:44,938 - INFO - 127.0.0.1 - - [21/Apr/2026 18:36:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 18:36:48,848 - INFO - 127.0.0.1 - - [21/Apr/2026 18:36:48] "GET /events HTTP/1.1" 200 -
+2026-04-21 18:36:51,302 - INFO - Event Triggered: {"timestamp": 1776776811.302528, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:37:03,524 - INFO - Event Triggered: {"timestamp": 1776776823.5244915, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:37:58,347 - INFO - Event Triggered: {"timestamp": 1776776878.3475602, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:43:38,094 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 18:43:50,658 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 18:43:50,659 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 18:44:15,295 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:15] "GET / HTTP/1.1" 200 -
+2026-04-21 18:44:15,621 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:15] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 18:44:15,650 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:15] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-21 18:44:17,826 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:17] "GET /events HTTP/1.1" 200 -
+2026-04-21 18:44:25,805 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:25] "GET / HTTP/1.1" 200 -
+2026-04-21 18:44:26,047 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 18:44:26,158 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-21 18:44:33,892 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:33] "GET /events HTTP/1.1" 200 -
+2026-04-21 18:44:45,313 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:45] "GET / HTTP/1.1" 200 -
+2026-04-21 18:44:45,660 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 18:44:45,661 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-21 18:44:45,946 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:45] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 18:44:45,946 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:45] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 18:44:46,251 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:46] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 18:44:46,267 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 18:44:46,574 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 18:44:49,679 - INFO - 127.0.0.1 - - [21/Apr/2026 18:44:49] "GET /events HTTP/1.1" 200 -
+2026-04-21 18:45:40,322 - INFO - 127.0.0.1 - - [21/Apr/2026 18:45:40] "GET / HTTP/1.1" 200 -
+2026-04-21 18:45:40,364 - INFO - 127.0.0.1 - - [21/Apr/2026 18:45:40] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 18:45:40,581 - INFO - 127.0.0.1 - - [21/Apr/2026 18:45:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 18:45:40,679 - INFO - 127.0.0.1 - - [21/Apr/2026 18:45:40] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-21 18:45:44,559 - INFO - 127.0.0.1 - - [21/Apr/2026 18:45:44] "GET /events HTTP/1.1" 200 -
+2026-04-21 18:54:43,212 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 18:54:56,739 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 18:54:56,739 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 18:55:27,662 - INFO - 127.0.0.1 - - [21/Apr/2026 18:55:27] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 18:55:27,678 - INFO - 127.0.0.1 - - [21/Apr/2026 18:55:27] "GET /login HTTP/1.1" 200 -
+2026-04-21 18:55:27,990 - INFO - 127.0.0.1 - - [21/Apr/2026 18:55:27] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 18:55:28,361 - INFO - 127.0.0.1 - - [21/Apr/2026 18:55:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 18:56:51,555 - INFO - 127.0.0.1 - - [21/Apr/2026 18:56:51] "POST /login HTTP/1.1" 200 -
+2026-04-21 18:56:51,655 - INFO - 127.0.0.1 - - [21/Apr/2026 18:56:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 18:56:57,866 - INFO - Event Triggered: {"timestamp": 1776778017.8661265, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:56:58,018 - INFO - Event Triggered: {"timestamp": 1776778018.018527, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 18:58:20,995 - INFO - 127.0.0.1 - - [21/Apr/2026 18:58:20] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 18:58:21,305 - INFO - 127.0.0.1 - - [21/Apr/2026 18:58:21] "GET /login HTTP/1.1" 200 -
+2026-04-21 18:58:21,571 - INFO - 127.0.0.1 - - [21/Apr/2026 18:58:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 18:58:21,645 - INFO - 127.0.0.1 - - [21/Apr/2026 18:58:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 19:08:54,632 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 19:09:08,046 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 19:09:08,046 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 19:09:30,575 - INFO - 127.0.0.1 - - [21/Apr/2026 19:09:30] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 19:09:30,592 - INFO - 127.0.0.1 - - [21/Apr/2026 19:09:30] "GET /login HTTP/1.1" 200 -
+2026-04-21 19:09:30,903 - INFO - 127.0.0.1 - - [21/Apr/2026 19:09:30] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 19:09:31,265 - INFO - 127.0.0.1 - - [21/Apr/2026 19:09:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 19:09:39,796 - INFO - 127.0.0.1 - - [21/Apr/2026 19:09:39] "GET /signup HTTP/1.1" 200 -
+2026-04-21 19:09:39,870 - INFO - 127.0.0.1 - - [21/Apr/2026 19:09:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:10:35,263 - INFO - 127.0.0.1 - - [21/Apr/2026 19:10:35] "GET /login HTTP/1.1" 200 -
+2026-04-21 19:10:35,589 - INFO - 127.0.0.1 - - [21/Apr/2026 19:10:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:10:52,587 - INFO - 127.0.0.1 - - [21/Apr/2026 19:10:52] "POST /login HTTP/1.1" 200 -
+2026-04-21 19:10:52,660 - INFO - 127.0.0.1 - - [21/Apr/2026 19:10:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:11:06,713 - INFO - 127.0.0.1 - - [21/Apr/2026 19:11:06] "GET /signup HTTP/1.1" 200 -
+2026-04-21 19:11:07,013 - INFO - 127.0.0.1 - - [21/Apr/2026 19:11:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:11:53,131 - INFO - 127.0.0.1 - - [21/Apr/2026 19:11:53] "POST /signup HTTP/1.1" 200 -
+2026-04-21 19:11:53,229 - INFO - 127.0.0.1 - - [21/Apr/2026 19:11:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:13:25,748 - INFO - Event Triggered: {"timestamp": 1776779005.7488954, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:13:25,849 - INFO - Event Triggered: {"timestamp": 1776779005.84912, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:13:50,025 - INFO - Event Triggered: {"timestamp": 1776779030.0254948, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:14:14,354 - INFO - Event Triggered: {"timestamp": 1776779054.3542988, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:14:14,543 - INFO - Event Triggered: {"timestamp": 1776779054.543496, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:14:37,028 - INFO - Event Triggered: {"timestamp": 1776779077.028149, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:14:37,342 - INFO - Event Triggered: {"timestamp": 1776779077.342098, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:35,439 - INFO - Event Triggered: {"timestamp": 1776779135.4393907, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:35,842 - INFO - Event Triggered: {"timestamp": 1776779135.842778, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:43,834 - INFO - Event Triggered: {"timestamp": 1776779143.8346198, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:45,073 - INFO - Event Triggered: {"timestamp": 1776779145.0725024, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:47,381 - INFO - Event Triggered: {"timestamp": 1776779147.3802907, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:47,851 - INFO - Event Triggered: {"timestamp": 1776779147.8515232, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:50,472 - INFO - Event Triggered: {"timestamp": 1776779150.4727645, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:50,766 - INFO - Event Triggered: {"timestamp": 1776779150.7659986, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:59,455 - INFO - Event Triggered: {"timestamp": 1776779159.4555986, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:15:59,542 - INFO - Event Triggered: {"timestamp": 1776779159.5429978, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:16:00,017 - INFO - Event Triggered: {"timestamp": 1776779160.01761, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:16:01,539 - INFO - Event Triggered: {"timestamp": 1776779161.5392315, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:16:02,921 - INFO - Event Triggered: {"timestamp": 1776779162.921367, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:17:35,322 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 19:17:49,522 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 19:17:49,522 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 19:18:00,054 - INFO - 127.0.0.1 - - [21/Apr/2026 19:18:00] "GET /signup HTTP/1.1" 200 -
+2026-04-21 19:18:00,167 - INFO - 127.0.0.1 - - [21/Apr/2026 19:18:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:18:00,312 - INFO - 127.0.0.1 - - [21/Apr/2026 19:18:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 19:18:45,854 - INFO - 127.0.0.1 - - [21/Apr/2026 19:18:45] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2026-04-21 19:18:45,870 - INFO - 127.0.0.1 - - [21/Apr/2026 19:18:45] "GET /login HTTP/1.1" 200 -
+2026-04-21 19:18:45,929 - INFO - 127.0.0.1 - - [21/Apr/2026 19:18:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:19:04,837 - INFO - 127.0.0.1 - - [21/Apr/2026 19:19:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-21 19:19:04,847 - INFO - 127.0.0.1 - - [21/Apr/2026 19:19:04] "GET / HTTP/1.1" 200 -
+2026-04-21 19:19:04,917 - INFO - 127.0.0.1 - - [21/Apr/2026 19:19:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:19:05,287 - INFO - 127.0.0.1 - - [21/Apr/2026 19:19:05] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 19:19:05,659 - INFO - 127.0.0.1 - - [21/Apr/2026 19:19:05] "GET /events HTTP/1.1" 200 -
+2026-04-21 19:19:55,472 - INFO - Event Triggered: {"timestamp": 1776779395.4720862, "source": "manual", "event": "EMERGENCY", "details": "User sent a high-priority alert.", "reason": "Manual Trigger", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:19:55,472 - INFO - 127.0.0.1 - - [21/Apr/2026 19:19:55] "POST /send_alert HTTP/1.1" 200 -
+2026-04-21 19:19:57,676 - INFO - Event Triggered: {"timestamp": 1776779397.676757, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:19:59,926 - INFO - Event Triggered: {"timestamp": 1776779399.9246402, "source": "manual", "event": "EMERGENCY", "details": "User requested emergency doctor call.", "reason": "Manual Trigger", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:19:59,926 - INFO - 127.0.0.1 - - [21/Apr/2026 19:19:59] "POST /call_doctor HTTP/1.1" 200 -
+2026-04-21 19:20:03,379 - INFO - Event Triggered: {"timestamp": 1776779403.379649, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:04,704 - INFO - Event Triggered: {"timestamp": 1776779404.7043989, "source": "manual", "event": "EMERGENCY", "details": "User requested emergency doctor call.", "reason": "Manual Trigger", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:04,705 - INFO - 127.0.0.1 - - [21/Apr/2026 19:20:04] "POST /call_doctor HTTP/1.1" 200 -
+2026-04-21 19:20:09,451 - INFO - Event Triggered: {"timestamp": 1776779409.4519699, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:15,902 - INFO - Event Triggered: {"timestamp": 1776779415.9027386, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:21,537 - INFO - Event Triggered: {"timestamp": 1776779421.5376134, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:27,475 - INFO - Event Triggered: {"timestamp": 1776779427.4753532, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:33,310 - INFO - Event Triggered: {"timestamp": 1776779433.3100984, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:39,044 - INFO - Event Triggered: {"timestamp": 1776779439.044546, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:44,678 - INFO - Event Triggered: {"timestamp": 1776779444.6784286, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:50,457 - INFO - Event Triggered: {"timestamp": 1776779450.457404, "source": "voice", "event": "NORMAL", "details": "", "reason": "", "severity": "CRITICAL", "system_state": "CRITICAL"}
+2026-04-21 19:20:52,461 - INFO - 127.0.0.1 - - [21/Apr/2026 19:20:52] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-21 19:37:23,891 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 19:37:35,195 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 19:37:35,196 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 19:38:02,410 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:02] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 19:38:02,422 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:02] "GET /login HTTP/1.1" 200 -
+2026-04-21 19:38:02,496 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:02] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 19:38:02,839 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-21 19:38:13,311 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-21 19:38:13,321 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:13] "GET / HTTP/1.1" 200 -
+2026-04-21 19:38:13,360 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 19:38:13,366 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:13] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 19:38:14,795 - INFO - 127.0.0.1 - - [21/Apr/2026 19:38:14] "GET /events HTTP/1.1" 200 -
+2026-04-21 19:38:40,884 - INFO - Event Triggered: {"timestamp": 1776780520.8842013, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:38:53,102 - INFO - Event Triggered: {"timestamp": 1776780533.1024082, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 19:39:20,466 - INFO - 127.0.0.1 - - [21/Apr/2026 19:39:20] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-21 19:39:20,476 - INFO - 127.0.0.1 - - [21/Apr/2026 19:39:20] "GET /login HTTP/1.1" 200 -
+2026-04-21 19:39:20,517 - INFO - 127.0.0.1 - - [21/Apr/2026 19:39:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:21:59,404 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 22:22:11,209 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-21 22:22:11,209 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-21 22:22:11,666 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 22:22:11,667 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 22:22:25,539 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:25] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 22:22:25,722 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:25] "GET /login HTTP/1.1" 200 -
+2026-04-21 22:22:25,991 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:25] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 22:22:33,760 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-21 22:22:33,769 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:33] "GET / HTTP/1.1" 200 -
+2026-04-21 22:22:33,799 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:22:33,801 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:33] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 22:22:35,605 - INFO - 127.0.0.1 - - [21/Apr/2026 22:22:35] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:23:50,894 - INFO - Event Triggered: {"timestamp": 1776790430.8943455, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:02,643 - INFO - Event Triggered: {"timestamp": 1776790442.6435394, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:03,104 - INFO - Event Triggered: {"timestamp": 1776790443.1034896, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:04,665 - INFO - Event Triggered: {"timestamp": 1776790444.6659894, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:05,370 - INFO - Event Triggered: {"timestamp": 1776790445.3701262, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:05,655 - INFO - Event Triggered: {"timestamp": 1776790445.6554315, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:08,122 - INFO - Event Triggered: {"timestamp": 1776790448.1223478, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.5s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:09,233 - INFO - Event Triggered: {"timestamp": 1776790449.2333674, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 3.6s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:09,757 - INFO - Event Triggered: {"timestamp": 1776790449.757058, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 4.1s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:10,021 - INFO - Event Triggered: {"timestamp": 1776790450.0210443, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:12,405 - INFO - Event Triggered: {"timestamp": 1776790452.4055278, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:12,691 - INFO - Event Triggered: {"timestamp": 1776790452.6913655, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:13,233 - INFO - Event Triggered: {"timestamp": 1776790453.233848, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:13,592 - INFO - Event Triggered: {"timestamp": 1776790453.592275, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:16,560 - INFO - Event Triggered: {"timestamp": 1776790456.5608563, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 3.3s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:22,413 - INFO - Event Triggered: {"timestamp": 1776790462.4134715, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:23,838 - INFO - Event Triggered: {"timestamp": 1776790463.8383327, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 10.6s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:28,148 - INFO - Event Triggered: {"timestamp": 1776790468.1476347, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:31,739 - INFO - Event Triggered: {"timestamp": 1776790471.7395976, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 18.5s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:33,674 - INFO - Event Triggered: {"timestamp": 1776790473.6746116, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:24:38,525 - INFO - Event Triggered: {"timestamp": 1776790478.5253239, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:42,033 - INFO - Event Triggered: {"timestamp": 1776790482.0332544, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:24:42,188 - INFO - Event Triggered: {"timestamp": 1776790482.188229, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:27:34,043 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 22:27:47,946 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-21 22:27:47,947 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-21 22:27:48,252 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 22:27:48,252 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 22:27:54,788 - INFO - 127.0.0.1 - - [21/Apr/2026 22:27:54] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:28:12,117 - INFO - 127.0.0.1 - - [21/Apr/2026 22:28:12] "GET / HTTP/1.1" 200 -
+2026-04-21 22:28:12,191 - INFO - 127.0.0.1 - - [21/Apr/2026 22:28:12] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 22:28:12,250 - INFO - 127.0.0.1 - - [21/Apr/2026 22:28:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:28:17,324 - INFO - 127.0.0.1 - - [21/Apr/2026 22:28:17] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:28:29,641 - INFO - Event Triggered: {"timestamp": 1776790709.6413462, "source": "voice", "event": "EMERGENCY", "details": "Transcript: help", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:28:32,784 - INFO - Event Triggered: {"timestamp": 1776790712.783594, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:37:07,230 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 22:37:08,447 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-21 22:37:08,447 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-21 22:37:18,451 - INFO - Event Triggered: {"timestamp": 1776791238.451408, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:37:20,504 - INFO - Event Triggered: {"timestamp": 1776791240.5048006, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.1s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:37:20,797 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 22:37:20,798 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 22:37:28,332 - INFO - Event Triggered: {"timestamp": 1776791248.3323932, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:37:28,341 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:28] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:37:31,113 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:31] "GET / HTTP/1.1" 200 -
+2026-04-21 22:37:31,365 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:31] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 22:37:31,387 - INFO - Event Triggered: {"timestamp": 1776791251.386795, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:37:31,533 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:31] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 22:37:33,656 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:33] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 22:37:34,270 - INFO - Event Triggered: {"timestamp": 1776791254.270741, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:37:34,270 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:34] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:37:39,233 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:39] "GET / HTTP/1.1" 200 -
+2026-04-21 22:37:39,383 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:37:39,387 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:39] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 22:37:41,178 - INFO - Event Triggered: {"timestamp": 1776791261.1780043, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:37:41,178 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:41] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:37:41,198 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:41] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 22:37:41,450 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:41] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 22:37:49,603 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:49] "GET /login HTTP/1.1" 200 -
+2026-04-21 22:37:57,117 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-21 22:37:57,134 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:57] "GET / HTTP/1.1" 200 -
+2026-04-21 22:37:57,198 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:37:57,200 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:57] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 22:37:59,224 - INFO - 127.0.0.1 - - [21/Apr/2026 22:37:59] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 22:38:09,192 - INFO - Event Triggered: {"timestamp": 1776791289.1922007, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:38:09,224 - INFO - 127.0.0.1 - - [21/Apr/2026 22:38:09] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:38:12,287 - INFO - Event Triggered: {"timestamp": 1776791292.2863352, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:38:12,450 - INFO - 127.0.0.1 - - [21/Apr/2026 22:38:12] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 22:38:16,048 - INFO - Event Triggered: {"timestamp": 1776791296.0489051, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:38:21,683 - INFO - Event Triggered: {"timestamp": 1776791301.683635, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:38:21,687 - INFO - Event Triggered: {"timestamp": 1776791301.6877487, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:38:27,324 - INFO - Event Triggered: {"timestamp": 1776791307.3247263, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 22:40:25,584 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 22:40:27,139 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-21 22:40:27,141 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-21 22:40:38,643 - INFO - Event Triggered: {"timestamp": 1776791438.6430438, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:40:41,111 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 22:40:41,112 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 22:40:44,955 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:44] "GET /login HTTP/1.1" 200 -
+2026-04-21 22:40:45,045 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:45] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 22:40:55,696 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-21 22:40:55,707 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:55] "GET / HTTP/1.1" 200 -
+2026-04-21 22:40:55,744 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:40:55,745 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:55] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 22:40:57,764 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:57] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 22:40:59,489 - INFO - 127.0.0.1 - - [21/Apr/2026 22:40:59] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:41:24,753 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:24] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-21 22:41:24,763 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:24] "GET /login HTTP/1.1" 200 -
+2026-04-21 22:41:24,823 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:41:32,968 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:32] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 22:41:42,075 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:42] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 22:41:42,085 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:42] "GET /login HTTP/1.1" 200 -
+2026-04-21 22:41:42,153 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

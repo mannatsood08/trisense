@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriSense - Doctor Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="app" class="dashboard-root">
+        <header class="top-bar glass">
+            <div class="logo">
+                <span class="tri">Tri</span><span class="sense">Sense</span>
+                <span class="platform-tag" style="background: #10b981;">DOCTOR PORTAL</span>
+            </div>
+            <div class="system-status">
+                <h2>PATIENT STATUS: <span id="global-state-text" class="state-normal">NORMAL</span></h2>
+            </div>
+            <div class="header-right">
+                <div class="time" id="current-time">00:00:00</div>
+                <div class="user-profile">
+                    <span class="user-name">Dr. {{ user }}</span>
+                    <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Left: Module Health -->
+            <aside class="sidebar left">
+                <section class="glass-container modules-status">
+                    <h3><i class="icon-monitor"></i> Remote Diagnostics</h3>
+                    <div id="pose-card" class="status-card border-normal">
+                        <div class="card-info">
+                            <span class="card-header">Activity Monitor</span>
+                            <span id="pose-val" class="card-value state-normal">STEADY</span>
+                        </div>
+                    </div>
+                    <div id="voice-card" class="status-card border-normal">
+                        <div class="card-info">
+                            <span class="card-header">Audio Stream</span>
+                            <span id="voice-val" class="card-value state-normal">QUIET</span>
+                        </div>
+                    </div>
+                    <div id="face-card" class="status-card border-normal">
+                        <div class="card-info">
+                            <span class="card-header">Patient Presence</span>
+                            <span id="face-val" class="card-value state-normal">DETECTED</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="glass-container voice-transcript-panel">
+                    <h3><i class="icon-mic"></i> Patient Speech Log</h3>
+                    <div id="transcript-content" class="transcript-box">
+                        <p class="placeholder">Monitoring audio feed...</p>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Center: Live Feed -->
+            <div class="main-content">
+                <section class="glass-container video-wrapper">
+                    <div class="video-header">
+                        <span class="live-indicator"><span class="dot" style="background: #10b981; box-shadow: 0 0 8px #10b981;"></span> ENCRYPTED LINK</span>
+                    </div>
+                    <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Patient Stream">
+                </section>
+
+                <section class="glass-container clinical-notes" style="height: 250px;">
+                    <h3><i class="icon-file"></i> Clinical Assessment</h3>
+                    <div class="intelligence-box" style="margin-top: 10px;">
+                        <p class="reason-title">Last Automated Diagnosis:</p>
+                        <p id="reason-text" class="reason-content" style="font-size: 14px;">No immediate medical attention required. Vitals appear stable based on current movement patterns.</p>
+                        <p class="contributing-module">Last Refresh: <span id="reason-source">Just now</span></p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right: Alert History -->
+            <aside class="sidebar right">
+                <section class="glass-container event-timeline">
+                    <h3><i class="icon-log"></i> Remote Alert History</h3>
+                    <div id="log-entries" class="log-entries">
+                        <!-- Events populated by SSE -->
+                    </div>
+                </section>
+            </aside>
+        </main>
+    </div>
+
+    <script>
+        const logEntries = document.getElementById('log-entries');
+        const stateText = document.getElementById('global-state-text');
+        const transcriptBox = document.getElementById('transcript-content');
+        const reasonText = document.getElementById('reason-text');
+        const reasonSource = document.getElementById('reason-source');
+
+        const eventSource = new EventSource('/events');
+
+        eventSource.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            updateDoctorUI(data);
+        };
+
+        function updateDoctorUI(data) {
+            const state = data.system_state;
+            stateText.innerText = state;
+            stateText.className = `state-${state.toLowerCase()}`;
+            
+            document.body.className = state === 'EMERGENCY' || state === 'CRITICAL' ? 'emergency-state' : '';
+
+            if (data.reason && data.event !== 'NORMAL') {
+                reasonText.innerText = data.reason;
+                reasonSource.innerText = new Date(data.timestamp * 1000).toLocaleTimeString();
+            }
+
+            if (data.source === 'voice' && data.details.includes('Transcript:')) {
+                const text = data.details.replace('Transcript: ', '');
+                const p = document.createElement('p');
+                p.className = 'transcript-item';
+                p.innerText = text;
+                transcriptBox.prepend(p);
+                if (transcriptBox.children.length > 8) transcriptBox.lastChild.remove();
+            }
+
+            if (data.event !== 'NORMAL' || data.severity === 'CRITICAL') {
+                const entry = document.createElement('div');
+                entry.className = `log-item border-${data.severity.toLowerCase()}`;
+                const timeStr = new Date(data.timestamp * 1000).toLocaleTimeString();
+                
+                entry.innerHTML = `
+                    <div class="log-time">${timeStr}</div>
+                    <div class="log-title">${data.event} [${data.source}]</div>
+                    <div class="log-details">${data.reason || data.details}</div>
+                `;
+                
+                logEntries.prepend(entry);
+                if (logEntries.children.length > 30) logEntries.lastChild.remove();
+            }
+
+            // Update Module Badges
+            const val = document.getElementById(`${data.source}-val`);
+            const card = document.getElementById(`${data.source}-card`);
+            if (val && card) {
+                val.innerText = data.event;
+                val.className = `card-value state-${data.severity.toLowerCase()}`;
+                card.className = `status-card border-${data.severity.toLowerCase()}`;
+            }
+        }
+
+        setInterval(() => {
+            document.getElementById('current-time').innerText = new Date().toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+</html>

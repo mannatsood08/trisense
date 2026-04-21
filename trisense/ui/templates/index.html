@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriSense Dashboard - Real-Time Safety</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="app" class="dashboard-root">
+        <!-- Top Navigation Bar -->
+        <header class="top-bar glass">
+            <div class="logo">
+                <span class="tri">Tri</span><span class="sense">Sense</span>
+                <span class="platform-tag">PLATFORM</span>
+            </div>
+            <div class="system-status">
+                <h2>STATE: <span id="global-state-text" class="state-normal">NORMAL</span></h2>
+            </div>
+            <div class="header-right">
+                <div class="time" id="current-time">00:00:00</div>
+                <div class="user-profile">
+                    <span class="user-name">{{ user }}</span>
+                    <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Left Column: Status & Voice -->
+            <aside class="sidebar left">
+                <section class="glass-container modules-status">
+                    <h3><i class="icon-monitor"></i> Module Status</h3>
+                    <div id="pose-card" class="status-card border-normal">
+                        <div class="card-info">
+                            <span class="card-header">Pose Detection</span>
+                            <span id="pose-val" class="card-value state-normal">ACTIVE</span>
+                        </div>
+                    </div>
+                    <div id="voice-card" class="status-card border-normal">
+                        <div class="card-info">
+                            <span class="card-header">Voice Analysis</span>
+                            <span id="voice-val" class="card-value state-normal">LISTENING</span>
+                        </div>
+                    </div>
+                    <div id="face-card" class="status-card border-normal">
+                        <div class="card-info">
+                            <span class="card-header">Face Monitor</span>
+                            <span id="face-val" class="card-value state-normal">SECURE</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="glass-container voice-transcript-panel">
+                    <h3><i class="icon-mic"></i> Live Transcript</h3>
+                    <div id="transcript-content" class="transcript-box">
+                        <p class="placeholder">Listening for speech...</p>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Center Column: Video & Chat -->
+            <div class="main-content">
+                <section class="glass-container video-wrapper">
+                    <div class="video-header">
+                        <span class="live-indicator"><span class="dot"></span> LIVE FEED</span>
+                    </div>
+                    <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Live Stream">
+                    <div id="emergency-overlay" class="overlay-hidden"></div>
+                </section>
+
+                <section class="glass-container ai-chat-hub">
+                    <h3><i class="icon-bot"></i> AI Safety Assistant</h3>
+                    <div id="chat-messages" class="chat-box">
+                        <div class="msg bot">Hello {{ user }}, I am monitoring your safety. Everything looks normal.</div>
+                    </div>
+                    <div id="chat-actions" class="chat-footer hidden">
+                        <!-- Quick actions appear here based on state -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Intelligence & Timeline -->
+            <aside class="sidebar right">
+                <section class="glass-container intelligence-panel">
+                    <h3><i class="icon-brain"></i> System Intelligence</h3>
+                    <div id="ai-reasoning" class="intelligence-box">
+                        <p class="reason-title">Last Assessment:</p>
+                        <p id="reason-text" class="reason-content">System is monitoring for falls and unrecognized individuals. No anomalies detected.</p>
+                        <p class="contributing-module">Source: <span id="reason-source">System</span></p>
+                    </div>
+                </section>
+
+                <section class="glass-container event-timeline">
+                    <h3><i class="icon-log"></i> Event Timeline</h3>
+                    <div id="log-entries" class="log-entries">
+                        <!-- Events populated by SSE -->
+                    </div>
+                </section>
+            </aside>
+        </main>
+
+        <!-- Bottom Action Bar (Dynamic) -->
+        <footer class="action-bar glass">
+            <div class="emergency-controls">
+                <button id="btn-call-doctor" class="action-btn disabled" onclick="triggerEmergency('/call_doctor')">
+                    <i class="icon-doctor"></i> Call Doctor
+                </button>
+                <button id="btn-send-alert" class="action-btn disabled" onclick="triggerEmergency('/send_alert')">
+                    <i class="icon-alert"></i> Send Alert
+                </button>
+                <button id="btn-mark-safe" class="action-btn safe-btn" onclick="triggerEmergency('/mark_safe')">
+                    Mark System Safe
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const logEntries = document.getElementById('log-entries');
+        const stateText = document.getElementById('global-state-text');
+        const overlay = document.getElementById('emergency-overlay');
+        const transcriptBox = document.getElementById('transcript-content');
+        const reasonText = document.getElementById('reason-text');
+        const reasonSource = document.getElementById('reason-source');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatActions = document.getElementById('chat-actions');
+
+        // State Buttons
+        const btns = {
+            doctor: document.getElementById('btn-call-doctor'),
+            alert: document.getElementById('btn-send-alert')
+        };
+
+        const eventSource = new EventSource('/events');
+
+        eventSource.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            updateUI(data);
+        };
+
+        function updateUI(data) {
+            // Update Global State
+            const state = data.system_state;
+            stateText.innerText = state;
+            stateText.className = `state-${state.toLowerCase()}`;
+            
+            // Update Body Class for flash effect
+            document.body.className = state === 'EMERGENCY' || state === 'CRITICAL' ? 'emergency-state' : '';
+            if (state === 'WARNING') document.body.className = 'warning-state';
+            if (data.event === 'VERIFYING') document.body.className = 'verifying-state';
+
+            // Enable/Disable buttons
+            if (state !== 'NORMAL') {
+                btns.doctor.classList.remove('disabled');
+                btns.alert.classList.remove('disabled');
+            } else {
+                btns.doctor.classList.add('disabled');
+                btns.alert.classList.add('disabled');
+            }
+
+            // Update Intelligence Panel
+            if (data.reason && data.event !== 'NORMAL') {
+                reasonText.innerText = data.reason;
+                reasonSource.innerText = data.source.toUpperCase();
+            }
+
+            // Update Transcript Panel
+            if (data.source === 'voice' && data.details.includes('Transcript:')) {
+                const text = data.details.replace('Transcript: ', '');
+                const p = document.createElement('p');
+                p.className = 'transcript-item';
+                p.innerText = text;
+                transcriptBox.prepend(p);
+                if (transcriptBox.children.length > 5) transcriptBox.lastChild.remove();
+            }
+
+            // Update Log
+            if (data.event !== 'NORMAL' || data.severity === 'CRITICAL') {
+                const entry = document.createElement('div');
+                entry.className = `log-item border-${data.severity.toLowerCase()}`;
+                const timeStr = new Date(data.timestamp * 1000).toLocaleTimeString();
+                
+                entry.innerHTML = `
+                    <div class="log-time">${timeStr}</div>
+                    <div class="log-title">${data.event} [${data.source}]</div>
+                    <div class="log-details">${data.reason || data.details}</div>
+                `;
+                
+                logEntries.prepend(entry);
+                if (logEntries.children.length > 20) logEntries.lastChild.remove();
+
+                // Proactive Chat response
+                handleAIChat(data);
+            }
+
+            // Update Module Badges
+            updateModuleBadge(data);
+        }
+
+        function updateModuleBadge(data) {
+            const val = document.getElementById(`${data.source}-val`);
+            const card = document.getElementById(`${data.source}-card`);
+            if (val && card) {
+                val.innerText = data.event;
+                val.className = `card-value state-${data.severity.toLowerCase()}`;
+                card.className = `status-card border-${data.severity.toLowerCase()}`;
+            }
+        }
+
+        let lastPromptedState = '';
+        function handleAIChat(data) {
+            if (data.system_state === lastPromptedState) return;
+            
+            if (data.system_state === 'EMERGENCY' || data.system_state === 'CRITICAL') {
+                if (data.event === 'VERIFYING') {
+                    addChatMessage("bot", "🚨 Verification In Progress: I'm speaking to you and listening for a response. Please say 'I am okay' if you do not need help.");
+                } else {
+                    addChatMessage("bot", `I've detected a ${data.event}. Please stay calm. Should I call a doctor for you?`);
+                }
+                showChatActions();
+                lastPromptedState = data.system_state;
+            } else if (data.system_state === 'NORMAL' && lastPromptedState !== 'NORMAL') {
+                addChatMessage("bot", "The situation seems resolved. I'm back to monitoring.");
+                hideChatActions();
+                lastPromptedState = 'NORMAL';
+            }
+        }
+
+        function addChatMessage(sender, text) {
+            const div = document.createElement('div');
+            div.className = `msg ${sender}`;
+            div.innerText = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Trigger Voice for Bot messages
+            if (sender === 'bot') {
+                fetch('/api/speak', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: text })
+                }).catch(e => console.error("Voice failed", e));
+            }
+        }
+
+        // Speak initial welcome message
+        setTimeout(() => {
+            const msg = document.querySelector('.msg.bot');
+            if (msg) fetch('/api/speak', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: msg.innerText })
+            });
+        }, 2000);
+
+        function showChatActions() {
+            chatActions.innerHTML = `
+                <button class="chat-btn yes" onclick="triggerEmergency('/call_doctor')">Yes, Call Doctor</button>
+                <button class="chat-btn no" onclick="triggerEmergency('/mark_safe')">No, I'm Safe</button>
+            `;
+            chatActions.classList.remove('hidden');
+        }
+
+        function hideChatActions() {
+            chatActions.classList.add('hidden');
+        }
+
+        async function triggerEmergency(url) {
+            try {
+                const res = await fetch(url, { method: 'POST' });
+                const result = await res.json();
+                addChatMessage("user", url.replace('/', '').replace('_', ' '));
+                if (url === '/mark_safe') hideChatActions();
+            } catch (e) {
+                console.error("Action failed", e);
+            }
+        }
+
+        // Clock Update
+        setInterval(() => {
+            document.getElementById('current-time').innerText = new Date().toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+</html>

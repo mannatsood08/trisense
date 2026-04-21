@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriSense - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+    <div class="login-container glass">
+        <div class="logo">
+            <span class="tri">Tri</span><span class="sense">Sense</span>
+        </div>
+        <h1>Join TriSense</h1>
+        <p class="subtitle">Create an account for safety monitoring</p>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash-messages">
+            {% for message in messages %}
+              <div class="alert warn">{{ message }}</div>
+            {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('signup') }}" method="POST" class="login-form">
+            <div class="input-group">
+                <label for="username">Choose Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" autocomplete="username" required autofocus>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="new-password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="••••••••" autocomplete="new-password" required>
+            </div>
+            <div class="input-group">
+                <label for="role">Account Type</label>
+                <select id="role" name="role" style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; color: white;">
+                    <option value="user">Patient / User</option>
+                    <option value="doctor">Medical Doctor</option>
+                </select>
+            </div>
+            <button type="submit" class="login-btn">Create Account</button>
+        </form>
+        
+        <div class="login-footer">
+            <p>Already have an account? <a href="{{ url_for('login') }}" style="color: #38bdf8; text-decoration: none;">Sign In</a></p>
+        </div>
+    </div>
+</body>
+</html>
