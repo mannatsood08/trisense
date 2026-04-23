@@ -1,7 +1,12 @@
 from flask import Flask, render_template, Response, request, redirect, url_for, session, flash
 import json
 import time
+import os
+import threading
+import queue
 from functools import wraps
+import numpy as np
+import cv2
 
 from trisense.models.database import init_db, add_user, verify_user
 
@@ -15,6 +20,7 @@ init_db()
 camera_stream = None
 event_engine = None
 context_engine = None
+camera_paused = False # Global privacy toggle
 
 def save_snapshot(event_data):
     """Saves a frame when an emergency occurs"""
@@ -95,17 +101,38 @@ def logout():
     return redirect(url_for('login'))
 
 def gen_frames():
+    # Pre-generate privacy placeholder once
+    try:
+        privacy_placeholder = np.zeros((480, 360, 3), dtype=np.uint8)
+        cv2.putText(privacy_placeholder, "PRIVACY MODE", (40, 240), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 2)
+        _, privacy_buffer = cv2.imencode('.jpg', privacy_placeholder)
+        privacy_bytes = privacy_buffer.tobytes()
+    except:
+        privacy_bytes = b''
+
     while True:
-        if camera_stream is None:
-            time.sleep(0.1)
-            continue
-        
-        frame = camera_stream.get_frame()
-        if frame is not None:
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-        else:
-            time.sleep(0.01)
+        try:
+            if camera_paused:
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + privacy_bytes + b'\r\n')
+                time.sleep(1.0)
+                continue
+                
+            if camera_stream is None:
+                time.sleep(0.5)
+                continue
+            
+            frame = camera_stream.get_frame()
+            if frame is not None:
+                # Direct yield of the pre-encoded bytes from CameraStream
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                time.sleep(0.04) # Stable 25 FPS
+            else:
+                time.sleep(0.1)
+        except Exception as e:
+            print(f"[Dashboard] Stream Error: {e}")
+            time.sleep(1.0)
 
 @app.route('/video_feed')
 @login_required
@@ -159,9 +186,30 @@ def events():
 def doctor_dashboard():
     if session.get('role') != 'doctor':
         return redirect(url_for('index'))
-    return render_template('doctor_dashboard.html', user=session['user'])
+    return render_template('doctor_dashboard.html', user=session['user'], camera_paused=camera_paused)
+
+@app.route('/api/camera/toggle', methods=['POST'])
+@login_required
+def toggle_camera():
+    global camera_paused
+    camera_paused = not camera_paused
+    return {"status": "ok", "paused": camera_paused}
+
+@app.route('/api/patient/notes')
+@login_required
+def patient_notes():
+    from trisense.models.database import get_patient_notes
+    notes = get_patient_notes(session['user'])
+    return {"notes": notes}
 
 # --- Emergency Endpoints ---
+@app.route('/sos', methods=['POST'])
+@login_required
+def trigger_sos():
+    if event_engine:
+        event_engine.push_event("CRITICAL_SOS", "Emergency SOS button pressed", source="USER_INTERFACE")
+    return {"status": "success", "message": "SOS triggered"}
+
 @app.route('/call_doctor', methods=['POST'])
 @login_required
 def call_doctor():
@@ -185,6 +233,9 @@ def mark_safe():
 @login_required
 def api_speak():
     from trisense.utils.voice_service import voice_service
+    if not request.is_json:
+        return {"status": "error", "message": "JSON required"}, 400
+        
     text = request.json.get('text', '')
     if text:
         voice_service.speak(text)
@@ -209,8 +260,6 @@ def gen_wellbeing_frames():
         raw_frame_bytes = camera_stream.get_frame()
         if raw_frame_bytes is not None:
             # Decode to CV2
-            import numpy as np
-            import cv2
             nparr = np.frombuffer(raw_frame_bytes, np.uint8)
             frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
             
@@ -328,7 +377,7 @@ def api_get_patients():
 @app.route('/api/messages', methods=['GET', 'POST'])
 @login_required
 def api_messages():
-    from trisense.models.database import add_message, get_messages
+    from trisense.models.database import add_message, get_messages, get_all_patient_messages
     if request.method == 'POST':
         data = request.json
         receiver = data.get('receiver')
@@ -337,10 +386,54 @@ def api_messages():
         return {"status": "success"}
     else:
         other_user = request.args.get('with')
-        if not other_user:
-            return {"status": "error"}, 400
-        msgs = get_messages(session['user'], other_user)
+        if session.get('role') == 'doctor':
+            if not other_user:
+                return {"status": "error", "message": "Doctor must specify a patient"}, 400
+            msgs = get_messages(session['user'], other_user)
+        else:
+            # Patient: Get all messages with doctors to ensure they don't miss anything
+            msgs = get_all_patient_messages(session['user'])
+            
         return {"messages": msgs}
+
+@app.route('/api/doctor/analytics')
+@login_required
+def api_wellbeing_analytics():
+    if session.get('role') != 'doctor':
+        return {"status": "error"}, 403
+    
+    patient = request.args.get('patient')
+    if not patient:
+        return {"status": "error", "message": "Missing patient"}, 400
+        
+    from trisense.models.database import get_wellbeing_history
+    history = get_wellbeing_history(patient)
+    
+    # Early Warning System (Feature Implementation)
+    at_risk = False
+    warning_reason = ""
+    
+    if len(history) >= 5:
+        # Check distress trend
+        recent_distress = [h['distress'] for h in history[-5:]]
+        distress_slope = recent_distress[-1] - recent_distress[0]
+        
+        # Check activity trend
+        recent_activity = [h['activity'] for h in history[-5:]]
+        activity_slope = recent_activity[-1] - recent_activity[0]
+        
+        if distress_slope > 10 and activity_slope < 0:
+            at_risk = True
+            warning_reason = "Rising distress coupled with declining activity levels."
+        elif distress_slope > 20:
+            at_risk = True
+            warning_reason = "Significant sudden increase in emotional distress."
+
+    return {
+        "history": history,
+        "at_risk": at_risk,
+        "warning_reason": warning_reason
+    }
 
 @app.route('/api/my_doctor')
 @login_required
@@ -374,6 +467,21 @@ def start_ui(_camera_stream, _event_engine, _context_engine=None):
     camera_stream = _camera_stream
     event_engine = _event_engine
     context_engine = _context_engine
+    
+    # Start wellbeing background logger
+    def wellbeing_logger():
+        from trisense.models.database import log_wellbeing_score, get_all_patients
+        while True:
+            time.sleep(30) # Log every 30s for demo purposes
+            if context_engine:
+                status = context_engine.get_status()
+                distress = status.get('risk_score', 0)
+                activity = status.get('inactivity_score', 0)
+                # In a real app, you'd log for the specific patient being monitored.
+                # Here we log for 'mannat' as a primary demo patient.
+                log_wellbeing_score('mannat', distress, activity)
+    
+    threading.Thread(target=wellbeing_logger, daemon=True).start()
     
     # Register snapshot listener
     event_engine.subscribe(save_snapshot)

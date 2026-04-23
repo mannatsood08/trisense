@@ -47,6 +47,16 @@ def init_db():
             FOREIGN KEY (doctor_username) REFERENCES users (username)
         )
     ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS wellbeing_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            patient_username TEXT NOT NULL,
+            distress_score INTEGER NOT NULL,
+            activity_score INTEGER NOT NULL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (patient_username) REFERENCES users (username)
+        )
+    ''')
     
     # Add default admin if not exists
     cursor.execute("SELECT * FROM users WHERE username='admin'")
@@ -132,6 +142,19 @@ def get_messages(u1, u2):
     conn.close()
     return [{"sender": r[0], "receiver": r[1], "message": r[2], "time": r[3]} for r in res]
 
+def get_all_patient_messages(patient):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    # Get all messages where patient is sender or receiver, AND the other party is a doctor
+    cursor.execute("""
+        SELECT sender, receiver, message, timestamp FROM messages 
+        WHERE (sender=? OR receiver=?)
+        ORDER BY timestamp ASC
+    """, (patient, patient))
+    res = cursor.fetchall()
+    conn.close()
+    return [{"sender": r[0], "receiver": r[1], "message": r[2], "time": r[3]} for r in res]
+
 def add_patient_note(patient, doctor, note):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -174,3 +197,25 @@ def get_doctor_for_patient(patient):
     # 3. Default fallback to the system admin doctor
     conn.close()
     return "admin"
+
+def log_wellbeing_score(patient, distress, activity):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO wellbeing_history (patient_username, distress_score, activity_score) VALUES (?, ?, ?)",
+                   (patient, distress, activity))
+    conn.commit()
+    conn.close()
+
+def get_wellbeing_history(patient, days=7):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT distress_score, activity_score, timestamp 
+        FROM wellbeing_history 
+        WHERE patient_username=? 
+        AND timestamp >= datetime('now', ?)
+        ORDER BY timestamp ASC
+    """, (patient, f'-{days} days'))
+    res = cursor.fetchall()
+    conn.close()
+    return [{"distress": r[0], "activity": r[1], "time": r[2]} for r in res]

@@ -11,6 +11,8 @@ class EmergencyManager:
     def __init__(self, event_engine):
         self.event_engine = event_engine
         self.is_verifying = False
+        self.last_warning_time = 0
+        self.warning_cooldown = 30 # Seconds between warning beeps
         # Non-blocking registration
         self.event_engine.subscribe(self.on_event_received)
         print("[EmergencyManager] Initialized and monitoring for events.")
@@ -19,7 +21,13 @@ class EmergencyManager:
         import json
         data = json.loads(event_json)
         
-        # Only trigger verification if system enters EMERGENCY state and we aren't already verifying
+        # Handle immediate SOS (Feature 7)
+        if data.get("system_state") == "CRITICAL" and data.get("source") == "USER_INTERFACE":
+            print("[EmergencyManager] CRITICAL SOS RECEIVED. Escalating immediately.")
+            self.escalate_emergency("SOS_BUTTON", data.get("timestamp"), "Manual SOS triggered", "User pressed SOS button")
+            return
+
+        # Handle Potential Falls/Emergencies (Feature 6)
         if data.get("system_state") in ["EMERGENCY", "CRITICAL"] and not self.is_verifying:
             # We don't want to re-trigger if it's already an escalated or system type event
             if data.get("source") not in ["system", "manual"]:
@@ -32,9 +40,11 @@ class EmergencyManager:
                                  daemon=True).start()
         
         elif data.get("system_state") == "WARNING":
-            # Play a short "notice" beep for warnings (like potential falls)
-            if not self.is_verifying:
-                print("[EmergencyManager] Warning detected. Playing pre-alert notice.")
+            # Play a short "notice" beep for warnings with a cooldown to prevent ear fatigue
+            current_time = time.time()
+            if not self.is_verifying and (current_time - self.last_warning_time) > self.warning_cooldown:
+                self.last_warning_time = current_time
+                print(f"[EmergencyManager] Warning alert: {data.get('reason', 'Unknown reason')}. Playing notice.")
                 threading.Thread(target=self.play_notice_beep, daemon=True).start()
 
     def play_notice_beep(self):
@@ -85,8 +95,8 @@ class EmergencyManager:
                 print("[EmergencyManager] Manual reset detected. Aborting verification.")
                 return
 
-            # 4. Speak Verification Message
-            self.speak("An emergency has been detected. Are you okay? Please respond.")
+            # 4. Speak Verification Message (Personalized Feature 6)
+            self.speak("I detected a possible fall. Are you okay? Please say 'I am fine' to cancel this alert.")
 
             # 4. Listen for Response
             recognizer = sr.Recognizer()

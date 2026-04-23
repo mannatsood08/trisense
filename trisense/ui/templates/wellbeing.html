@@ -119,7 +119,7 @@
             // Update Score & Badge
             scoreEl.innerText = data.score + '%';
             badgeEl.innerText = data.status;
-            badgeEl.className = 'status-badge ' + (data.status === 'DISTRESS' ? 'status-distress' : 'status-normal');
+            badgeEl.className = 'status-badge ' + (data.status !== 'NORMAL' ? 'status-distress' : 'status-normal');
             
             // Update Metrics
             faceVal.innerText = data.face_score + '%';

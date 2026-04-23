@@ -25,6 +25,7 @@
                 <span id="lock-status-subtext" class="state-subtext hidden">Previous alert not resolved</span>
             </div>
             <div class="header-right">
+                <button id="btn-sos" class="sos-btn" onclick="triggerEmergency('/sos')">SOS</button>
                 <a href="{{ url_for('wellbeing_page') }}" class="nav-btn wellbeing-btn">
                     <i class="icon-heart"></i> Monitor Emotional Wellbeing
                 </a>
@@ -69,14 +70,22 @@
                 </section>
 
                 {% if session['role'] == 'patient' or session['role'] == 'user' %}
-                <section class="glass-container medicine-panel">
-                    <h3><i class="icon-pill"></i> My Medicines</h3>
-                    <div id="medicine-list" class="medicine-list">
-                        <p class="placeholder">No medicines prescribed for today.</p>
+                <section class="glass-container care-panel">
+                    <h3><i class="icon-pill"></i> Daily Medication</h3>
+                    <div id="medicine-list" class="medication-list">
+                        <!-- Populated by JS -->
+                        <p class="placeholder">Loading prescriptions...</p>
                     </div>
                     <div class="next-reminder">
-                        <small>Next Reminder:</small>
-                        <p id="next-med-time">-- : --</p>
+                        <span class="label">Next:</span>
+                        <span id="next-med-time" class="time-val">--:--</span>
+                    </div>
+                </section>
+
+                <section class="glass-container care-panel">
+                    <h3><i class="icon-file"></i> Doctor's Clinical Notes</h3>
+                    <div id="clinical-notes-list" class="medication-list">
+                        <p class="placeholder">Loading notes...</p>
                     </div>
                 </section>
                 {% endif %}
@@ -178,7 +187,7 @@
         <!-- Doctor-Patient Messaging Floating Window -->
         <div id="doctor-msg-window" class="chatbot-window glass-container collapsed">
             <div class="chatbot-header" onclick="toggleDoctorMsg()">
-                <span><i class="icon-chat"></i> Message My Doctor</span>
+                <span><i class="icon-chat"></i> Messaging: <span id="active-doctor-name">Doctor</span></span>
                 <span id="msg-toggle-icon">▲</span>
             </div>
             <div class="chatbot-content">
@@ -208,6 +217,7 @@
         const chatActions = document.getElementById('chat-actions');
         
         const currentUsername = "{{ user }}";
+        const userRole = "{{ session['role'] }}";
         let activeDoctor = 'admin'; // Will be updated from API
 
         // Behavioral Insights Elements
@@ -449,13 +459,14 @@
         }, 1000);
 
         // --- Care Features Logic ---
-        const userRole = "{{ session['role'] }}";
-        const currentUsername = "{{ session['user'] }}";
-
         if (userRole === 'doctor') {
             loadPatients();
         } else {
             loadPrescriptions();
+            loadClinicalNotes();
+            loadDoctorInfo(); // Sync doctor identity immediately
+            setInterval(loadClinicalNotes, 10000); 
+            setInterval(loadDoctorMessages, 2000); // Poll messages every 2s
         }
 
         async function loadPatients() {
@@ -519,13 +530,34 @@
             }
         }
 
+        async function loadClinicalNotes() {
+            const res = await fetch('/api/patient/notes');
+            const data = await res.json();
+            const list = document.getElementById('clinical-notes-list');
+            if (list) {
+                if (data.notes.length === 0) {
+                    list.innerHTML = '<p class="placeholder">No clinical notes yet.</p>';
+                    return;
+                }
+                list.innerHTML = '';
+                data.notes.forEach(n => {
+                    list.innerHTML += `
+                        <div class="med-item glass note-item-patient">
+                            <span class="med-name">${n.text}</span>
+                            <span class="med-time">${new Date(n.time).toLocaleDateString()}</span>
+                        </div>
+                    `;
+                });
+            }
+        }
+
         // Messaging logic with Doctor
-        function toggleDoctorMsg() {
+        async function toggleDoctorMsg() {
             const win = document.getElementById('doctor-msg-window');
             win.classList.toggle('collapsed');
             document.getElementById('msg-toggle-icon').innerText = win.classList.contains('collapsed') ? '▲' : '▼';
             if (!win.classList.contains('collapsed')) {
-                loadDoctorInfo();
+                await loadDoctorInfo();
                 loadDoctorMessages();
             }
         }
@@ -534,6 +566,8 @@
             const res = await fetch('/api/my_doctor');
             const data = await res.json();
             activeDoctor = data.doctor;
+            const nameEl = document.getElementById('active-doctor-name');
+            if (nameEl) nameEl.innerText = `Dr. ${activeDoctor}`;
         }
 
         function handleDoctorMsg(e) {
@@ -569,11 +603,7 @@
             loadDoctorMessages();
         }
 
-        // Poll for doctor replies
-        setInterval(() => {
-            const win = document.getElementById('doctor-msg-window');
-            if (!win.classList.contains('collapsed')) loadDoctorMessages();
-        }, 5000);
+        // Polling logic moved to init block for consistency
     </script>
 </body>
 </html>

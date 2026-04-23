@@ -6,6 +6,7 @@
     <title>TriSense - Patient Management Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="app" class="dashboard-root doctor-portal">
@@ -18,6 +19,9 @@
                 <div class="time" id="current-time">00:00:00</div>
                 <div class="user-profile">
                     <span class="user-name">Dr. {{ user }}</span>
+                    <button id="privacy-toggle" class="action-btn small {{ 'active' if camera_paused else '' }}" onclick="toggleCameraPrivacy()">
+                        {{ 'Resume Monitoring' if camera_paused else 'Privacy Mode' }}
+                    </button>
                     <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
                 </div>
             </div>
@@ -54,12 +58,25 @@
                         </div>
                     </section>
 
-                    <section class="glass-container system-insights">
+                    <div class="glass-container analytics-panel">
+                        <div class="panel-header">
+                            <h3><i class="icon-analytics"></i> Wellbeing Trends</h3>
+                            <div id="risk-warning-badge" class="risk-badge hidden">AT RISK</div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="wellbeingChart"></canvas>
+                        </div>
+                        <div id="risk-analysis-text" class="risk-analysis">
+                            Analyzing patient trends...
+                        </div>
+                    </div>
+
+                    <div class="glass-container behavioral-insights">
                         <h3><i class="icon-brain"></i> System Insights</h3>
                         <div class="insight-content">
                             <p id="insight-text">Monitoring safety patterns and wellbeing indicators.</p>
                         </div>
-                    </section>
+                    </div>
 
                     <section class="glass-container safety-history">
                         <h3><i class="icon-log"></i> Safety Event History</h3>
@@ -148,11 +165,12 @@
             });
         }
 
-        async function selectPatient(username) {
+        function selectPatient(username) {
             selectedPatient = username;
             document.getElementById('no-patient-selected').classList.add('hidden');
             document.getElementById('patient-details-view').classList.remove('hidden');
             document.getElementById('det-name').innerText = username;
+            document.getElementById('chat-patient-name').innerText = username;
             
             renderPatientList(); // Refresh highlighting
             loadHistory();
@@ -291,13 +309,91 @@
             });
             document.getElementById('note-input').value = '';
             loadNotes();
+            loadAnalytics();
+        }
+
+        let wellbeingChart = null;
+
+        async function loadAnalytics() {
+            if (!selectedPatient) return;
+            const res = await fetch(`/api/doctor/analytics?patient=${selectedPatient}`);
+            const data = await res.json();
+            
+            // 1. Update Early Warning UI
+            const badge = document.getElementById('risk-warning-badge');
+            const analysis = document.getElementById('risk-analysis-text');
+            if (data.at_risk) {
+                badge.classList.remove('hidden');
+                analysis.innerHTML = `<span class="warning-text">⚠️ Warning: ${data.warning_reason}</span>`;
+            } else {
+                badge.classList.add('hidden');
+                analysis.innerText = "Current trends appear stable and within normal ranges.";
+            }
+
+            // 2. Render Chart
+            const ctx = document.getElementById('wellbeingChart').getContext('2d');
+            const labels = data.history.map(h => new Date(h.time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+            const distressData = data.history.map(h => h.distress);
+            const activityData = data.history.map(h => h.activity);
+
+            if (wellbeingChart) wellbeingChart.destroy();
+
+            wellbeingChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Distress Score',
+                            data: distressData,
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            fill: true,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Activity Score',
+                            data: activityData,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            fill: true,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#94a3b8', font: { size: 10 } } }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { display: false } },
+                        y: { 
+                            type: 'linear', display: true, position: 'left',
+                            min: 0, max: 100, ticks: { color: '#ef4444' }, grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        y1: {
+                            type: 'linear', display: true, position: 'right',
+                            min: 0, max: 100, ticks: { color: '#3b82f6' }, grid: { drawOnChartArea: false }
+                        }
+                    }
+                }
+            });
         }
 
         // Live status updates from SSE
         const eventSource = new EventSource('/events');
         eventSource.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            if (data.event !== 'NORMAL') {
+            const isSignificant = ["EMERGENCY", "FALL_DETECTED", "CRITICAL", "WARNING", "UNKNOWN_PERSON"].includes(data.event) || 
+                                 ["EMERGENCY", "CRITICAL", "WARNING"].includes(data.system_state);
+                                 
+            if (isSignificant) {
                 // If it's the selected patient (or we assume it's relevant in this demo)
                 document.getElementById('det-status-badge').innerText = data.system_state;
                 document.getElementById('det-status-badge').className = `status-badge state-${data.severity.toLowerCase()}`;
@@ -311,8 +407,21 @@
             }
         };
 
-        // Poll messages occasionally
-        setInterval(loadMessages, 5000);
+        // Poll messages frequently for real-time feel
+        setInterval(loadMessages, 2000);
+
+        async function toggleCameraPrivacy() {
+            const res = await fetch('/api/camera/toggle', {method: 'POST'});
+            const data = await res.json();
+            const btn = document.getElementById('privacy-toggle');
+            if (data.paused) {
+                btn.innerText = 'Resume Monitoring';
+                btn.classList.add('active');
+            } else {
+                btn.innerText = 'Privacy Mode';
+                btn.classList.remove('active');
+            }
+        }
 
         // Init
         loadPatients();

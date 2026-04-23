@@ -1,4 +1,6 @@
 import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 import sys
 
 # Add the current directory and trisense directory to the python path

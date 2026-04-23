@@ -30,16 +30,22 @@ class WellbeingModel:
 
         # Feature tracking for movement & variability
         self.last_face_landmarks = None
-        self.facial_movement_history = deque(maxlen=20)
+        self.facial_movement_history = deque(maxlen=30)
         self.mfcc_history = deque(maxlen=10)
         self.pitch_history = deque(maxlen=10)
         
-        # Scoring components
+        # Per-modality smoothing
+        self.face_score_history = deque(maxlen=15)
+        self.voice_score_history = deque(maxlen=5) # Slower update rate
+        self.pose_score_history = deque(maxlen=15)
+        
+        # Scoring components (0-100 for UI)
         self.last_face_score = 0
         self.last_voice_score = 0
         self.last_pose_score = 0
-        self.score_history = deque(maxlen=10) # 10 seconds smoothing
-        self.last_explanation = "Initializing system assessment..."
+        
+        self.score_history = deque(maxlen=15) # Final fused smoothing
+        self.last_explanation = "Initializing multimodal assessment..."
 
         # Audio Capture thread
         self.audio_thread = threading.Thread(target=self._audio_capture_loop, daemon=True)
@@ -57,84 +63,100 @@ class WellbeingModel:
                 # Process features
                 self.extract_voice_features(recording.flatten(), sr=fs)
             except Exception as e:
-                print(f"[WellbeingAudio] Error: {e}")
+                # Silent fail for audio if device busy
                 time.sleep(5)
 
     def calculate_mar(self, landmarks, img_w, img_h):
-        """Mouth Aspect Ratio"""
-        top_lip = np.array([landmarks[13].x * img_w, landmarks[13].y * img_h])
-        bottom_lip = np.array([landmarks[14].x * img_w, landmarks[14].y * img_h])
-        left_corner = np.array([landmarks[61].x * img_w, landmarks[61].y * img_h])
-        right_corner = np.array([landmarks[291].x * img_w, landmarks[291].y * img_h])
+        """Mouth Aspect Ratio: vertical / horizontal"""
+        # Upper and lower lip centers
+        p13 = np.array([landmarks[13].x * img_w, landmarks[13].y * img_h])
+        p14 = np.array([landmarks[14].x * img_w, landmarks[14].y * img_h])
+        # Mouth corners
+        p61 = np.array([landmarks[61].x * img_w, landmarks[61].y * img_h])
+        p291 = np.array([landmarks[291].x * img_w, landmarks[291].y * img_h])
         
-        vertical_dist = np.linalg.norm(top_lip - bottom_lip)
-        horizontal_dist = np.linalg.norm(left_corner - right_corner)
+        vertical_dist = np.linalg.norm(p13 - p14)
+        horizontal_dist = np.linalg.norm(p61 - p291)
         return vertical_dist / (horizontal_dist + 1e-6)
 
     def calculate_ear(self, landmarks, img_w, img_h):
-        """Eye Aspect Ratio (Openness)"""
-        # Left Eye (Simplified set)
-        l_top = np.array([landmarks[159].x * img_w, landmarks[159].y * img_h])
-        l_bottom = np.array([landmarks[145].x * img_w, landmarks[145].y * img_h])
-        l_left = np.array([landmarks[33].x * img_w, landmarks[33].y * img_h])
-        l_right = np.array([landmarks[133].x * img_w, landmarks[133].y * img_h])
-        
-        # Right Eye
-        r_top = np.array([landmarks[386].x * img_w, landmarks[386].y * img_h])
-        r_bottom = np.array([landmarks[374].x * img_w, landmarks[374].y * img_h])
-        r_left = np.array([landmarks[362].x * img_w, landmarks[362].y * img_h])
-        r_right = np.array([landmarks[263].x * img_w, landmarks[263].y * img_h])
-        
-        def ear_single(top, bot, left, right):
-            return np.linalg.norm(top - bot) / (np.linalg.norm(left - right) + 1e-6)
+        """Eye Aspect Ratio: vertical / horizontal"""
+        def get_ear(indices):
+            # Vertical
+            p_top = np.array([landmarks[indices[1]].x * img_w, landmarks[indices[1]].y * img_h])
+            p_bot = np.array([landmarks[indices[5]].x * img_w, landmarks[indices[5]].y * img_h])
+            # Horizontal
+            p_left = np.array([landmarks[indices[0]].x * img_w, landmarks[indices[0]].y * img_h])
+            p_right = np.array([landmarks[indices[3]].x * img_w, landmarks[indices[3]].y * img_h])
             
-        return (ear_single(l_top, l_bottom, l_left, l_right) + ear_single(r_top, r_bottom, r_left, r_right)) / 2.0
+            v = np.linalg.norm(p_top - p_bot)
+            h = np.linalg.norm(p_left - p_right)
+            return v / (h + 1e-6)
+
+        # Landmarks for eyes (approximate vertical/horizontal pairs)
+        left_eye = [33, 159, 158, 133, 153, 145]
+        right_eye = [362, 386, 385, 263, 373, 374]
+        
+        return (get_ear(left_eye) + get_ear(right_eye)) / 2.0
 
     def process_face(self, frame):
         h, w = frame.shape[:2]
-        results = self.face_mesh.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-        
-        face_score = 0
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        results = self.face_mesh.process(rgb_frame)
         
         if results.multi_face_landmarks:
             landmarks = results.multi_face_landmarks[0].landmark
             
-            # Simple bounding box instead of mesh
-            coords = [(l.x * w, l.y * h) for l in landmarks]
-            x_min = int(min(c[0] for c in coords))
-            y_min = int(min(c[1] for c in coords))
-            x_max = int(max(c[0] for c in coords))
-            y_max = int(max(c[1] for c in coords))
-            cv2.rectangle(frame, (x_min, y_min), (x_max, y_max), (0, 255, 0), 1)
-
-            # Feature Calculation
+            # 1. Feature Extraction
             mar = self.calculate_mar(landmarks, w, h)
             ear = self.calculate_ear(landmarks, w, h)
             
-            # Facial Movement (displacement from last frame)
+            # Face size for normalization
+            face_w = (max(l.x for l in landmarks) - min(l.x for l in landmarks)) * w
+            
+            # 2. Movement Tracking
             movement = 0
             if self.last_face_landmarks:
-                movement = np.mean([np.linalg.norm(np.array([landmarks[i].x - self.last_face_landmarks[i].x, 
-                                                              landmarks[i].y - self.last_face_landmarks[i].y])) 
-                                     for i in range(0, 468, 50)]) # Sample 10 points
+                # Compare a subset of landmarks for stability
+                subset = [0, 13, 33, 61, 133, 159, 263, 291, 362, 386]
+                diffs = []
+                for i in subset:
+                    d = np.linalg.norm(np.array([landmarks[i].x - self.last_face_landmarks[i].x, 
+                                                landmarks[i].y - self.last_face_landmarks[i].y]))
+                    diffs.append(d)
+                movement = np.mean(diffs)
+            
             self.last_face_landmarks = landmarks
             self.facial_movement_history.append(movement)
             avg_movement = np.mean(self.facial_movement_history)
 
-            # --- Interpretable Scoring ---
-            # Normal MAR: ~0.1-0.2. Distress: > 0.4 (mouth tension/yawning)
-            mar_score = np.clip((mar - 0.15) * 4, 0, 1)
-            
-            # Normal EAR: ~0.25-0.35. Distress: < 0.2 (tiredness/drooping)
-            ear_score = np.clip((0.28 - ear) * 5, 0, 1)
-            
-            # Normal movement: varied. Distress: < 0.001 (frozen/stony face)
-            movement_score = np.clip((0.003 - avg_movement) * 300, 0, 1) if avg_movement > 0 else 0
-            
-            face_score = (mar_score * 0.4) + (ear_score * 0.4) + (movement_score * 0.2)
-            self.last_face_score = face_score * 100
-        
-        # Process Pose alongside face
+            # 3. Interpretability Mapping (0 to 1 Distress Score)
+            # High MAR (>0.3) -> Tension/Agitation
+            mar_distress = np.clip((mar - 0.2) * 3, 0, 1)
+            # Low EAR (<0.2) -> Drowsiness/Withdrawal
+            ear_distress = np.clip((0.25 - ear) * 5, 0, 1)
+            # Low movement -> Flat affect / Distress
+            # Movement is typically ~0.002-0.01. < 0.0015 is very low.
+            mov_distress = np.clip((0.002 - avg_movement) * 500, 0, 1)
+
+            # Weighted Face Score
+            raw_face_score = (mar_distress * 0.35) + (ear_distress * 0.35) + (mov_distress * 0.30)
+            self.face_score_history.append(raw_face_score)
+            self.last_face_score = np.mean(self.face_score_history) * 100
+
+            # Draw visual feedback (interpretable bounding box)
+            color = (0, 255, 0) if raw_face_score < 0.4 else (0, 165, 255) if raw_face_score < 0.7 else (0, 0, 255)
+            x_coords = [l.x * w for l in landmarks]
+            y_coords = [l.y * h for l in landmarks]
+            cv2.rectangle(frame, (int(min(x_coords)), int(min(y_coords))), 
+                          (int(max(x_coords)), int(max(y_coords))), color, 2)
+        else:
+            # Gradually decay score if face lost
+            if len(self.face_score_history) > 0:
+                self.face_score_history.append(self.face_score_history[-1] * 0.9)
+            self.last_face_score = np.mean(self.face_score_history) * 100 if self.face_score_history else 0
+
+        # Process Pose
         self.process_pose(frame)
         
         return frame, self.last_face_score, ""
@@ -145,83 +167,87 @@ class WellbeingModel:
         
         if results.pose_landmarks:
             landmarks = results.pose_landmarks.landmark
-            # Shoulder (11, 12) to Hip (23, 24) distance
-            upper_body_y = (landmarks[11].y + landmarks[12].y) / 2
-            lower_body_y = (landmarks[23].y + landmarks[24].y) / 2
             
-            torso_height = lower_body_y - upper_body_y
+            # 1. Posture: Shoulder-Hip Alignment
+            # We measure vertical distance and normalize by shoulder width for distance-invariance
+            shoulder_mid_y = (landmarks[11].y + landmarks[12].y) / 2
+            hip_mid_y = (landmarks[23].y + landmarks[24].y) / 2
+            shoulder_width = abs(landmarks[11].x - landmarks[12].x)
             
-            # Posture Score: Normalized torso height. 
-            # Slouching reduces vertical distance between shoulders and hips
-            # Assuming 0.4 as typical upright height in frame
-            posture_score = np.clip((0.35 - torso_height) * 4, 0, 1)
-            self.last_pose_score = posture_score * 100
+            torso_height = hip_mid_y - shoulder_mid_y
+            # Ratio of vertical height to width. 
+            # Slouching reduces vertical height while width stays relatively stable.
+            posture_ratio = torso_height / (shoulder_width + 1e-6)
+            
+            # Normal upright ratio is typically > 1.2. 
+            # We lower this to 0.7 to avoid false positives from leaning back in chairs.
+            slouch_distress = np.clip((0.8 - posture_ratio) * 2, 0, 1)
+            
+            # 2. Head Position: Nose relative to shoulders
+            nose_y = landmarks[0].y
+            head_tilt = nose_y - shoulder_mid_y
+            # Downward tilt (nose closer to or below shoulder line)
+            tilt_distress = np.clip((head_tilt + 0.1) * 4, 0, 1)
+            
+            raw_pose_score = (slouch_distress * 0.6) + (tilt_distress * 0.4)
+            self.pose_score_history.append(raw_pose_score)
+            self.last_pose_score = np.mean(self.pose_score_history) * 100
+        else:
+            if len(self.pose_score_history) > 0:
+                self.pose_score_history.append(self.pose_score_history[-1] * 0.9)
+            self.last_pose_score = np.mean(self.pose_score_history) * 100 if self.pose_score_history else 0
 
     def extract_voice_features(self, audio_data, sr=22050):
-        if audio_data is None or len(audio_data) < 100:
+        if audio_data is None or len(audio_data) < 500:
             return
             
         try:
-            mfccs = librosa.feature.mfcc(y=audio_data, sr=sr, n_mfcc=13)
-            mfcc_mean = np.mean(mfccs, axis=1)
+            # Energy
             rms = librosa.feature.rms(y=audio_data)
             energy = np.mean(rms)
             
-            # Pitch variation
+            # Pitch variability
             pitches, magnitudes = librosa.piptrack(y=audio_data, sr=sr)
-            pitch_vals = []
-            for t in range(pitches.shape[1]):
-                index = magnitudes[:, t].argmax()
-                pitch = pitches[index, t]
-                if pitch > 0: pitch_vals.append(pitch)
-            
+            pitch_vals = [pitches[magnitudes[:, t].argmax(), t] for t in range(pitches.shape[1]) if magnitudes[:, t].max() > 0.1]
             pitch_var = np.std(pitch_vals) if len(pitch_vals) > 5 else 0
             
-            # MFCC Variation
-            self.mfcc_history.append(mfcc_mean)
-            mfcc_var = np.std(self.mfcc_history) if len(self.mfcc_history) > 2 else 0
-
-            # --- Interpretable Scoring ---
-            # Low energy (<0.02) -> Distress (withdrawn)
-            energy_score = np.clip((0.03 - energy) * 20, 0, 1)
+            # Scoring
+            energy_distress = np.clip((0.02 - energy) * 50, 0, 1)
+            pitch_distress = np.clip((40 - pitch_var) / 40, 0, 1)
             
-            # Low pitch variability (<20Hz) -> Distress (monotone)
-            pitch_score = np.clip((50 - pitch_var) / 50, 0, 1)
-            
-            # Low MFCC variation -> Distress (unstated expression)
-            mfcc_score = np.clip((2.0 - mfcc_var) / 2, 0, 1)
-            
-            self.last_voice_score = ((energy_score * 0.4) + (pitch_score * 0.3) + (mfcc_score * 0.3)) * 100
+            raw_voice_score = (energy_distress * 0.5) + (pitch_distress * 0.5)
+            self.voice_score_history.append(raw_voice_score)
+            self.last_voice_score = np.mean(self.voice_score_history) * 100
         except:
             pass
 
     def get_fused_distress(self):
-        # Research aligned weights: 40% Face, 40% Voice, 20% Pose
-        current_score = (self.last_face_score * 0.4) + (self.last_voice_score * 0.4) + (self.last_pose_score * 0.2)
+        # 40% Face, 40% Voice, 20% Pose
+        fused_score = (self.last_face_score * 0.4) + (self.last_voice_score * 0.4) + (self.last_pose_score * 0.2)
         
-        self.score_history.append(current_score)
-        smoothed_score = np.mean(self.score_history) / 100.0 # 0.0 to 1.0
+        self.score_history.append(fused_score)
+        smoothed_score = np.mean(self.score_history)
         
         level = "NORMAL"
-        explanation_parts = []
+        if smoothed_score > 75: level = "HIGH"
+        elif smoothed_score > 50: level = "MODERATE"
+        elif smoothed_score > 25: level = "MILD"
         
-        if smoothed_score > 0.8: level = "HIGH"
-        elif smoothed_score > 0.6: level = "MODERATE"
-        elif smoothed_score > 0.3: level = "MILD"
-        
-        if level != "NORMAL":
-            if self.last_face_score > 50: explanation_parts.append("unusual facial tension or reduced expression")
-            if self.last_voice_score > 50: explanation_parts.append("reduced vocal energy and variability")
-            if self.last_pose_score > 50: explanation_parts.append("slouching posture")
+        # Explainable Reasoning
+        reasons = []
+        if self.last_face_score > 40:
+            reasons.append("reduced facial expression or tension")
+        if self.last_voice_score > 40:
+            reasons.append("low vocal energy/monotone")
+        if self.last_pose_score > 40:
+            reasons.append("slouched posture detected")
             
-            if not explanation_parts:
-                self.last_explanation = f"{level} distress indicator detected based on subtle multimodal signals."
-            else:
-                self.last_explanation = f"{level} distress detected due to " + " and ".join(explanation_parts) + "."
+        if not reasons:
+            self.last_explanation = "Multimodal signals are within normal operational range."
         else:
-            self.last_explanation = "Normal activity. All multimodal signals are within typical range."
+            self.last_explanation = f"{level} distress indicated by " + ", ".join(reasons) + "."
             
-        return smoothed_score * 100, level
+        return smoothed_score, level
 
     def get_explanation(self):
         return self.last_explanation

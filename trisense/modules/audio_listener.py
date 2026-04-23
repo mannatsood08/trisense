@@ -8,13 +8,20 @@ class AudioListener(threading.Thread):
         self.event_engine = event_engine
         self.detector = VoiceDetector(keywords, energy_threshold)
         self.recognizer = sr.Recognizer()
-        self.microphone = sr.Microphone()
-        
-        with self.microphone as source:
-            self.recognizer.adjust_for_ambient_noise(source, duration=2)
+        try:
+            self.microphone = sr.Microphone()
+            with self.microphone as source:
+                self.recognizer.adjust_for_ambient_noise(source, duration=2)
+        except Exception as e:
+            print(f"[AudioListener] Warning: No microphone found or error during initialization: {e}")
+            self.microphone = None
 
     def run(self):
         print(f"[AudioListener] Started. Sensitivity: {self.detector.energy_threshold}")
+        if not self.microphone:
+            print("[AudioListener] Aborting capture loop: No microphone available.")
+            return
+
         with self.microphone as source:
             while True:
                 try:
