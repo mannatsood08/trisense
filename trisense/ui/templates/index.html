@@ -9,6 +9,11 @@
 </head>
 <body>
     <div id="app" class="dashboard-root">
+        <!-- Emergency Global Banner -->
+        <div id="emergency-banner" class="emergency-banner hidden">
+            🚨 EMERGENCY ACTIVE — Awaiting Resolution 🚨
+        </div>
+        
         <!-- Top Navigation Bar -->
         <header class="top-bar glass">
             <div class="logo">
@@ -17,8 +22,12 @@
             </div>
             <div class="system-status">
                 <h2>STATE: <span id="global-state-text" class="state-normal">NORMAL</span></h2>
+                <span id="lock-status-subtext" class="state-subtext hidden">Previous alert not resolved</span>
             </div>
             <div class="header-right">
+                <a href="{{ url_for('wellbeing_page') }}" class="nav-btn wellbeing-btn">
+                    <i class="icon-heart"></i> Monitor Emotional Wellbeing
+                </a>
                 <div class="time" id="current-time">00:00:00</div>
                 <div class="user-profile">
                     <span class="user-name">{{ user }}</span>
@@ -58,6 +67,19 @@
                         <p class="placeholder">Listening for speech...</p>
                     </div>
                 </section>
+
+                {% if session['role'] == 'patient' or session['role'] == 'user' %}
+                <section class="glass-container medicine-panel">
+                    <h3><i class="icon-pill"></i> My Medicines</h3>
+                    <div id="medicine-list" class="medicine-list">
+                        <p class="placeholder">No medicines prescribed for today.</p>
+                    </div>
+                    <div class="next-reminder">
+                        <small>Next Reminder:</small>
+                        <p id="next-med-time">-- : --</p>
+                    </div>
+                </section>
+                {% endif %}
             </aside>
 
             <!-- Center Column: Video & Chat -->
@@ -68,6 +90,7 @@
                     </div>
                     <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Live Stream">
                     <div id="emergency-overlay" class="overlay-hidden"></div>
+                    <div id="video-overlay-text" class="video-overlay hidden">EMERGENCY DETECTED</div>
                 </section>
 
                 <section class="glass-container ai-chat-hub">
@@ -92,12 +115,48 @@
                     </div>
                 </section>
 
+                <section class="glass-container behavioral-insights">
+                    <h3><i class="icon-analytics"></i> Behavioral Insights</h3>
+                    <div class="insight-grid">
+                        <div class="insight-item">
+                            <span class="insight-label">Movement Status</span>
+                            <span id="insight-inactivity" class="insight-value">Active</span>
+                            <div class="risk-bar-bg"><div id="inactivity-bar" class="risk-bar" style="width: 0%"></div></div>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-label">Fused Risk Level</span>
+                            <span id="insight-risk-state" class="insight-value state-normal">NORMAL</span>
+                            <div class="risk-bar-bg"><div id="risk-score-bar" class="risk-bar" style="width: 0%"></div></div>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-label">Current Zone</span>
+                            <span id="insight-zone" class="insight-value">Furniture Area</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-label">Routine (Wake-up)</span>
+                            <span id="insight-routine" class="insight-value">Avg: --:-- | Today: --:--</span>
+                        </div>
+                    </div>
+                </section>
+
                 <section class="glass-container event-timeline">
                     <h3><i class="icon-log"></i> Event Timeline</h3>
                     <div id="log-entries" class="log-entries">
                         <!-- Events populated by SSE -->
                     </div>
                 </section>
+
+                {% if session['role'] == 'doctor' %}
+                <section class="glass-container patients-panel">
+                    <h3><i class="icon-users"></i> Patient Management</h3>
+                    <div class="patient-form">
+                        <select id="select-patient" class="input-field"></select>
+                        <input type="text" id="input-medicine" placeholder="Medicine Name" class="input-field">
+                        <input type="time" id="input-time" class="input-field">
+                        <button onclick="prescribeMedicine()" class="action-btn small">Add Prescription</button>
+                    </div>
+                </section>
+                {% endif %}
             </aside>
         </main>
 
@@ -115,17 +174,49 @@
                 </button>
             </div>
         </footer>
+
+        <!-- Doctor-Patient Messaging Floating Window -->
+        <div id="doctor-msg-window" class="chatbot-window glass-container collapsed">
+            <div class="chatbot-header" onclick="toggleDoctorMsg()">
+                <span><i class="icon-chat"></i> Message My Doctor</span>
+                <span id="msg-toggle-icon">▲</span>
+            </div>
+            <div class="chatbot-content">
+                <div id="doctor-chat-messages" class="care-chat-area">
+                    <div class="msg chatbot">Hi! Send a message to your doctor here.</div>
+                </div>
+                <div class="care-chat-input">
+                    <input type="text" id="doctor-chat-input-field" placeholder="Ask your doctor..." onkeypress="handleDoctorMsg(event)">
+                    <button onclick="sendDoctorMessage()">Send</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         const logEntries = document.getElementById('log-entries');
         const stateText = document.getElementById('global-state-text');
+        const lockSubtext = document.getElementById('lock-status-subtext');
+        const banner = document.getElementById('emergency-banner');
+        const videoWrapper = document.querySelector('.video-wrapper');
+        const videoOverlayText = document.getElementById('video-overlay-text');
         const overlay = document.getElementById('emergency-overlay');
         const transcriptBox = document.getElementById('transcript-content');
         const reasonText = document.getElementById('reason-text');
         const reasonSource = document.getElementById('reason-source');
         const chatMessages = document.getElementById('chat-messages');
         const chatActions = document.getElementById('chat-actions');
+        
+        const currentUsername = "{{ user }}";
+        let activeDoctor = 'admin'; // Will be updated from API
+
+        // Behavioral Insights Elements
+        const insightInactivity = document.getElementById('insight-inactivity');
+        const inactBar = document.getElementById('inactivity-bar');
+        const insightRiskState = document.getElementById('insight-risk-state');
+        const riskBar = document.getElementById('risk-score-bar');
+        const insightZone = document.getElementById('insight-zone');
+        const insightRoutine = document.getElementById('insight-routine');
 
         // State Buttons
         const btns = {
@@ -137,19 +228,52 @@
 
         eventSource.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            updateUI(data);
+            if (data.event === "CONTEXT_UPDATE") {
+                updateBehavioralInsights(data.details);
+            } else {
+                updateUI(data);
+            }
         };
 
         function updateUI(data) {
             // Update Global State
             const state = data.system_state;
-            stateText.innerText = state;
+            let displayText = state;
+            if (data.locked && state !== 'NORMAL') {
+                displayText = state + " (Awaiting Resolution)";
+                stateText.style.fontSize = "14px"; // Slightly smaller for long text
+            } else {
+                stateText.style.fontSize = ""; // Reset
+            }
+            
+            stateText.innerText = displayText;
             stateText.className = `state-${state.toLowerCase()}`;
             
-            // Update Body Class for flash effect
-            document.body.className = state === 'EMERGENCY' || state === 'CRITICAL' ? 'emergency-state' : '';
-            if (state === 'WARNING') document.body.className = 'warning-state';
-            if (data.event === 'VERIFYING') document.body.className = 'verifying-state';
+            // Toggle Persistent Emergency Global UI
+            // PRIORITY: If system is unlocked, hide EVERYTHING emergency-related
+            if (!data.locked) {
+                banner.classList.add('hidden');
+                lockSubtext.classList.add('hidden');
+                videoWrapper.classList.remove('video-border-glow');
+                videoOverlayText.classList.add('hidden');
+                document.body.classList.remove('locked-overlay');
+                document.getElementById('btn-mark-safe').classList.remove('pulsing-btn');
+            } else if (state !== 'NORMAL') {
+                // Only show if locked AND still in a non-normal state
+                banner.classList.remove('hidden');
+                lockSubtext.classList.remove('hidden');
+                videoWrapper.classList.add('video-border-glow');
+                videoOverlayText.classList.remove('hidden');
+                document.body.classList.add('locked-overlay');
+                document.getElementById('btn-mark-safe').classList.add('pulsing-btn');
+            }
+
+            // Update Body Class for flash effect (momentary)
+            if (!data.locked) {
+                document.body.className = state === 'EMERGENCY' || state === 'CRITICAL' ? 'emergency-state' : '';
+                if (state === 'WARNING') document.body.className = 'warning-state';
+                if (data.event === 'VERIFYING') document.body.className = 'verifying-state';
+            }
 
             // Enable/Disable buttons
             if (state !== 'NORMAL') {
@@ -179,15 +303,19 @@
             // Update Log
             if (data.event !== 'NORMAL' || data.severity === 'CRITICAL') {
                 const entry = document.createElement('div');
-                entry.className = `log-item border-${data.severity.toLowerCase()}`;
+                const isActive = data.locked && (data.event === 'EMERGENCY' || data.event === 'FALL_DETECTED');
+                entry.className = `log-item border-${data.severity.toLowerCase()} ${isActive ? 'active-emergency' : ''}`;
+                
                 const timeStr = new Date(data.timestamp * 1000).toLocaleTimeString();
+                const activeTag = isActive ? '<span class="active-tag">[ACTIVE]</span>' : '';
                 
                 entry.innerHTML = `
-                    <div class="log-time">${timeStr}</div>
+                    <div class="log-time">${timeStr}${activeTag}</div>
                     <div class="log-title">${data.event} [${data.source}]</div>
                     <div class="log-details">${data.reason || data.details}</div>
                 `;
                 
+                // If active emergency, keep it pinned at the top if it's the first one
                 logEntries.prepend(entry);
                 if (logEntries.children.length > 20) logEntries.lastChild.remove();
 
@@ -197,6 +325,32 @@
 
             // Update Module Badges
             updateModuleBadge(data);
+        }
+
+        function updateBehavioralInsights(details) {
+            // Update Inactivity
+            insightInactivity.innerText = details.inactivity_status === "NORMAL" ? "Active" : "INACTIVE";
+            insightInactivity.className = details.inactivity_status === "NORMAL" ? "insight-value" : "insight-value state-warning";
+            
+            // Progress bar for inactivity (capped at 60 mins for display)
+            const inactPercent = Math.min((details.inactivity_mins / 60) * 100, 100);
+            inactBar.style.width = `${inactPercent}%`;
+            inactBar.style.backgroundColor = details.inactivity_status === "NORMAL" ? "var(--color-normal)" : "var(--color-warning)";
+
+            // Update Risk
+            insightRiskState.innerText = details.fused_state;
+            insightRiskState.className = `insight-value state-${details.fused_state.toLowerCase()}`;
+            riskBar.style.width = `${details.risk_score}%`;
+            
+            // Risk bar color
+            let riskColor = "var(--color-normal)";
+            if (details.risk_score > 80) riskColor = "var(--color-emergency)";
+            else if (details.risk_score > 40) riskColor = "var(--color-warning)";
+            riskBar.style.backgroundColor = riskColor;
+
+            // Update Zone & Routine
+            insightZone.innerText = details.current_zone;
+            insightRoutine.innerText = `Avg: ${details.avg_wakeup} | Today: ${details.today_wakeup}`;
         }
 
         function updateModuleBadge(data) {
@@ -268,6 +422,17 @@
         }
 
         async function triggerEmergency(url) {
+            // Instant Visual Feedback for the user
+            if (url === '/mark_safe') {
+                updateUI({ 
+                    system_state: 'NORMAL', 
+                    locked: false, 
+                    source: 'manual', 
+                    event: 'SAFE_CONFIRMED',
+                    severity: 'NORMAL'
+                });
+            }
+            
             try {
                 const res = await fetch(url, { method: 'POST' });
                 const result = await res.json();
@@ -282,6 +447,133 @@
         setInterval(() => {
             document.getElementById('current-time').innerText = new Date().toLocaleTimeString();
         }, 1000);
+
+        // --- Care Features Logic ---
+        const userRole = "{{ session['role'] }}";
+        const currentUsername = "{{ session['user'] }}";
+
+        if (userRole === 'doctor') {
+            loadPatients();
+        } else {
+            loadPrescriptions();
+        }
+
+        async function loadPatients() {
+            const res = await fetch('/api/get_patients');
+            const data = await res.json();
+            const select = document.getElementById('select-patient');
+            if (select) {
+                select.innerHTML = '<option value="">Select Patient</option>';
+                data.patients.forEach(p => {
+                    select.innerHTML += `<option value="${p}">${p}</option>`;
+                });
+            }
+        }
+
+        async function prescribeMedicine() {
+            const patient = document.getElementById('select-patient').value;
+            const medicine = document.getElementById('input-medicine').value;
+            const time = document.getElementById('input-time').value;
+
+            if (!patient || !medicine || !time) return alert("Please fill all fields");
+
+            const res = await fetch('/api/add_prescription', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ patient, medicine, time })
+            });
+
+            if (res.ok) {
+                alert("Prescription Added");
+                document.getElementById('input-medicine').value = '';
+                document.getElementById('input-time').value = '';
+            }
+        }
+
+        async function loadPrescriptions() {
+            const res = await fetch('/api/get_prescriptions');
+            const data = await res.json();
+            const list = document.getElementById('medicine-list');
+            if (list) {
+                if (data.prescriptions.length === 0) {
+                    list.innerHTML = '<p class="placeholder">No medicines for today.</p>';
+                    return;
+                }
+                list.innerHTML = '';
+                data.prescriptions.forEach(p => {
+                    list.innerHTML += `
+                        <div class="med-item glass">
+                            <span class="med-name">${p.medicine}</span>
+                            <span class="med-time">${p.time}</span>
+                        </div>
+                    `;
+                });
+                
+                // Find next reminder
+                const now = new Date();
+                const currentStr = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
+                const future = data.prescriptions.filter(p => p.time > currentStr).sort((a,b) => a.time.localeCompare(b.time));
+                if (future.length > 0) {
+                    document.getElementById('next-med-time').innerText = future[0].time + " (" + future[0].medicine + ")";
+                }
+            }
+        }
+
+        // Messaging logic with Doctor
+        function toggleDoctorMsg() {
+            const win = document.getElementById('doctor-msg-window');
+            win.classList.toggle('collapsed');
+            document.getElementById('msg-toggle-icon').innerText = win.classList.contains('collapsed') ? '▲' : '▼';
+            if (!win.classList.contains('collapsed')) {
+                loadDoctorInfo();
+                loadDoctorMessages();
+            }
+        }
+
+        async function loadDoctorInfo() {
+            const res = await fetch('/api/my_doctor');
+            const data = await res.json();
+            activeDoctor = data.doctor;
+        }
+
+        function handleDoctorMsg(e) {
+            if (e.key === 'Enter') sendDoctorMessage();
+        }
+
+        async function loadDoctorMessages() {
+            const res = await fetch(`/api/messages?with=${activeDoctor}`); 
+            const data = await res.json();
+            const area = document.getElementById('doctor-chat-messages');
+            area.innerHTML = '';
+            data.messages.forEach(m => {
+                const div = document.createElement('div');
+                // currentUsername is defined at top of script
+                div.className = `msg ${m.sender === currentUsername ? 'user' : 'bot'}`;
+                div.innerText = m.message;
+                area.appendChild(div);
+            });
+            area.scrollTop = area.scrollHeight;
+        }
+
+        async function sendDoctorMessage() {
+            const input = document.getElementById('doctor-chat-input-field');
+            const text = input.value.trim();
+            if (!text) return;
+
+            await fetch('/api/messages', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ receiver: activeDoctor, message: text }) 
+            });
+            input.value = '';
+            loadDoctorMessages();
+        }
+
+        // Poll for doctor replies
+        setInterval(() => {
+            const win = document.getElementById('doctor-msg-window');
+            if (!win.classList.contains('collapsed')) loadDoctorMessages();
+        }, 5000);
     </script>
 </body>
 </html>

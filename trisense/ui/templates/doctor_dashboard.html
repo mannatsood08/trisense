@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TriSense - Doctor Portal</title>
+    <title>TriSense - Patient Management Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div id="app" class="dashboard-root">
+    <div id="app" class="dashboard-root doctor-portal">
         <header class="top-bar glass">
             <div class="logo">
                 <span class="tri">Tri</span><span class="sense">Sense</span>
-                <span class="platform-tag" style="background: #10b981;">DOCTOR PORTAL</span>
-            </div>
-            <div class="system-status">
-                <h2>PATIENT STATUS: <span id="global-state-text" class="state-normal">NORMAL</span></h2>
+                <span class="platform-tag" style="background: #10b981;">HEALTHCARE MANAGER</span>
             </div>
             <div class="header-right">
                 <div class="time" id="current-time">00:00:00</div>
@@ -26,64 +23,96 @@
             </div>
         </header>
 
-        <main class="dashboard-grid">
-            <!-- Left: Module Health -->
-            <aside class="sidebar left">
-                <section class="glass-container modules-status">
-                    <h3><i class="icon-monitor"></i> Remote Diagnostics</h3>
-                    <div id="pose-card" class="status-card border-normal">
-                        <div class="card-info">
-                            <span class="card-header">Activity Monitor</span>
-                            <span id="pose-val" class="card-value state-normal">STEADY</span>
-                        </div>
-                    </div>
-                    <div id="voice-card" class="status-card border-normal">
-                        <div class="card-info">
-                            <span class="card-header">Audio Stream</span>
-                            <span id="voice-val" class="card-value state-normal">QUIET</span>
-                        </div>
-                    </div>
-                    <div id="face-card" class="status-card border-normal">
-                        <div class="card-info">
-                            <span class="card-header">Patient Presence</span>
-                            <span id="face-val" class="card-value state-normal">DETECTED</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="glass-container voice-transcript-panel">
-                    <h3><i class="icon-mic"></i> Patient Speech Log</h3>
-                    <div id="transcript-content" class="transcript-box">
-                        <p class="placeholder">Monitoring audio feed...</p>
-                    </div>
-                </section>
+        <main class="dashboard-grid doctor-grid">
+            <!-- COLUMN 1: Patient List -->
+            <aside class="sidebar left glass-container">
+                <div class="panel-header">
+                    <h3><i class="icon-users"></i> Patients List</h3>
+                    <button class="refresh-btn" onclick="loadPatients()">↻</button>
+                </div>
+                <div id="patient-list" class="patient-list-area">
+                    <div class="loading">Loading patients...</div>
+                </div>
             </aside>
 
-            <!-- Center: Live Feed -->
-            <div class="main-content">
-                <section class="glass-container video-wrapper">
-                    <div class="video-header">
-                        <span class="live-indicator"><span class="dot" style="background: #10b981; box-shadow: 0 0 8px #10b981;"></span> ENCRYPTED LINK</span>
-                    </div>
-                    <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Patient Stream">
-                </section>
+            <!-- COLUMN 2: Patient Detail & History -->
+            <div class="main-content center-panel">
+                <div id="no-patient-selected" class="empty-state glass-container">
+                    <div class="empty-icon">📁</div>
+                    <h2>No Patient Selected</h2>
+                    <p>Select a patient from the left panel to view their records and history.</p>
+                </div>
 
-                <section class="glass-container clinical-notes" style="height: 250px;">
-                    <h3><i class="icon-file"></i> Clinical Assessment</h3>
-                    <div class="intelligence-box" style="margin-top: 10px;">
-                        <p class="reason-title">Last Automated Diagnosis:</p>
-                        <p id="reason-text" class="reason-content" style="font-size: 14px;">No immediate medical attention required. Vitals appear stable based on current movement patterns.</p>
-                        <p class="contributing-module">Last Refresh: <span id="reason-source">Just now</span></p>
-                    </div>
-                </section>
+                <div id="patient-details-view" class="details-view hidden">
+                    <section class="glass-container patient-bio-card">
+                        <div class="bio-header">
+                            <div>
+                                <h1 id="det-name">Patient Name</h1>
+                                <p class="last-seen">Last Activity: <span id="det-time">--:--</span></p>
+                            </div>
+                            <div id="det-status-badge" class="status-badge state-normal">NORMAL</div>
+                        </div>
+                    </section>
+
+                    <section class="glass-container system-insights">
+                        <h3><i class="icon-brain"></i> System Insights</h3>
+                        <div class="insight-content">
+                            <p id="insight-text">Monitoring safety patterns and wellbeing indicators.</p>
+                        </div>
+                    </section>
+
+                    <section class="glass-container safety-history">
+                        <h3><i class="icon-log"></i> Safety Event History</h3>
+                        <div id="history-list" class="history-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </section>
+                </div>
             </div>
 
-            <!-- Right: Alert History -->
+            <!-- COLUMN 3: Prescriptions, Notes & Communication -->
             <aside class="sidebar right">
-                <section class="glass-container event-timeline">
-                    <h3><i class="icon-log"></i> Remote Alert History</h3>
-                    <div id="log-entries" class="log-entries">
-                        <!-- Events populated by SSE -->
+                <section class="glass-container patient-messages">
+                    <h3><i class="icon-chat"></i> Patient Messages</h3>
+                    <div id="doctor-chat-box" class="chat-bubbles scrollable">
+                        <div class="empty-chat">Select a patient to see messages</div>
+                    </div>
+                    <div class="chat-input-row">
+                        <input type="text" id="doctor-msg-input" placeholder="Type a message..." class="input-field">
+                        <button class="action-btn small" onclick="sendMessageToPatient()">Send</button>
+                    </div>
+                </section>
+
+                <section class="glass-container prescription-manager">
+                    <h3><i class="icon-pill"></i> Prescriptions</h3>
+                    <div class="form-compact">
+                        <input type="text" id="new-med" placeholder="Medicine Name" class="input-field">
+                        <input type="time" id="new-time" class="input-field">
+                        <button class="action-btn small" onclick="addPrescription()">Add</button>
+                    </div>
+                    <div id="presc-list" class="record-list">
+                        <!-- List of meds -->
+                    </div>
+                </section>
+
+                <section class="glass-container doctor-notes">
+                    <h3><i class="icon-file"></i> Clinical Notes</h3>
+                    <textarea id="note-input" placeholder="Type new clinical note here..." class="note-textarea"></textarea>
+                    <button class="action-btn small w-100" onclick="saveNote()">Save Note</button>
+                    <div id="notes-list" class="record-list scrollable">
+                        <!-- List of notes -->
+                    </div>
+                </section>
+
+                <!-- Last Alert Snapshot (Replaces live surveillance) -->
+                <section class="glass-container alert-snapshot">
+                    <div class="mini-header">
+                        <span><i class="icon-alert"></i> Last Alert Snapshot</span>
+                        <span id="snap-time" class="snap-time">--:--</span>
+                    </div>
+                    <div class="snapshot-frame">
+                        <img id="alert-img" src="" alt="No Alert" class="snapshot-img">
+                        <div id="no-snap-msg" class="no-snap">No incidents recorded</div>
                     </div>
                 </section>
             </aside>
@@ -91,65 +120,202 @@
     </div>
 
     <script>
-        const logEntries = document.getElementById('log-entries');
-        const stateText = document.getElementById('global-state-text');
-        const transcriptBox = document.getElementById('transcript-content');
-        const reasonText = document.getElementById('reason-text');
-        const reasonSource = document.getElementById('reason-source');
+        let selectedPatient = null;
+        let patientsData = [];
 
-        const eventSource = new EventSource('/events');
+        async function loadPatients() {
+            const res = await fetch('/api/get_patients');
+            const data = await res.json();
+            patientsData = data.patients;
+            renderPatientList();
+        }
 
-        eventSource.onmessage = function(e) {
-            const data = JSON.parse(e.data);
-            updateDoctorUI(data);
-        };
-
-        function updateDoctorUI(data) {
-            const state = data.system_state;
-            stateText.innerText = state;
-            stateText.className = `state-${state.toLowerCase()}`;
-            
-            document.body.className = state === 'EMERGENCY' || state === 'CRITICAL' ? 'emergency-state' : '';
-
-            if (data.reason && data.event !== 'NORMAL') {
-                reasonText.innerText = data.reason;
-                reasonSource.innerText = new Date(data.timestamp * 1000).toLocaleTimeString();
-            }
-
-            if (data.source === 'voice' && data.details.includes('Transcript:')) {
-                const text = data.details.replace('Transcript: ', '');
-                const p = document.createElement('p');
-                p.className = 'transcript-item';
-                p.innerText = text;
-                transcriptBox.prepend(p);
-                if (transcriptBox.children.length > 8) transcriptBox.lastChild.remove();
-            }
-
-            if (data.event !== 'NORMAL' || data.severity === 'CRITICAL') {
-                const entry = document.createElement('div');
-                entry.className = `log-item border-${data.severity.toLowerCase()}`;
-                const timeStr = new Date(data.timestamp * 1000).toLocaleTimeString();
-                
-                entry.innerHTML = `
-                    <div class="log-time">${timeStr}</div>
-                    <div class="log-title">${data.event} [${data.source}]</div>
-                    <div class="log-details">${data.reason || data.details}</div>
+        function renderPatientList() {
+            const list = document.getElementById('patient-list');
+            list.innerHTML = '';
+            patientsData.forEach(p => {
+                const item = document.createElement('div');
+                item.className = `patient-item ${selectedPatient === p ? 'selected' : ''}`;
+                item.onclick = () => selectPatient(p);
+                item.innerHTML = `
+                    <div class="patient-info">
+                        <span class="p-name">${p}</span>
+                        <span class="p-role">Patient ID: #${p.substring(0,4)}</span>
+                    </div>
+                    <div class="p-status-dot state-normal"></div>
                 `;
-                
-                logEntries.prepend(entry);
-                if (logEntries.children.length > 30) logEntries.lastChild.remove();
-            }
+                list.appendChild(item);
+            });
+        }
 
-            // Update Module Badges
-            const val = document.getElementById(`${data.source}-val`);
-            const card = document.getElementById(`${data.source}-card`);
-            if (val && card) {
-                val.innerText = data.event;
-                val.className = `card-value state-${data.severity.toLowerCase()}`;
-                card.className = `status-card border-${data.severity.toLowerCase()}`;
+        async function selectPatient(username) {
+            selectedPatient = username;
+            document.getElementById('no-patient-selected').classList.add('hidden');
+            document.getElementById('patient-details-view').classList.remove('hidden');
+            document.getElementById('det-name').innerText = username;
+            
+            renderPatientList(); // Refresh highlighting
+            loadHistory();
+            loadPrescriptions();
+            loadNotes();
+            loadMessages();
+            loadLastSnapshot();
+        }
+
+        async function loadLastSnapshot() {
+            const res = await fetch('/api/doctor/last_snapshot');
+            const data = await res.json();
+            const img = document.getElementById('alert-img');
+            const msg = document.getElementById('no-snap-msg');
+            const time = document.getElementById('snap-time');
+
+            if (data.url) {
+                img.src = data.url;
+                img.classList.remove('hidden');
+                msg.classList.add('hidden');
+                time.innerText = "Alert at " + data.time;
+            } else {
+                img.classList.add('hidden');
+                msg.classList.remove('hidden');
+                time.innerText = "--:--";
             }
         }
 
+        async function loadMessages() {
+            if (!selectedPatient) return;
+            const res = await fetch(`/api/messages?with=${selectedPatient}`);
+            const data = await res.json();
+            const chatBox = document.getElementById('doctor-chat-box');
+            chatBox.innerHTML = '';
+            
+            if (data.messages.length === 0) {
+                chatBox.innerHTML = '<div class="empty-chat">No message history</div>';
+                return;
+            }
+
+            data.messages.forEach(m => {
+                const bubble = document.createElement('div');
+                bubble.className = `chat-bubble ${m.sender === selectedPatient ? 'patient' : 'doctor'}`;
+                bubble.innerHTML = `
+                    <div class="bubble-content">${m.message}</div>
+                    <div class="bubble-meta">${new Date(m.time).toLocaleTimeString()}</div>
+                `;
+                chatBox.appendChild(bubble);
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        async function sendMessageToPatient() {
+            const input = document.getElementById('doctor-msg-input');
+            const text = input.value.trim();
+            if (!text || !selectedPatient) return;
+
+            await fetch('/api/messages', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ receiver: selectedPatient, message: text })
+            });
+            input.value = '';
+            loadMessages();
+        }
+
+        async function loadHistory() {
+            const res = await fetch('/api/doctor/patient_history');
+            const data = await res.json();
+            const list = document.getElementById('history-list');
+            list.innerHTML = '';
+            
+            data.events.forEach(ev => {
+                const card = document.createElement('div');
+                card.className = `history-card border-${ev.severity.toLowerCase()}`;
+                card.innerHTML = `
+                    <div class="card-time">${new Date(ev.timestamp * 1000).toLocaleTimeString()}</div>
+                    <div class="card-title">${ev.event}</div>
+                    <p>${ev.reason || ev.details}</p>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        async function loadPrescriptions() {
+            const res = await fetch(`/api/get_prescriptions?patient=${selectedPatient}`);
+            const data = await res.json();
+            const list = document.getElementById('presc-list');
+            list.innerHTML = '';
+            data.prescriptions.forEach(p => {
+                list.innerHTML += `
+                    <div class="record-item">
+                        <span><strong>${p.medicine}</strong> at ${p.time}</span>
+                    </div>
+                `;
+            });
+        }
+
+        async function addPrescription() {
+            const med = document.getElementById('new-med').value;
+            const time = document.getElementById('new-time').value;
+            if (!med || !time) return;
+
+            await fetch('/api/add_prescription', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ patient: selectedPatient, medicine: med, time: time })
+            });
+            document.getElementById('new-med').value = '';
+            loadPrescriptions();
+        }
+
+        async function loadNotes() {
+            const res = await fetch(`/api/doctor/notes?patient=${selectedPatient}`);
+            const data = await res.json();
+            const list = document.getElementById('notes-list');
+            list.innerHTML = '';
+            data.notes.forEach(n => {
+                list.innerHTML += `
+                    <div class="note-item">
+                        <p>${n.text}</p>
+                        <small>${new Date(n.time).toLocaleString()} by ${n.doctor}</small>
+                    </div>
+                `;
+            });
+        }
+
+        async function saveNote() {
+            const note = document.getElementById('note-input').value;
+            if (!note) return;
+
+            await fetch('/api/doctor/notes', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ patient: selectedPatient, note: note })
+            });
+            document.getElementById('note-input').value = '';
+            loadNotes();
+        }
+
+        // Live status updates from SSE
+        const eventSource = new EventSource('/events');
+        eventSource.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            if (data.event !== 'NORMAL') {
+                // If it's the selected patient (or we assume it's relevant in this demo)
+                document.getElementById('det-status-badge').innerText = data.system_state;
+                document.getElementById('det-status-badge').className = `status-badge state-${data.severity.toLowerCase()}`;
+                
+                if (data.reason) {
+                    document.getElementById('insight-text').innerText = "ALERT DETECTED: " + data.reason;
+                }
+                
+                loadHistory(); // Refresh history list
+                loadLastSnapshot(); // Refresh snapshot list if alert triggered
+            }
+        };
+
+        // Poll messages occasionally
+        setInterval(loadMessages, 5000);
+
+        // Init
+        loadPatients();
         setInterval(() => {
             document.getElementById('current-time').innerText = new Date().toLocaleTimeString();
         }, 1000);

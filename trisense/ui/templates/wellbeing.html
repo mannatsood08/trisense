@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriSense - Emotional Wellbeing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .wellbeing-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 20px;
+            height: calc(100vh - 120px);
+        }
+        .stats-sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .score-display { text-align: center; padding: 30px; }
+        .score-value { font-size: 72px; font-weight: 800; color: var(--color-info); }
+        .score-label { font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+        .status-badge { 
+            padding: 10px 20px; border-radius: 50px; font-weight: 700; 
+            display: inline-block; margin-top: 15px; 
+        }
+        .status-normal { background: rgba(16, 185, 129, 0.1); color: var(--color-normal); border: 1px solid var(--color-normal); }
+        .status-distress { background: rgba(239, 68, 68, 0.1); color: var(--color-emergency); border: 1px solid var(--color-emergency); animation: pulse-red 2s infinite; }
+        
+        .metric-card { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .metric-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .metric-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+        .metric-fill { height: 100%; width: 0%; transition: width 0.5s ease; background: var(--color-info); }
+
+        @keyframes pulse-red { 
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-root">
+        <header class="top-bar glass">
+            <div class="logo">
+                <span class="tri">Tri</span><span class="sense">Sense</span>
+                <span class="platform-tag" style="background: var(--color-normal);">WELLBEING</span>
+            </div>
+            <div class="header-right">
+                <a href="{{ url_for('index') }}" class="nav-btn-back">
+                    &larr; Back to Safety Dashboard
+                </a>
+            </div>
+        </header>
+
+        <main class="wellbeing-grid">
+            <section class="glass-container video-wrapper" style="flex: 1;">
+                <div class="video-header">
+                    <span class="live-indicator"><span class="dot" style="background: var(--color-normal); box-shadow: 0 0 8px var(--color-normal);"></span> WELLBEING MONITOR</span>
+                </div>
+                <img id="wellbeing-feed" src="{{ url_for('wellbeing_feed') }}" alt="Wellbeing Feed" style="width: 100%; height: 100%; object-fit: cover;">
+            </section>
+
+            <aside class="stats-sidebar">
+                <section class="glass-container score-display">
+                    <span class="score-label">Distress Probability</span>
+                    <div id="distress-score" class="score-value">0%</div>
+                    <div id="status-badge" class="status-badge status-normal">NORMAL</div>
+                </section>
+
+                <section class="glass-container">
+                    <h3><i class="icon-analytics"></i> Emotion Metrics</h3>
+                    <div class="metric-card" style="margin-top: 15px;">
+                        <div class="metric-header">
+                            <span>Facial Indicators</span>
+                            <span id="face-val-wb">0%</span>
+                        </div>
+                        <div class="metric-bar"><div id="face-fill" class="metric-fill"></div></div>
+                    </div>
+                    <div class="metric-card" style="margin-top: 15px;">
+                        <div class="metric-header">
+                            <span>Vocal Indicators</span>
+                            <span id="voice-val-wb">0%</span>
+                        </div>
+                        <div class="metric-bar"><div id="voice-fill" class="metric-fill"></div></div>
+                    </div>
+                    <div class="metric-card" style="margin-top: 15px;">
+                        <div class="metric-header">
+                            <span>Posture Indicators</span>
+                            <span id="pose-val-wb">0%</span>
+                        </div>
+                        <div class="metric-bar"><div id="pose-fill" class="metric-fill" style="background: var(--color-warning);"></div></div>
+                    </div>
+                </section>
+
+                <section class="glass-container" style="flex: 1;">
+                    <h3><i class="icon-info"></i> System Explanation</h3>
+                    <div id="explanation-text" class="intelligence-box" style="margin-top: 15px; color: #94a3b8; font-size: 14px; line-height: 1.6;">
+                        Analyzing facial landmarks and voice spectrum to assess emotional state...
+                    </div>
+                </section>
+            </aside>
+        </main>
+    </div>
+
+    <script>
+        const scoreEl = document.getElementById('distress-score');
+        const badgeEl = document.getElementById('status-badge');
+        const faceVal = document.getElementById('face-val-wb');
+        const faceFill = document.getElementById('face-fill');
+        const voiceVal = document.getElementById('voice-val-wb');
+        const voiceFill = document.getElementById('voice-fill');
+        const poseVal = document.getElementById('pose-val-wb');
+        const poseFill = document.getElementById('pose-fill');
+        const explanationEl = document.getElementById('explanation-text');
+
+        const eventSource = new EventSource('/wellbeing_stats');
+
+        eventSource.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            
+            // Update Score & Badge
+            scoreEl.innerText = data.score + '%';
+            badgeEl.innerText = data.status;
+            badgeEl.className = 'status-badge ' + (data.status === 'DISTRESS' ? 'status-distress' : 'status-normal');
+            
+            // Update Metrics
+            faceVal.innerText = data.face_score + '%';
+            faceFill.style.width = data.face_score + '%';
+            voiceVal.innerText = data.voice_score + '%';
+            voiceFill.style.width = data.voice_score + '%';
+            poseVal.innerText = data.pose_score + '%';
+            poseFill.style.width = data.pose_score + '%';
+            
+            // Update Explanation
+            explanationEl.innerText = data.explanation;
+        };
+    </script>
+</body>
+</html>

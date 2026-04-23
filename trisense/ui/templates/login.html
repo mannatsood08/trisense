@@ -28,7 +28,7 @@
         <form action="{{ url_for('login') }}" method="POST" class="login-form">
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your ID" autocomplete="username" required autofocus>
+                <input type="text" id="username" name="username" placeholder="Enter your username" autocomplete="username" required autofocus>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
@@ -38,7 +38,8 @@
         </form>
         
         <div class="login-footer">
-            <p>System Status: <span class="status-dot"></span> Secure Connection</p>
+            <p>New to TriSense? <a href="{{ url_for('signup') }}" style="color: #38bdf8; text-decoration: none; font-weight: 600;">Create an account</a></p>
+            <p style="margin-top: 15px; font-size: 11px; opacity: 0.5;">System Status: <span class="status-dot"></span> Secure Connection</p>
         </div>
     </div>
 </body>

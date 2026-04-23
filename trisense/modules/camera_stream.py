@@ -10,6 +10,7 @@ class CameraStream(threading.Thread):
         self.event_engine = event_engine
         self.pose_detector = PoseDetector()
         self.face_monitor = FaceMonitor(db_path=faces_db_path)
+        self.context_engine = None # Will be set by main.py call setup_context
         
         self.cap = cv2.VideoCapture(0)
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
@@ -43,6 +44,10 @@ class CameraStream(threading.Thread):
             if pose_state != last_pose_state:
                 self.event_engine.trigger_event("pose", pose_state, reason=pose_reason)
                 last_pose_state = pose_state
+            
+            # 1.5 Context Engine Landmark Processing
+            if self.context_engine and self.pose_detector.last_landmarks:
+                self.context_engine.process_landmarks(self.pose_detector.last_landmarks)
 
             # 2. Face Monitoring
             frame, face_state = self.face_monitor.process_frame(frame)

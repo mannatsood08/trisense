@@ -18,8 +18,8 @@ class AudioListener(threading.Thread):
         with self.microphone as source:
             while True:
                 try:
-                    # Listen for up to 5 seconds per chunk
-                    audio_data = self.recognizer.listen(source, phrase_time_limit=5)
+                    # Listen for up to 5 seconds per chunk, with a 2-second timeout for phrase start
+                    audio_data = self.recognizer.listen(source, timeout=2, phrase_time_limit=5)
                     print("[AudioListener] Data captured, processing...")
                     
                     keyword, transcript = self.detector.detect_emergency(audio_data)

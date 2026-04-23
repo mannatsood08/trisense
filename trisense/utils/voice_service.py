@@ -50,5 +50,17 @@ class VoiceService:
         if text:
             self.speak_queue.put(text)
 
+    def flush(self):
+        """Clears all pending speech messages immediately"""
+        print("[VoiceService] Flushing speech queue...")
+        try:
+            while not self.speak_queue.empty():
+                self.speak_queue.get_nowait()
+                self.speak_queue.task_done()
+        except:
+            pass
+        # Note: We can't easily stop the currently speaking sentence in pyttsx3 
+        # without complex thread killing, but this prevents NEW sentences from starting.
+
 # Global singleton
 voice_service = VoiceService()

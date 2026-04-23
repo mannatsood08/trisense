@@ -30,6 +30,18 @@ class EmergencyManager:
                 threading.Thread(target=self.run_verification_workflow, 
                                  args=(trigger_source, trigger_timestamp, trigger_reason),
                                  daemon=True).start()
+        
+        elif data.get("system_state") == "WARNING":
+            # Play a short "notice" beep for warnings (like potential falls)
+            if not self.is_verifying:
+                print("[EmergencyManager] Warning detected. Playing pre-alert notice.")
+                threading.Thread(target=self.play_notice_beep, daemon=True).start()
+
+    def play_notice_beep(self):
+        """Short beep to alert user the system sees something suspicious"""
+        winsound.Beep(800, 150)
+        time.sleep(0.1)
+        winsound.Beep(800, 150)
 
     def play_alarm(self, duration_sec=3):
         """Plays a warning sound"""
@@ -42,12 +54,15 @@ class EmergencyManager:
         else:
             # Fallback to beep
             print("[EmergencyManager] Alarm file missing, using system beep.")
-            for _ in range(duration_sec):
+            for _ in range(duration_sec * 2):
+                if not self.event_engine.locked:
+                    print("[EmergencyManager] Reset detected during beep. Stopping alarm.")
+                    break
                 try:
-                    winsound.Beep(1000, 500)
+                    winsound.Beep(1000, 300)
                 except:
                     pass
-                time.sleep(0.5)
+                time.sleep(0.3)
 
     def speak(self, text):
         voice_service.speak(text)
@@ -65,41 +80,65 @@ class EmergencyManager:
                                             details="System is verifying user safety via voice.",
                                             reason="Waiting for user response...")
 
-            # 3. Speak Verification Message
+            # 3. Check if we should abort (user might have clicked Mark Safe already)
+            if not self.event_engine.locked:
+                print("[EmergencyManager] Manual reset detected. Aborting verification.")
+                return
+
+            # 4. Speak Verification Message
             self.speak("An emergency has been detected. Are you okay? Please respond.")
 
             # 4. Listen for Response
             recognizer = sr.Recognizer()
             microphone = sr.Microphone()
             
-            with microphone as mic:
-                recognizer.adjust_for_ambient_noise(mic, duration=1)
-                print(f"[EmergencyManager] Listening for 10 seconds...")
-                try:
-                    audio = recognizer.listen(mic, timeout=5, phrase_time_limit=5)
-                    response = recognizer.recognize_google(audio).lower()
-                    print(f"[EmergencyManager] User responded: {response}")
-                    
-                    safe_keywords = ["i am okay", "i'm fine", "cancel", "no problem", "stop", "safe"]
-                    is_safe = any(kw in response for kw in safe_keywords)
-                    
-                    if is_safe:
-                        print("[EmergencyManager] User confirmed SAFE.")
-                        self.event_engine.trigger_event("system", "SAFE_CONFIRMED", 
-                                                        details=f"User verbally confirmed safety: {response}",
-                                                        reason="Safe response received")
-                    else:
-                        print("[EmergencyManager] Response detected but not safe. ESCALATING.")
-                        self.escalate_emergency(source, timestamp, reason, response)
+            try:
+                with microphone as mic:
+                    recognizer.adjust_for_ambient_noise(mic, duration=1)
+                    print(f"[EmergencyManager] Listening for 10 seconds...")
+                    try:
+                        audio = recognizer.listen(mic, timeout=5, phrase_time_limit=5)
                         
-                except (sr.WaitTimeoutError, sr.UnknownValueError):
-                    print("[EmergencyManager] No intelligible response detected. ESCALATING.")
-                    self.escalate_emergency(source, timestamp, reason, "No response")
+                        # Re-check abort before processing speech
+                        if not self.event_engine.locked:
+                            print("[EmergencyManager] Manual reset detected during listening. Aborting.")
+                            return
+                            
+                        response = recognizer.recognize_google(audio).lower()
+                        print(f"[EmergencyManager] User responded: {response}")
+                        
+                        safe_keywords = [
+                            "i am okay", "i'm fine", "cancel", "no problem", "stop", "safe",
+                            "i am ok", "i'm ok", "everything is fine", "yes", "i am good", "ok"
+                        ]
+                        is_safe = any(kw in response for kw in safe_keywords)
+                        
+                        if is_safe:
+                            print("[EmergencyManager] User confirmed SAFE.")
+                            self.event_engine.trigger_event("system", "SAFE_CONFIRMED", 
+                                                            details=f"User verbally confirmed safety: {response}",
+                                                            reason="Safe response received")
+                        else:
+                            print("[EmergencyManager] Response detected but not safe. ESCALATING.")
+                            self.escalate_emergency(source, timestamp, reason, response)
+                            
+                    except (sr.WaitTimeoutError, sr.UnknownValueError):
+                        print("[EmergencyManager] No intelligible response detected. ESCALATING.")
+                        self.escalate_emergency(source, timestamp, reason, "No response")
+            except Exception as e:
+                print(f"[EmergencyManager] Microphone Access Error: {e}")
+                print("[EmergencyManager] Falling back to automatic escalation for safety.")
+                self.escalate_emergency(source, timestamp, reason, f"Mic Error: {e}")
         
         finally:
             self.is_verifying = False
 
     def escalate_emergency(self, type, timestamp, reason, user_resp):
+        # FINAL CHECK: If user marked safe while we were preparing escalation, DO NOT ESCALATE
+        if not self.event_engine.locked:
+            print("[EmergencyManager] Abortion: System already marked safe. Skipping escalation.")
+            return
+
         self.event_engine.trigger_event("system", "ESCALATED_EMERGENCY", 
                                         details=f"User Response: {user_resp}",
                                         reason="Escalation due to lack of safe confirmation")

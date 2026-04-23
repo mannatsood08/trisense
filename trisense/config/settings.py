@@ -5,8 +5,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Safety Keywords for Voice Emergency
 EMERGENCY_KEYWORDS = [
-    "help", "emergency", "call doctor", "call ambulance",
-    "i need help", "help me", "save me", "sos"
+    "help", "emergency", "call doctor", "call a doctor", "call the doctor",
+    "call ambulance", "call an ambulance", "i need help", "help me", 
+    "save me", "sos", "medical emergency", "doctor please"
 ]
 
 # Pose Detection Settings
@@ -14,7 +15,7 @@ POSE_MIN_CONFIDENCE = 0.5
 FALL_DURATION_THRESHOLD = 2.0  # seconds horizontally to be considered a fall
 
 # Audio Detection Settings
-AUDIO_ENERGY_THRESHOLD = 250
+AUDIO_ENERGY_THRESHOLD = 200
 MIN_TRANSCRIPT_LENGTH = 3
 
 # Face Monitor Settings

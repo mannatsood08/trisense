@@ -20,10 +20,21 @@ class VoiceDetector:
             
             print(f"[VoiceDetector] Captured: \"{transcript}\"")
             
-            if len(transcript_lower) >= 3:
-                for kw in self.keywords:
-                    if kw in transcript_lower:
+            # Simple substring check (existing)
+            for kw in self.keywords:
+                if kw in transcript_lower:
+                    return kw, transcript
+            
+            # Flexible word-based matching for phrases
+            words = set(transcript_lower.split())
+            for kw in self.keywords:
+                kw_words = kw.split()
+                if len(kw_words) > 1: # Only for phrases
+                    # Check if all words of the keyword phrase exist in the transcript
+                    if all(word in words for word in kw_words):
+                        print(f"[VoiceDetector] Flexible Match Found: '{kw}'")
                         return kw, transcript
+
             return None, transcript
         except sr.UnknownValueError:
             # Speech was heard but not recognized

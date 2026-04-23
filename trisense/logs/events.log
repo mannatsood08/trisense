@@ -375,3 +375,934 @@
 2026-04-21 22:41:42,075 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:42] "[32mGET / HTTP/1.1[0m" 302 -
 2026-04-21 22:41:42,085 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:42] "GET /login HTTP/1.1" 200 -
 2026-04-21 22:41:42,153 - INFO - 127.0.0.1 - - [21/Apr/2026 22:41:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:54:25,656 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 22:54:26,668 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-21 22:54:26,669 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-21 22:54:37,815 - INFO - Event Triggered: {"timestamp": 1776792277.8151503, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:54:37,943 - INFO - Event Triggered: {"timestamp": 1776792277.942708, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 22:54:38,772 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 22:54:38,772 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 22:55:04,064 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:04] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-21 22:55:04,109 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:04] "GET /login HTTP/1.1" 200 -
+2026-04-21 22:55:04,200 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:55:12,813 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-21 22:55:12,840 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:12] "GET / HTTP/1.1" 200 -
+2026-04-21 22:55:12,901 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 22:55:12,907 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:12] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 22:55:13,916 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:13] "GET /events HTTP/1.1" 200 -
+2026-04-21 22:55:14,932 - INFO - 127.0.0.1 - - [21/Apr/2026 22:55:14] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 23:22:46,680 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 23:22:48,372 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-21 23:22:48,374 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-21 23:27:53,297 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-21 23:27:53,984 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-21 23:27:53,984 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-21 23:28:07,199 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-21 23:28:07,215 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-21 23:28:09,910 - INFO - Event Triggered: {"timestamp": 1776794289.9100657, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 23:28:09,911 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:09] "GET /events HTTP/1.1" 200 -
+2026-04-21 23:28:36,114 - INFO - Event Triggered: {"timestamp": 1776794316.114313, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 23:28:36,978 - INFO - Event Triggered: {"timestamp": 1776794316.9787347, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 23:28:37,401 - INFO - Event Triggered: {"timestamp": 1776794317.40197, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 23:28:40,023 - INFO - Event Triggered: {"timestamp": 1776794320.023687, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.6s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-21 23:28:40,356 - INFO - Event Triggered: {"timestamp": 1776794320.3561635, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 23:28:40,375 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:40] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 23:28:43,077 - INFO - Event Triggered: {"timestamp": 1776794323.0776858, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-21 23:28:55,394 - INFO - Event Triggered: {"timestamp": 1776794335.3949463, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "LOW", "system_state": "NORMAL"}
+2026-04-21 23:28:55,461 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:55] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 23:28:56,192 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:56] "GET / HTTP/1.1" 200 -
+2026-04-21 23:28:56,252 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:56] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 23:28:56,391 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:56] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-21 23:28:58,020 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:58] "GET /events HTTP/1.1" 200 -
+2026-04-21 23:28:58,416 - INFO - 127.0.0.1 - - [21/Apr/2026 23:28:58] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 23:29:08,558 - INFO - 127.0.0.1 - - [21/Apr/2026 23:29:08] "GET /wellbeing HTTP/1.1" 200 -
+2026-04-21 23:29:08,604 - INFO - 127.0.0.1 - - [21/Apr/2026 23:29:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 23:29:08,629 - INFO - 127.0.0.1 - - [21/Apr/2026 23:29:08] "GET /wellbeing_stats HTTP/1.1" 200 -
+2026-04-21 23:29:08,752 - INFO - 127.0.0.1 - - [21/Apr/2026 23:29:08] "GET /wellbeing_feed HTTP/1.1" 200 -
+2026-04-21 23:30:12,628 - INFO - 127.0.0.1 - - [21/Apr/2026 23:30:12] "GET / HTTP/1.1" 200 -
+2026-04-21 23:30:12,689 - INFO - 127.0.0.1 - - [21/Apr/2026 23:30:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-21 23:30:12,692 - INFO - 127.0.0.1 - - [21/Apr/2026 23:30:12] "GET /video_feed HTTP/1.1" 200 -
+2026-04-21 23:30:14,704 - INFO - 127.0.0.1 - - [21/Apr/2026 23:30:14] "POST /api/speak HTTP/1.1" 200 -
+2026-04-21 23:30:15,022 - INFO - 127.0.0.1 - - [21/Apr/2026 23:30:15] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:04:32,532 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 13:04:33,653 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 13:04:33,653 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 13:04:44,618 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 13:04:44,618 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 13:04:48,466 - INFO - 127.0.0.1 - - [22/Apr/2026 13:04:48] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-22 13:04:48,527 - INFO - 127.0.0.1 - - [22/Apr/2026 13:04:48] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:04:48,682 - INFO - 127.0.0.1 - - [22/Apr/2026 13:04:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:04:48,912 - INFO - 127.0.0.1 - - [22/Apr/2026 13:04:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-22 13:05:00,800 - INFO - 127.0.0.1 - - [22/Apr/2026 13:05:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 13:05:00,834 - INFO - 127.0.0.1 - - [22/Apr/2026 13:05:00] "GET / HTTP/1.1" 200 -
+2026-04-22 13:05:00,888 - INFO - 127.0.0.1 - - [22/Apr/2026 13:05:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:05:00,891 - INFO - 127.0.0.1 - - [22/Apr/2026 13:05:00] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:05:02,930 - INFO - 127.0.0.1 - - [22/Apr/2026 13:05:02] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:05:03,210 - INFO - 127.0.0.1 - - [22/Apr/2026 13:05:03] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:05:56,531 - INFO - Event Triggered: {"timestamp": 1776843356.5315585, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-22 13:05:56,699 - INFO - Event Triggered: {"timestamp": 1776843356.699837, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-22 13:05:57,106 - INFO - Event Triggered: {"timestamp": 1776843357.1064322, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-22 13:05:58,138 - INFO - Event Triggered: {"timestamp": 1776843358.1387281, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-22 13:05:59,074 - INFO - Event Triggered: {"timestamp": 1776843359.074972, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-22 13:05:59,129 - INFO - Event Triggered: {"timestamp": 1776843359.1295347, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.0s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-22 13:05:59,160 - INFO - 127.0.0.1 - - [22/Apr/2026 13:05:59] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:05:59,278 - INFO - Event Triggered: {"timestamp": 1776843359.278914, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.2s", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-22 13:06:00,957 - INFO - Event Triggered: {"timestamp": 1776843360.9560702, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING"}
+2026-04-22 13:06:02,173 - INFO - Event Triggered: {"timestamp": 1776843362.1734354, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "LOW", "system_state": "NORMAL"}
+2026-04-22 13:06:02,222 - INFO - 127.0.0.1 - - [22/Apr/2026 13:06:02] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:06:09,820 - INFO - Event Triggered: {"timestamp": 1776843369.8196938, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "LOW", "system_state": "NORMAL"}
+2026-04-22 13:15:22,932 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 13:15:25,172 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 13:15:25,174 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 13:15:37,303 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 13:15:37,303 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 13:15:44,336 - INFO - 127.0.0.1 - - [22/Apr/2026 13:15:44] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:17:03,232 - INFO - 127.0.0.1 - - [22/Apr/2026 13:17:03] "GET / HTTP/1.1" 200 -
+2026-04-22 13:17:03,299 - INFO - 127.0.0.1 - - [22/Apr/2026 13:17:03] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:17:03,417 - INFO - 127.0.0.1 - - [22/Apr/2026 13:17:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:17:05,465 - INFO - 127.0.0.1 - - [22/Apr/2026 13:17:05] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:17:05,682 - INFO - 127.0.0.1 - - [22/Apr/2026 13:17:05] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:17:25,714 - INFO - Event Triggered: {"timestamp": 1776844045.714514, "source": "voice", "event": "EMERGENCY", "details": "Transcript: emergency", "reason": "Keyword identified: emergency", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-22 13:17:25,741 - INFO - 127.0.0.1 - - [22/Apr/2026 13:17:25] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:17:28,770 - INFO - Event Triggered: {"timestamp": 1776844048.7664766, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY"}
+2026-04-22 13:17:33,612 - INFO - Event Triggered: {"timestamp": 1776844053.612138, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "LOW", "system_state": "NORMAL"}
+2026-04-22 13:17:33,627 - INFO - 127.0.0.1 - - [22/Apr/2026 13:17:33] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:30:44,428 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 13:30:45,436 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 13:30:45,436 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 13:30:56,486 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 13:30:56,486 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 13:31:14,843 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:14] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:31:28,212 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:28] "GET / HTTP/1.1" 200 -
+2026-04-22 13:31:28,260 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:28] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:31:28,314 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:31:30,305 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:30] "GET / HTTP/1.1" 200 -
+2026-04-22 13:31:30,354 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:31:30,356 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:30] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:31:32,159 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:32] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:31:32,161 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:32] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:31:32,395 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:32] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:31:35,357 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 13:31:35,398 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:35] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:31:35,622 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:31:39,255 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:39] "GET /signup HTTP/1.1" 200 -
+2026-04-22 13:31:39,302 - INFO - 127.0.0.1 - - [22/Apr/2026 13:31:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:32:08,388 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:08] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2026-04-22 13:32:08,400 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:08] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:32:08,476 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:32:21,727 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:21] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 13:32:21,834 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:21] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-22 13:32:21,869 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:32:21,873 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:21] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:32:21,948 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:21] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:32:54,080 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 13:32:54,094 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:54] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:32:54,134 - INFO - 127.0.0.1 - - [22/Apr/2026 13:32:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:33:02,827 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 13:33:02,833 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:02] "GET / HTTP/1.1" 200 -
+2026-04-22 13:33:02,867 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:33:02,867 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:02] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:33:03,848 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:03] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:33:04,903 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:04] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:33:21,736 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 13:33:21,754 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:21] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:33:21,807 - INFO - 127.0.0.1 - - [22/Apr/2026 13:33:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:51:46,464 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 13:51:47,025 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 13:51:47,171 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 13:51:55,166 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 13:51:55,166 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 13:51:59,537 - INFO - 127.0.0.1 - - [22/Apr/2026 13:51:59] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-22 13:51:59,556 - INFO - 127.0.0.1 - - [22/Apr/2026 13:51:59] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:51:59,680 - INFO - 127.0.0.1 - - [22/Apr/2026 13:51:59] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-22 13:52:14,471 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 13:52:14,492 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:14] "GET / HTTP/1.1" 200 -
+2026-04-22 13:52:14,578 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:52:14,581 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:14] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:52:14,613 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:14] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 13:52:15,950 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:15] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:52:16,808 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:16] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:52:40,526 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:40] "POST /api/chatbot HTTP/1.1" 200 -
+2026-04-22 13:52:40,604 - INFO - 127.0.0.1 - - [22/Apr/2026 13:52:40] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:53:03,854 - INFO - 127.0.0.1 - - [22/Apr/2026 13:53:03] "POST /api/chatbot HTTP/1.1" 200 -
+2026-04-22 13:53:03,919 - INFO - 127.0.0.1 - - [22/Apr/2026 13:53:03] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:53:12,319 - INFO - 127.0.0.1 - - [22/Apr/2026 13:53:12] "POST /api/chatbot HTTP/1.1" 200 -
+2026-04-22 13:53:12,333 - INFO - 127.0.0.1 - - [22/Apr/2026 13:53:12] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 13:53:54,733 - INFO - 127.0.0.1 - - [22/Apr/2026 13:53:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 13:53:54,805 - INFO - 127.0.0.1 - - [22/Apr/2026 13:53:54] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:53:54,948 - INFO - 127.0.0.1 - - [22/Apr/2026 13:53:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:54:15,915 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:15] "GET /signup HTTP/1.1" 200 -
+2026-04-22 13:54:15,940 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:54:23,208 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:23] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:54:23,261 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:54:32,756 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 13:54:32,767 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:32] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-22 13:54:32,797 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:54:32,798 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:32] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:54:34,536 - INFO - 127.0.0.1 - - [22/Apr/2026 13:54:34] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:55:04,064 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:04] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 13:55:04,078 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:04] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:55:04,130 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:55:06,677 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:06] "GET /signup HTTP/1.1" 200 -
+2026-04-22 13:55:06,704 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:55:25,510 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:25] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2026-04-22 13:55:25,515 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:25] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:55:25,548 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:55:39,857 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 13:55:39,862 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:39] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-22 13:55:39,902 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:55:39,905 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:39] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 13:55:40,011 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:40] "GET /events HTTP/1.1" 200 -
+2026-04-22 13:55:49,699 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 13:55:49,717 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:49] "GET /login HTTP/1.1" 200 -
+2026-04-22 13:55:49,762 - INFO - 127.0.0.1 - - [22/Apr/2026 13:55:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 13:59:25,749 - INFO - Event Triggered: {"timestamp": 1776846565.749707, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Test Fall", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 13:59:25,749 - INFO - Event Triggered: {"timestamp": 1776846565.749707, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 13:59:25,750 - INFO - Event Triggered: {"timestamp": 1776846565.750695, "source": "system", "event": "SAFE_CONFIRMED", "details": "", "reason": "", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 14:06:39,200 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 14:06:39,984 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 14:06:39,984 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 14:06:48,173 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 14:06:48,173 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 14:07:16,032 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:16] "GET /login HTTP/1.1" 200 -
+2026-04-22 14:07:16,561 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:16] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-22 14:07:26,453 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 14:07:26,480 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:26] "GET / HTTP/1.1" 200 -
+2026-04-22 14:07:26,514 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 14:07:26,519 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:26] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 14:07:26,536 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:26] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 14:07:28,535 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:28] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:07:29,249 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:29] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:07:40,224 - INFO - Event Triggered: {"timestamp": 1776847060.2232842, "source": "voice", "event": "EMERGENCY", "details": "Transcript: emergency", "reason": "Keyword identified: emergency", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:07:40,293 - INFO - 127.0.0.1 - - [22/Apr/2026 14:07:40] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:07:43,678 - INFO - Event Triggered: {"timestamp": 1776847063.6774838, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:07:45,948 - INFO - Event Triggered: {"timestamp": 1776847065.9488406, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:07:48,092 - INFO - Event Triggered: {"timestamp": 1776847068.0918489, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:07:53,975 - INFO - Event Triggered: {"timestamp": 1776847073.9744766, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:07:54,221 - INFO - Event Triggered: {"timestamp": 1776847074.221701, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:02,704 - INFO - Event Triggered: {"timestamp": 1776847082.7045126, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:05,825 - INFO - Event Triggered: {"timestamp": 1776847085.825897, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:08,505 - INFO - Event Triggered: {"timestamp": 1776847088.5053637, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:12,326 - INFO - Event Triggered: {"timestamp": 1776847092.3259716, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:13,680 - INFO - Event Triggered: {"timestamp": 1776847093.680958, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:20,739 - INFO - Event Triggered: {"timestamp": 1776847100.739142, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:23,792 - INFO - Event Triggered: {"timestamp": 1776847103.7929695, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:23,794 - INFO - 127.0.0.1 - - [22/Apr/2026 14:08:23] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:08:23,799 - INFO - Event Triggered: {"timestamp": 1776847103.7998698, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:26,895 - INFO - Event Triggered: {"timestamp": 1776847106.8951058, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:30,066 - INFO - Event Triggered: {"timestamp": 1776847110.0656714, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:30,067 - INFO - 127.0.0.1 - - [22/Apr/2026 14:08:30] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:08:33,083 - INFO - Event Triggered: {"timestamp": 1776847113.0831556, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:35,702 - INFO - Event Triggered: {"timestamp": 1776847115.7021885, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:36,253 - INFO - Event Triggered: {"timestamp": 1776847116.2535641, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:39,326 - INFO - Event Triggered: {"timestamp": 1776847119.3263845, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:39,429 - INFO - Event Triggered: {"timestamp": 1776847119.429288, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:40,036 - INFO - Event Triggered: {"timestamp": 1776847120.0361712, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:40,036 - INFO - 127.0.0.1 - - [22/Apr/2026 14:08:40] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:08:42,602 - INFO - Event Triggered: {"timestamp": 1776847122.6027937, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:45,552 - INFO - Event Triggered: {"timestamp": 1776847125.5520537, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:45,636 - INFO - Event Triggered: {"timestamp": 1776847125.6368291, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:48,176 - INFO - Event Triggered: {"timestamp": 1776847128.1764534, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:48,691 - INFO - Event Triggered: {"timestamp": 1776847128.691381, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:51,744 - INFO - Event Triggered: {"timestamp": 1776847131.7441752, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:08:59,888 - INFO - Event Triggered: {"timestamp": 1776847139.8881118, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:09:00,102 - INFO - Event Triggered: {"timestamp": 1776847140.1023865, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:10:51,217 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 14:10:52,018 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 14:10:52,019 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 14:11:00,846 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 14:11:00,846 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 14:11:05,274 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:05] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:11:19,258 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:19] "GET / HTTP/1.1" 200 -
+2026-04-22 14:11:19,303 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:19] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 14:11:19,371 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 14:11:19,407 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:19] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 14:11:19,575 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:19] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:11:21,406 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:21] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:11:34,805 - INFO - Event Triggered: {"timestamp": 1776847294.805446, "source": "voice", "event": "EMERGENCY", "details": "Transcript: I need help I need help", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:34,831 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:34] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:11:37,867 - INFO - Event Triggered: {"timestamp": 1776847297.867586, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:40,770 - INFO - Event Triggered: {"timestamp": 1776847300.7697108, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:42,634 - INFO - Event Triggered: {"timestamp": 1776847302.6340485, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:46,920 - INFO - Event Triggered: {"timestamp": 1776847306.9205039, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: i am ok", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:46,946 - INFO - Event Triggered: {"timestamp": 1776847306.946785, "source": "voice", "event": "NORMAL", "details": "Transcript: I am ok", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:50,023 - INFO - Event Triggered: {"timestamp": 1776847310.0237684, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:53,977 - INFO - Event Triggered: {"timestamp": 1776847313.9778817, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:56,961 - INFO - Event Triggered: {"timestamp": 1776847316.961218, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: i am ok", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:59,344 - INFO - Event Triggered: {"timestamp": 1776847319.3445942, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:11:59,344 - INFO - 127.0.0.1 - - [22/Apr/2026 14:11:59] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:11:59,601 - INFO - Event Triggered: {"timestamp": 1776847319.60051, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:02,261 - INFO - Event Triggered: {"timestamp": 1776847322.2612371, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:02,639 - INFO - Event Triggered: {"timestamp": 1776847322.6394527, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:05,799 - INFO - Event Triggered: {"timestamp": 1776847325.7993088, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:09,286 - INFO - Event Triggered: {"timestamp": 1776847329.2861238, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:09,297 - INFO - Event Triggered: {"timestamp": 1776847329.2977297, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:23,409 - INFO - Event Triggered: {"timestamp": 1776847343.407538, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:26,443 - INFO - Event Triggered: {"timestamp": 1776847346.4434786, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:28,337 - INFO - Event Triggered: {"timestamp": 1776847348.3371477, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:30,549 - INFO - Event Triggered: {"timestamp": 1776847350.5499544, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:12:33,048 - INFO - Event Triggered: {"timestamp": 1776847353.0488315, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:17:55,107 - INFO - Event Triggered: {"timestamp": 1776847675.1071887, "source": "voice", "event": "EMERGENCY", "details": "", "reason": "HELP keyword", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:17:55,217 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 14:17:55,217 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 14:17:57,109 - INFO - Event Triggered: {"timestamp": 1776847677.1093686, "source": "manual", "event": "SAFE_CONFIRMED", "details": "", "reason": "", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 14:17:58,133 - INFO - Event Triggered: {"timestamp": 1776847678.1336238, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 14:20:59,612 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 14:21:00,265 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 14:21:00,266 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 14:21:08,092 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 14:21:08,092 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 14:21:16,013 - INFO - 127.0.0.1 - - [22/Apr/2026 14:21:16] "GET / HTTP/1.1" 200 -
+2026-04-22 14:21:16,039 - INFO - 127.0.0.1 - - [22/Apr/2026 14:21:16] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 14:21:16,126 - INFO - 127.0.0.1 - - [22/Apr/2026 14:21:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 14:21:16,141 - INFO - 127.0.0.1 - - [22/Apr/2026 14:21:16] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 14:21:18,144 - INFO - 127.0.0.1 - - [22/Apr/2026 14:21:18] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:21:20,348 - INFO - 127.0.0.1 - - [22/Apr/2026 14:21:20] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:21:50,599 - INFO - Event Triggered: {"timestamp": 1776847910.5996938, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:21:50,744 - INFO - Event Triggered: {"timestamp": 1776847910.744053, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:21:53,087 - INFO - Event Triggered: {"timestamp": 1776847913.0872853, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:04,827 - INFO - Event Triggered: {"timestamp": 1776847924.8278065, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:05,690 - INFO - Event Triggered: {"timestamp": 1776847925.6909535, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:06,226 - INFO - Event Triggered: {"timestamp": 1776847926.2260084, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:06,387 - INFO - Event Triggered: {"timestamp": 1776847926.3874543, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:06,808 - INFO - Event Triggered: {"timestamp": 1776847926.8089101, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:07,162 - INFO - Event Triggered: {"timestamp": 1776847927.1624086, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:07,326 - INFO - Event Triggered: {"timestamp": 1776847927.3268893, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:07,551 - INFO - Event Triggered: {"timestamp": 1776847927.5515082, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:07,850 - INFO - Event Triggered: {"timestamp": 1776847927.8502247, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:22:08,271 - INFO - Event Triggered: {"timestamp": 1776847928.2710643, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.0s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:08,347 - INFO - 127.0.0.1 - - [22/Apr/2026 14:22:08] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:22:08,587 - INFO - Event Triggered: {"timestamp": 1776847928.5870123, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:08,708 - INFO - Event Triggered: {"timestamp": 1776847928.7085714, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.5s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:09,256 - INFO - Event Triggered: {"timestamp": 1776847929.2565837, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:09,500 - INFO - Event Triggered: {"timestamp": 1776847929.5006297, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 3.3s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:10,000 - INFO - Event Triggered: {"timestamp": 1776847930.0007436, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:10,311 - INFO - Event Triggered: {"timestamp": 1776847930.3112607, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 4.1s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:10,702 - INFO - Event Triggered: {"timestamp": 1776847930.7023106, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:10,897 - INFO - Event Triggered: {"timestamp": 1776847930.897238, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 4.7s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:10,994 - INFO - Event Triggered: {"timestamp": 1776847930.9947019, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:11,303 - INFO - Event Triggered: {"timestamp": 1776847931.3033247, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:11,513 - INFO - Event Triggered: {"timestamp": 1776847931.51368, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:11,613 - INFO - Event Triggered: {"timestamp": 1776847931.6138568, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 5.4s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:11,916 - INFO - Event Triggered: {"timestamp": 1776847931.916768, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:12,019 - INFO - Event Triggered: {"timestamp": 1776847932.0193138, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 5.8s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:12,151 - INFO - Event Triggered: {"timestamp": 1776847932.15194, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:12,251 - INFO - Event Triggered: {"timestamp": 1776847932.2517657, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 6.0s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:12,385 - INFO - Event Triggered: {"timestamp": 1776847932.3850653, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:12,490 - INFO - Event Triggered: {"timestamp": 1776847932.4903798, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 6.3s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:12,800 - INFO - Event Triggered: {"timestamp": 1776847932.8001232, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:12,903 - INFO - Event Triggered: {"timestamp": 1776847932.903566, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 6.7s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:13,402 - INFO - Event Triggered: {"timestamp": 1776847933.4018517, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:13,500 - INFO - Event Triggered: {"timestamp": 1776847933.5001235, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 7.3s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:13,588 - INFO - Event Triggered: {"timestamp": 1776847933.588952, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:13,736 - INFO - Event Triggered: {"timestamp": 1776847933.7360637, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:17,193 - INFO - Event Triggered: {"timestamp": 1776847937.1937404, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:17,208 - INFO - Event Triggered: {"timestamp": 1776847937.20848, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:22,986 - INFO - Event Triggered: {"timestamp": 1776847942.9864228, "source": "voice", "event": "NORMAL", "details": "Transcript: I am ok", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:24,667 - INFO - Event Triggered: {"timestamp": 1776847944.6676323, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:24,667 - INFO - 127.0.0.1 - - [22/Apr/2026 14:22:24] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:22:26,078 - INFO - Event Triggered: {"timestamp": 1776847946.07823, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:30,010 - INFO - Event Triggered: {"timestamp": 1776847950.0105228, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:32,967 - INFO - Event Triggered: {"timestamp": 1776847952.9676723, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:37,526 - INFO - Event Triggered: {"timestamp": 1776847957.5261889, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:38,295 - INFO - Event Triggered: {"timestamp": 1776847958.2954812, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:38,591 - INFO - Event Triggered: {"timestamp": 1776847958.5909104, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:38,592 - INFO - 127.0.0.1 - - [22/Apr/2026 14:22:38] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:22:43,171 - INFO - Event Triggered: {"timestamp": 1776847963.1710916, "source": "manual", "event": "EMERGENCY", "details": "User sent a high-priority alert.", "reason": "Manual Trigger", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:43,172 - INFO - 127.0.0.1 - - [22/Apr/2026 14:22:43] "POST /send_alert HTTP/1.1" 200 -
+2026-04-22 14:22:46,019 - INFO - Event Triggered: {"timestamp": 1776847966.0195277, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:49,087 - INFO - Event Triggered: {"timestamp": 1776847969.087851, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:53,066 - INFO - Event Triggered: {"timestamp": 1776847973.0666323, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:54,325 - INFO - Event Triggered: {"timestamp": 1776847974.3258605, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: i am ok", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:58,731 - INFO - Event Triggered: {"timestamp": 1776847978.7318904, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:58,792 - INFO - Event Triggered: {"timestamp": 1776847978.7922816, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:22:58,793 - INFO - 127.0.0.1 - - [22/Apr/2026 14:22:58] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:23:01,786 - INFO - Event Triggered: {"timestamp": 1776847981.78665, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:23:07,827 - INFO - Event Triggered: {"timestamp": 1776847987.8260262, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:23:08,948 - INFO - Event Triggered: {"timestamp": 1776847988.9489458, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:23:11,836 - INFO - Event Triggered: {"timestamp": 1776847991.8353643, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:25:49,269 - INFO - Event Triggered: {"timestamp": 1776848149.2690322, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:25:49,281 - INFO - Event Triggered: {"timestamp": 1776848149.28199, "source": "manual", "event": "SAFE_CONFIRMED", "details": "", "reason": "", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 14:25:49,281 - INFO - Event Triggered: {"timestamp": 1776848149.28199, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:30:54,876 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 14:30:55,481 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 14:30:55,481 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 14:31:03,682 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 14:31:03,682 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 14:31:11,907 - INFO - 127.0.0.1 - - [22/Apr/2026 14:31:11] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:32:22,387 - INFO - Event Triggered: {"timestamp": 1776848542.3876662, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:32:29,512 - INFO - 127.0.0.1 - - [22/Apr/2026 14:32:29] "GET / HTTP/1.1" 200 -
+2026-04-22 14:32:29,683 - INFO - 127.0.0.1 - - [22/Apr/2026 14:32:29] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 14:32:29,769 - INFO - 127.0.0.1 - - [22/Apr/2026 14:32:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 14:32:29,821 - INFO - 127.0.0.1 - - [22/Apr/2026 14:32:29] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 14:32:31,826 - INFO - 127.0.0.1 - - [22/Apr/2026 14:32:31] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:32:37,738 - INFO - 127.0.0.1 - - [22/Apr/2026 14:32:37] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:32:41,606 - INFO - Event Triggered: {"timestamp": 1776848561.606737, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:32:43,088 - INFO - Event Triggered: {"timestamp": 1776848563.0873926, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:32:43,287 - INFO - Event Triggered: {"timestamp": 1776848563.2864015, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:32:43,614 - INFO - Event Triggered: {"timestamp": 1776848563.6145399, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 2.0s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:43,644 - INFO - 127.0.0.1 - - [22/Apr/2026 14:32:43] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:32:45,578 - INFO - Event Triggered: {"timestamp": 1776848565.578015, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:45,658 - INFO - Event Triggered: {"timestamp": 1776848565.6589, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 4.1s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:46,642 - INFO - Event Triggered: {"timestamp": 1776848566.6415555, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:46,693 - INFO - Event Triggered: {"timestamp": 1776848566.6935635, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:46,800 - INFO - Event Triggered: {"timestamp": 1776848566.8004014, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 5.2s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:47,467 - INFO - Event Triggered: {"timestamp": 1776848567.467202, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:47,564 - INFO - Event Triggered: {"timestamp": 1776848567.5640254, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 6.0s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,200 - INFO - Event Triggered: {"timestamp": 1776848568.2000022, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,288 - INFO - Event Triggered: {"timestamp": 1776848568.2874136, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 6.7s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,404 - INFO - Event Triggered: {"timestamp": 1776848568.4042587, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,503 - INFO - Event Triggered: {"timestamp": 1776848568.5032966, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 6.9s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,534 - INFO - Event Triggered: {"timestamp": 1776848568.5341952, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,619 - INFO - Event Triggered: {"timestamp": 1776848568.6194768, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,717 - INFO - Event Triggered: {"timestamp": 1776848568.7173285, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 7.1s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,888 - INFO - Event Triggered: {"timestamp": 1776848568.888427, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:48,981 - INFO - Event Triggered: {"timestamp": 1776848568.9817638, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 7.4s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:49,664 - INFO - Event Triggered: {"timestamp": 1776848569.6638806, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:49,751 - INFO - Event Triggered: {"timestamp": 1776848569.7515538, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 8.1s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:50,745 - INFO - Event Triggered: {"timestamp": 1776848570.7456856, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:50,847 - INFO - Event Triggered: {"timestamp": 1776848570.8467717, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 9.2s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:51,229 - INFO - Event Triggered: {"timestamp": 1776848571.2296019, "source": "pose", "event": "NORMAL", "details": "", "reason": "", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:51,315 - INFO - Event Triggered: {"timestamp": 1776848571.3158197, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall detected: horizontal for 9.7s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:52,991 - INFO - Event Triggered: {"timestamp": 1776848572.9915264, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:54,851 - INFO - Event Triggered: {"timestamp": 1776848574.8519094, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:32:57,883 - INFO - Event Triggered: {"timestamp": 1776848577.8836875, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:00,254 - INFO - Event Triggered: {"timestamp": 1776848580.254833, "source": "pose", "event": "NORMAL", "details": "", "reason": "Upright/Normal posture", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:01,518 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:01] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:33:01,525 - INFO - Event Triggered: {"timestamp": 1776848581.5242841, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:01,527 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:01] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:33:01,907 - INFO - Event Triggered: {"timestamp": 1776848581.9070446, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:02,667 - INFO - Event Triggered: {"timestamp": 1776848582.6670873, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:02,677 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:02] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:33:03,438 - INFO - Event Triggered: {"timestamp": 1776848583.4373724, "source": "pose", "event": "NORMAL", "details": "", "reason": "Upright/Normal posture", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:05,131 - INFO - Event Triggered: {"timestamp": 1776848585.1315277, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:05,272 - INFO - Event Triggered: {"timestamp": 1776848585.2729826, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:06,677 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:06] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:33:06,681 - INFO - Event Triggered: {"timestamp": 1776848586.6815755, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:06,683 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:06] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:33:09,334 - INFO - Event Triggered: {"timestamp": 1776848589.3344274, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:12,593 - INFO - Event Triggered: {"timestamp": 1776848592.593601, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:12,744 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:12] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:33:16,867 - INFO - Event Triggered: {"timestamp": 1776848596.8671784, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:17,172 - INFO - Event Triggered: {"timestamp": 1776848597.1727672, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:19,203 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:19] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:33:19,207 - INFO - Event Triggered: {"timestamp": 1776848599.2076592, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:19,208 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:19] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:33:27,470 - INFO - Event Triggered: {"timestamp": 1776848607.4703686, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:30,555 - INFO - Event Triggered: {"timestamp": 1776848610.5554795, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:30,575 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:30] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:33:34,170 - INFO - Event Triggered: {"timestamp": 1776848614.1702068, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:37,305 - INFO - Event Triggered: {"timestamp": 1776848617.3059936, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:38,045 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:38] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:33:38,049 - INFO - Event Triggered: {"timestamp": 1776848618.0498438, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:38,052 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:38] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:33:41,212 - INFO - Event Triggered: {"timestamp": 1776848621.212996, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:44,255 - INFO - Event Triggered: {"timestamp": 1776848624.2543824, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:33:44,278 - INFO - 127.0.0.1 - - [22/Apr/2026 14:33:44] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:36:55,200 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 14:36:55,892 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 14:36:55,894 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 14:37:03,800 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 14:37:03,800 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 14:37:07,606 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:07] "GET / HTTP/1.1" 200 -
+2026-04-22 14:37:07,644 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:07] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 14:37:07,684 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 14:37:07,693 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:07] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 14:37:09,707 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:09] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:37:14,379 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:14] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:37:14,379 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:14] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:37:20,412 - INFO - Event Triggered: {"timestamp": 1776848840.412675, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:37:20,890 - INFO - Event Triggered: {"timestamp": 1776848840.8903892, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:37:21,149 - INFO - Event Triggered: {"timestamp": 1776848841.1490636, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:37:21,764 - INFO - Event Triggered: {"timestamp": 1776848841.7643545, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 14:37:48,360 - INFO - Event Triggered: {"timestamp": 1776848868.3606677, "source": "voice", "event": "EMERGENCY", "details": "Transcript: emergency emergency help", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:37:48,411 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:48] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:37:52,015 - INFO - Event Triggered: {"timestamp": 1776848872.0156095, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:37:54,701 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:54] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:37:54,705 - INFO - Event Triggered: {"timestamp": 1776848874.7052708, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:37:54,706 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:54] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:37:56,034 - INFO - Event Triggered: {"timestamp": 1776848876.0346673, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:37:58,893 - INFO - Event Triggered: {"timestamp": 1776848878.8938422, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:37:59,219 - INFO - Event Triggered: {"timestamp": 1776848879.2196653, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:37:59,238 - INFO - 127.0.0.1 - - [22/Apr/2026 14:37:59] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:01,171 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:01] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:01,173 - INFO - Event Triggered: {"timestamp": 1776848881.1739278, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:01,176 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:01] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:38:03,723 - INFO - Event Triggered: {"timestamp": 1776848883.7229898, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:07,493 - INFO - Event Triggered: {"timestamp": 1776848887.493077, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:07,512 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:07] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:09,283 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:09] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:09,327 - INFO - Event Triggered: {"timestamp": 1776848889.3276963, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:09,329 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:09] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:38:11,505 - INFO - Event Triggered: {"timestamp": 1776848891.5052967, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:15,561 - INFO - Event Triggered: {"timestamp": 1776848895.5615203, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:15,584 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:15] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:17,256 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:17] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:17,258 - INFO - Event Triggered: {"timestamp": 1776848897.258872, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:17,261 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:17] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:38:21,980 - INFO - Event Triggered: {"timestamp": 1776848901.9801273, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:25,683 - INFO - Event Triggered: {"timestamp": 1776848905.6833463, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:25,701 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:25] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:26,023 - INFO - Event Triggered: {"timestamp": 1776848906.0231318, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:31,248 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:31] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:31,252 - INFO - Event Triggered: {"timestamp": 1776848911.2529047, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:31,253 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:31] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:38:33,745 - INFO - Event Triggered: {"timestamp": 1776848913.7458315, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:34,542 - INFO - Event Triggered: {"timestamp": 1776848914.5428731, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:34,559 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:34] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:40,905 - INFO - Event Triggered: {"timestamp": 1776848920.905209, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:41,472 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:41] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:41,480 - INFO - Event Triggered: {"timestamp": 1776848921.480217, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:41,481 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:41] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:38:44,598 - INFO - Event Triggered: {"timestamp": 1776848924.5983868, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:44,620 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:44] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:45,893 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:45] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:38:45,899 - INFO - Event Triggered: {"timestamp": 1776848925.8989418, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:45,899 - INFO - 127.0.0.1 - - [22/Apr/2026 14:38:45] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 14:38:48,788 - INFO - Event Triggered: {"timestamp": 1776848928.7883236, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:51,676 - INFO - Event Triggered: {"timestamp": 1776848931.675779, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 14:38:54,320 - INFO - Event Triggered: {"timestamp": 1776848934.3205283, "source": "system", "event": "SAFE_CONFIRMED", "details": "User verbally confirmed safety: i am safe", "reason": "Safe response received", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 14:39:15,338 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:15] "GET /wellbeing HTTP/1.1" 200 -
+2026-04-22 14:39:15,402 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 14:39:15,476 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:15] "GET /wellbeing_stats HTTP/1.1" 200 -
+2026-04-22 14:39:15,498 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:15] "GET /wellbeing_feed HTTP/1.1" 200 -
+2026-04-22 14:39:31,333 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:31] "GET / HTTP/1.1" 200 -
+2026-04-22 14:39:31,378 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 14:39:31,380 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:31] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 14:39:31,396 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:31] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 14:39:33,220 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:33] "GET /events HTTP/1.1" 200 -
+2026-04-22 14:39:33,393 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:33] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 14:39:34,876 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:34] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 14:39:34,898 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:34] "GET /login HTTP/1.1" 200 -
+2026-04-22 14:39:34,948 - INFO - 127.0.0.1 - - [22/Apr/2026 14:39:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:12:28,357 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 16:12:29,057 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 16:12:29,057 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 16:12:36,719 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 16:12:36,719 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 16:12:56,386 - INFO - 127.0.0.1 - - [22/Apr/2026 16:12:56] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-22 16:12:56,397 - INFO - 127.0.0.1 - - [22/Apr/2026 16:12:56] "GET /login HTTP/1.1" 200 -
+2026-04-22 16:12:56,451 - INFO - 127.0.0.1 - - [22/Apr/2026 16:12:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:13:05,282 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:05] "POST /login HTTP/1.1" 200 -
+2026-04-22 16:13:05,301 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:13:13,674 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 16:13:13,688 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:13] "GET / HTTP/1.1" 200 -
+2026-04-22 16:13:13,706 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:13:13,707 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:13] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 16:13:13,718 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:13] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 16:13:15,753 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:15] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:13:18,802 - INFO - 127.0.0.1 - - [22/Apr/2026 16:13:18] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:15:57,030 - INFO - 127.0.0.1 - - [22/Apr/2026 16:15:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 16:15:57,042 - INFO - 127.0.0.1 - - [22/Apr/2026 16:15:57] "GET /login HTTP/1.1" 200 -
+2026-04-22 16:15:57,094 - INFO - 127.0.0.1 - - [22/Apr/2026 16:15:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:16:07,792 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 16:16:07,801 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:07] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-22 16:16:07,826 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:16:07,826 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:07] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 16:16:07,990 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:07] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:16:19,693 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:19] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 16:16:19,703 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:19] "GET /login HTTP/1.1" 200 -
+2026-04-22 16:16:19,741 - INFO - 127.0.0.1 - - [22/Apr/2026 16:16:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:26:07,295 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 16:26:08,001 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 16:26:08,002 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 16:26:15,825 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 16:26:15,825 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 16:27:03,113 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:03] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 16:27:03,122 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:03] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-22 16:27:03,145 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:03] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 16:27:03,187 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:03] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-22 16:27:03,194 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:03] "GET /api/get_patients HTTP/1.1" 200 -
+2026-04-22 16:27:03,998 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:03] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:27:10,281 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:10] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-22 16:27:10,297 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:10] "GET /api/get_prescriptions?patient=mannat HTTP/1.1" 200 -
+2026-04-22 16:27:10,344 - INFO - 127.0.0.1 - - [22/Apr/2026 16:27:10] "GET /api/doctor/notes?patient=mannat HTTP/1.1" 200 -
+2026-04-22 16:29:45,924 - INFO - 127.0.0.1 - - [22/Apr/2026 16:29:45] "POST /api/doctor/notes HTTP/1.1" 200 -
+2026-04-22 16:29:45,944 - INFO - 127.0.0.1 - - [22/Apr/2026 16:29:45] "GET /api/doctor/notes?patient=mannat HTTP/1.1" 200 -
+2026-04-22 16:30:01,771 - INFO - 127.0.0.1 - - [22/Apr/2026 16:30:01] "POST /api/add_prescription HTTP/1.1" 200 -
+2026-04-22 16:30:01,833 - INFO - 127.0.0.1 - - [22/Apr/2026 16:30:01] "GET /api/get_prescriptions?patient=mannat HTTP/1.1" 200 -
+2026-04-22 16:48:49,379 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-22 16:48:50,062 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-22 16:48:50,063 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-22 16:48:59,527 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-22 16:48:59,527 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 16:49:06,210 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:06] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:49:06,877 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:06] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-22 16:49:06,981 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:06] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-22 16:49:06,993 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:06] "GET /api/get_patients HTTP/1.1" 200 -
+2026-04-22 16:49:11,139 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:11] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:49:15,682 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 16:49:15,720 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:15] "GET /login HTTP/1.1" 200 -
+2026-04-22 16:49:15,740 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:49:25,047 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 16:49:25,145 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:25] "GET / HTTP/1.1" 200 -
+2026-04-22 16:49:25,181 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:49:25,181 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:25] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 16:49:25,195 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:25] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 16:49:27,302 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:27] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:49:29,765 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:29] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:49:42,384 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:42] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:49:45,191 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:45] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:49:50,227 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:50] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:49:52,071 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:52] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:49:55,228 - INFO - 127.0.0.1 - - [22/Apr/2026 16:49:55] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:50:00,194 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:00] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:50:05,203 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:05] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:50:06,723 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:06] "POST /api/messages HTTP/1.1" 200 -
+2026-04-22 16:50:06,759 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:06] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:50:10,202 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:10] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:50:15,199 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:15] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-22 16:50:49,966 - INFO - Event Triggered: {"timestamp": 1776856849.9653206, "source": "voice", "event": "EMERGENCY", "details": "Transcript: help I", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:50:50,044 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:50] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:50:52,437 - INFO - Event Triggered: {"timestamp": 1776856852.4374056, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:50:53,642 - INFO - Event Triggered: {"timestamp": 1776856853.6424103, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:50:59,209 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:59] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:50:59,212 - INFO - Event Triggered: {"timestamp": 1776856859.2129116, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:50:59,216 - INFO - 127.0.0.1 - - [22/Apr/2026 16:50:59] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-22 16:51:01,201 - INFO - Event Triggered: {"timestamp": 1776856861.1996925, "source": "system", "event": "SAFE_CONFIRMED", "details": "User verbally confirmed safety: i am safe", "reason": "Safe response received", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 16:51:36,187 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:36] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 16:51:36,198 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:36] "GET /login HTTP/1.1" 200 -
+2026-04-22 16:51:36,258 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:51:45,693 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 16:51:45,698 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:45] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-22 16:51:45,723 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:51:45,731 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:45] "GET /api/get_patients HTTP/1.1" 200 -
+2026-04-22 16:51:47,358 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:47] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-22 16:51:47,361 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:47] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-22 16:51:47,363 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:47] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-22 16:51:47,374 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:47] "GET /api/get_prescriptions?patient=mannat HTTP/1.1" 200 -
+2026-04-22 16:51:47,378 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:47] "GET /api/doctor/notes?patient=mannat HTTP/1.1" 200 -
+2026-04-22 16:51:47,393 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:47] "GET /static/snapshots/snapshot_1776856849.jpg HTTP/1.1" 200 -
+2026-04-22 16:51:48,852 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:48] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:51:50,748 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:50] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-22 16:51:55,731 - INFO - 127.0.0.1 - - [22/Apr/2026 16:51:55] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-22 16:52:00,734 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:00] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-22 16:52:05,746 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:05] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-22 16:52:10,163 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-22 16:52:10,171 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:10] "GET /login HTTP/1.1" 200 -
+2026-04-22 16:52:10,198 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:52:19,592 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:19] "GET /signup HTTP/1.1" 200 -
+2026-04-22 16:52:19,614 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:52:22,722 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:22] "GET /login HTTP/1.1" 200 -
+2026-04-22 16:52:22,746 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:52:29,604 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:29] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-22 16:52:29,614 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:29] "GET / HTTP/1.1" 200 -
+2026-04-22 16:52:29,642 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-22 16:52:29,643 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:29] "GET /video_feed HTTP/1.1" 200 -
+2026-04-22 16:52:29,669 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:29] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-22 16:52:31,676 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:31] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:52:35,328 - INFO - 127.0.0.1 - - [22/Apr/2026 16:52:35] "GET /events HTTP/1.1" 200 -
+2026-04-22 16:53:08,713 - INFO - Event Triggered: {"timestamp": 1776856988.712817, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:53:20,320 - INFO - Event Triggered: {"timestamp": 1776857000.3195152, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:53:26,136 - INFO - Event Triggered: {"timestamp": 1776857006.1362545, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:53:26,936 - INFO - Event Triggered: {"timestamp": 1776857006.9353225, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:53:27,109 - INFO - Event Triggered: {"timestamp": 1776857007.1093986, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:53:27,349 - INFO - Event Triggered: {"timestamp": 1776857007.349129, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:53:29,066 - INFO - Event Triggered: {"timestamp": 1776857009.0646298, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:53:48,186 - INFO - Event Triggered: {"timestamp": 1776857028.1863637, "source": "voice", "event": "EMERGENCY", "details": "Transcript: help", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:53:48,206 - INFO - 127.0.0.1 - - [22/Apr/2026 16:53:48] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:53:51,767 - INFO - Event Triggered: {"timestamp": 1776857031.7673888, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:53:51,817 - INFO - Event Triggered: {"timestamp": 1776857031.817268, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:53:56,725 - INFO - Event Triggered: {"timestamp": 1776857036.725785, "source": "system", "event": "SAFE_CONFIRMED", "details": "User verbally confirmed safety: i am ok", "reason": "Safe response received", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 16:53:56,740 - INFO - 127.0.0.1 - - [22/Apr/2026 16:53:56] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:54:08,864 - INFO - Event Triggered: {"timestamp": 1776857048.8632188, "source": "voice", "event": "EMERGENCY", "details": "Transcript: help me", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:08,882 - INFO - 127.0.0.1 - - [22/Apr/2026 16:54:08] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:54:12,515 - INFO - Event Triggered: {"timestamp": 1776857052.5153143, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:18,183 - INFO - Event Triggered: {"timestamp": 1776857058.1834235, "source": "voice", "event": "EMERGENCY", "details": "Transcript: yes call doctor call doctor", "reason": "Keyword identified: call doctor", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:18,434 - INFO - Event Triggered: {"timestamp": 1776857058.4348118, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: call doctor", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:21,479 - INFO - Event Triggered: {"timestamp": 1776857061.4797359, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:25,131 - INFO - Event Triggered: {"timestamp": 1776857065.1310492, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:25,546 - INFO - Event Triggered: {"timestamp": 1776857065.5463092, "source": "voice", "event": "NORMAL", "details": "Transcript: I am ok", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:28,526 - INFO - Event Triggered: {"timestamp": 1776857068.5268426, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-22 16:54:31,805 - INFO - Event Triggered: {"timestamp": 1776857071.8053076, "source": "system", "event": "SAFE_CONFIRMED", "details": "User verbally confirmed safety: i am ok", "reason": "Safe response received", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-22 16:54:31,817 - INFO - 127.0.0.1 - - [22/Apr/2026 16:54:31] "POST /api/speak HTTP/1.1" 200 -
+2026-04-22 16:55:16,256 - INFO - Event Triggered: {"timestamp": 1776857116.2562044, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:55:16,556 - INFO - Event Triggered: {"timestamp": 1776857116.556198, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:55:26,987 - INFO - Event Triggered: {"timestamp": 1776857126.9877777, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:55:30,146 - INFO - Event Triggered: {"timestamp": 1776857130.1465364, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:55:30,526 - INFO - Event Triggered: {"timestamp": 1776857130.5260618, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:55:37,415 - INFO - Event Triggered: {"timestamp": 1776857137.4159176, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-22 16:56:58,959 - INFO - Event Triggered: {"timestamp": 1776857218.9595358, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:47:17,249 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-23 13:47:17,948 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-23 13:47:17,950 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-23 13:47:26,574 - INFO - Event Triggered: {"timestamp": 1776932246.574659, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:47:26,714 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.102:5000
+2026-04-23 13:47:26,714 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-23 13:47:37,757 - INFO - 127.0.0.1 - - [23/Apr/2026 13:47:37] "GET / HTTP/1.1" 200 -
+2026-04-23 13:47:37,774 - INFO - 127.0.0.1 - - [23/Apr/2026 13:47:37] "GET /video_feed HTTP/1.1" 200 -
+2026-04-23 13:47:37,847 - INFO - 127.0.0.1 - - [23/Apr/2026 13:47:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 13:47:37,859 - INFO - 127.0.0.1 - - [23/Apr/2026 13:47:37] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-23 13:47:38,304 - INFO - 127.0.0.1 - - [23/Apr/2026 13:47:38] "GET /events HTTP/1.1" 200 -
+2026-04-23 13:47:39,856 - INFO - 127.0.0.1 - - [23/Apr/2026 13:47:39] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 13:48:07,845 - INFO - Event Triggered: {"timestamp": 1776932287.845455, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:48:07,865 - INFO - 127.0.0.1 - - [23/Apr/2026 13:48:07] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 13:48:09,843 - INFO - Event Triggered: {"timestamp": 1776932289.8438768, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:48:11,941 - INFO - Event Triggered: {"timestamp": 1776932291.9412642, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:48:15,482 - INFO - Event Triggered: {"timestamp": 1776932295.482231, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:48:21,407 - INFO - Event Triggered: {"timestamp": 1776932301.4071314, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:48:28,252 - INFO - Event Triggered: {"timestamp": 1776932308.2523673, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:48:30,497 - INFO - Event Triggered: {"timestamp": 1776932310.4975436, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:34,448 - INFO - Event Triggered: {"timestamp": 1776932314.4481268, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:35,266 - INFO - Event Triggered: {"timestamp": 1776932315.2669091, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:35,634 - INFO - Event Triggered: {"timestamp": 1776932315.6342435, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:39,997 - INFO - Event Triggered: {"timestamp": 1776932319.997425, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:41,436 - INFO - Event Triggered: {"timestamp": 1776932321.4367921, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:43,343 - INFO - Event Triggered: {"timestamp": 1776932323.3430285, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:43,862 - INFO - Event Triggered: {"timestamp": 1776932323.8622353, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:44,295 - INFO - Event Triggered: {"timestamp": 1776932324.2959719, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:44,927 - INFO - Event Triggered: {"timestamp": 1776932324.9272559, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:45,324 - INFO - Event Triggered: {"timestamp": 1776932325.3248053, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 13:48:51,444 - INFO - Event Triggered: {"timestamp": 1776932331.443845, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:49:05,228 - INFO - Event Triggered: {"timestamp": 1776932345.2284667, "source": "voice", "event": "EMERGENCY", "details": "Transcript: I need help", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:05,284 - INFO - 127.0.0.1 - - [23/Apr/2026 13:49:05] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 13:49:08,892 - INFO - Event Triggered: {"timestamp": 1776932348.8928177, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:12,494 - INFO - Event Triggered: {"timestamp": 1776932352.4943438, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:14,459 - INFO - Event Triggered: {"timestamp": 1776932354.4594414, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:15,325 - INFO - Event Triggered: {"timestamp": 1776932355.325345, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:17,373 - INFO - Event Triggered: {"timestamp": 1776932357.372762, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:21,121 - INFO - Event Triggered: {"timestamp": 1776932361.121483, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:23,871 - INFO - Event Triggered: {"timestamp": 1776932363.8714828, "source": "voice", "event": "NORMAL", "details": "Transcript: I am ok", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:26,843 - INFO - Event Triggered: {"timestamp": 1776932366.8436844, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:28,258 - INFO - Event Triggered: {"timestamp": 1776932368.258143, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:31,941 - INFO - Event Triggered: {"timestamp": 1776932371.941366, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:31,995 - INFO - 127.0.0.1 - - [23/Apr/2026 13:49:31] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 13:49:31,999 - INFO - Event Triggered: {"timestamp": 1776932371.9997666, "source": "manual", "event": "NORMAL", "details": "User marked themselves as SAFE.", "reason": "Manual Reset", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:32,001 - INFO - 127.0.0.1 - - [23/Apr/2026 13:49:32] "POST /mark_safe HTTP/1.1" 200 -
+2026-04-23 13:49:32,024 - INFO - 127.0.0.1 - - [23/Apr/2026 13:49:32] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 13:49:36,286 - INFO - Event Triggered: {"timestamp": 1776932376.286314, "source": "voice", "event": "NORMAL", "details": "Transcript: I am ok", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:39,836 - INFO - Event Triggered: {"timestamp": 1776932379.8366597, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:42,299 - INFO - Event Triggered: {"timestamp": 1776932382.2997072, "source": "voice", "event": "NORMAL", "details": "Transcript: I am ok", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:45,956 - INFO - Event Triggered: {"timestamp": 1776932385.9564652, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:48,698 - INFO - Event Triggered: {"timestamp": 1776932388.6989906, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:49,870 - INFO - Event Triggered: {"timestamp": 1776932389.8700466, "source": "face", "event": "NORMAL", "details": "", "reason": "No face in view", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:51,805 - INFO - Event Triggered: {"timestamp": 1776932391.8055875, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 13:49:54,228 - INFO - Event Triggered: {"timestamp": 1776932394.2288601, "source": "system", "event": "SAFE_CONFIRMED", "details": "User verbally confirmed safety: i am ok", "reason": "Safe response received", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 13:49:54,244 - INFO - 127.0.0.1 - - [23/Apr/2026 13:49:54] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 19:36:08,848 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-23 19:36:09,486 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-23 19:36:09,486 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-23 19:36:19,948 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.104:5000
+2026-04-23 19:36:19,948 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-23 19:36:20,433 - INFO - Event Triggered: {"timestamp": 1776953180.4323714, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 19:36:32,652 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:32] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-23 19:36:32,666 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:32] "GET /login HTTP/1.1" 200 -
+2026-04-23 19:36:32,746 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:32] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-23 19:36:33,011 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-23 19:36:40,646 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-23 19:36:40,660 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:40] "GET / HTTP/1.1" 200 -
+2026-04-23 19:36:40,683 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 19:36:40,687 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:40] "GET /video_feed HTTP/1.1" 200 -
+2026-04-23 19:36:40,694 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:40] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-23 19:36:40,808 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:40] "GET /events HTTP/1.1" 200 -
+2026-04-23 19:36:42,722 - INFO - 127.0.0.1 - - [23/Apr/2026 19:36:42] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:11:16,843 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-23 20:11:18,142 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-23 20:11:18,143 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-23 20:11:31,479 - INFO - Event Triggered: {"timestamp": 1776955291.4797516, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:11:31,499 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.104:5000
+2026-04-23 20:11:31,499 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-23 20:11:34,405 - INFO - Event Triggered: {"timestamp": 1776955294.4041486, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:11:38,760 - INFO - Event Triggered: {"timestamp": 1776955298.7606995, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:11:40,413 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:40] "GET /wellbeing HTTP/1.1" 200 -
+2026-04-23 20:11:40,563 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 20:11:40,573 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:40] "GET /wellbeing_feed HTTP/1.1" 200 -
+2026-04-23 20:11:40,635 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:40] "GET /wellbeing_stats HTTP/1.1" 200 -
+2026-04-23 20:11:40,654 - INFO - Event Triggered: {"timestamp": 1776955300.6544063, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:11:43,306 - INFO - Event Triggered: {"timestamp": 1776955303.3062594, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:11:47,264 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:47] "GET / HTTP/1.1" 200 -
+2026-04-23 20:11:47,314 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 20:11:47,317 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:47] "GET /video_feed HTTP/1.1" 200 -
+2026-04-23 20:11:47,366 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:47] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-23 20:11:48,377 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:48] "GET /events HTTP/1.1" 200 -
+2026-04-23 20:11:49,371 - INFO - 127.0.0.1 - - [23/Apr/2026 20:11:49] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:12:15,275 - INFO - Event Triggered: {"timestamp": 1776955335.2750416, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:15,644 - INFO - Event Triggered: {"timestamp": 1776955335.6446145, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:17,532 - INFO - Event Triggered: {"timestamp": 1776955337.5329664, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:20,586 - INFO - Event Triggered: {"timestamp": 1776955340.5864778, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:12:20,594 - INFO - 127.0.0.1 - - [23/Apr/2026 20:12:20] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:12:21,497 - INFO - Event Triggered: {"timestamp": 1776955341.4976885, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:24,224 - INFO - Event Triggered: {"timestamp": 1776955344.2233968, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:27,096 - INFO - Event Triggered: {"timestamp": 1776955347.0968962, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:12:42,887 - INFO - Event Triggered: {"timestamp": 1776955362.886381, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:43,057 - INFO - Event Triggered: {"timestamp": 1776955363.0571325, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:44,889 - INFO - Event Triggered: {"timestamp": 1776955364.88923, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:12:46,983 - INFO - Event Triggered: {"timestamp": 1776955366.9838877, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:13:29,857 - INFO - Event Triggered: {"timestamp": 1776955409.8572783, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:13:32,802 - INFO - Event Triggered: {"timestamp": 1776955412.8025887, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:13:32,948 - INFO - Event Triggered: {"timestamp": 1776955412.9485388, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:13:35,914 - INFO - Event Triggered: {"timestamp": 1776955415.9140537, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:13:35,960 - INFO - Event Triggered: {"timestamp": 1776955415.96014, "source": "pose", "event": "FALL_DETECTED", "details": "", "reason": "Fall confirmed: position held for 3.0s", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:13:35,981 - INFO - Event Triggered: {"timestamp": 1776955415.9811108, "source": "face", "event": "NORMAL", "details": "", "reason": "No face in view", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:13:36,018 - INFO - 127.0.0.1 - - [23/Apr/2026 20:13:36] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:13:39,604 - INFO - Event Triggered: {"timestamp": 1776955419.604457, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:13:42,439 - INFO - Event Triggered: {"timestamp": 1776955422.4390068, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:13:42,861 - INFO - Event Triggered: {"timestamp": 1776955422.861188, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:13:43,024 - INFO - Event Triggered: {"timestamp": 1776955423.024408, "source": "pose", "event": "NORMAL", "details": "", "reason": "Upright", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:13:47,352 - INFO - Event Triggered: {"timestamp": 1776955427.352324, "source": "system", "event": "SAFE_CONFIRMED", "details": "User verbally confirmed safety: i am ok", "reason": "Safe response received", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:13:47,368 - INFO - 127.0.0.1 - - [23/Apr/2026 20:13:47] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:13:52,988 - INFO - 127.0.0.1 - - [23/Apr/2026 20:13:52] "GET /wellbeing HTTP/1.1" 200 -
+2026-04-23 20:13:53,032 - INFO - 127.0.0.1 - - [23/Apr/2026 20:13:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 20:13:53,054 - INFO - 127.0.0.1 - - [23/Apr/2026 20:13:53] "GET /wellbeing_stats HTTP/1.1" 200 -
+2026-04-23 20:13:53,110 - INFO - 127.0.0.1 - - [23/Apr/2026 20:13:53] "GET /wellbeing_feed HTTP/1.1" 200 -
+2026-04-23 20:14:02,821 - INFO - Event Triggered: {"timestamp": 1776955442.8215263, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:18,613 - INFO - Event Triggered: {"timestamp": 1776955458.613437, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:21,113 - INFO - Event Triggered: {"timestamp": 1776955461.1135628, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:24,291 - INFO - Event Triggered: {"timestamp": 1776955464.2907403, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:26,593 - INFO - Event Triggered: {"timestamp": 1776955466.593329, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:28,882 - INFO - Event Triggered: {"timestamp": 1776955468.8826451, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:31,071 - INFO - Event Triggered: {"timestamp": 1776955471.0718622, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:33,255 - INFO - Event Triggered: {"timestamp": 1776955473.2557876, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:48,558 - INFO - Event Triggered: {"timestamp": 1776955488.557369, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:14:54,034 - INFO - 127.0.0.1 - - [23/Apr/2026 20:14:54] "GET / HTTP/1.1" 200 -
+2026-04-23 20:14:54,091 - INFO - 127.0.0.1 - - [23/Apr/2026 20:14:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 20:14:54,095 - INFO - 127.0.0.1 - - [23/Apr/2026 20:14:54] "GET /video_feed HTTP/1.1" 200 -
+2026-04-23 20:14:54,116 - INFO - 127.0.0.1 - - [23/Apr/2026 20:14:54] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-23 20:14:55,124 - INFO - 127.0.0.1 - - [23/Apr/2026 20:14:55] "GET /events HTTP/1.1" 200 -
+2026-04-23 20:14:56,114 - INFO - 127.0.0.1 - - [23/Apr/2026 20:14:56] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:15:06,466 - INFO - Event Triggered: {"timestamp": 1776955506.4658828, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:15:09,554 - INFO - Event Triggered: {"timestamp": 1776955509.5545635, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:09,566 - INFO - 127.0.0.1 - - [23/Apr/2026 20:15:09] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:15:11,782 - INFO - Event Triggered: {"timestamp": 1776955511.7820063, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:13,635 - INFO - Event Triggered: {"timestamp": 1776955513.6354094, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:15,469 - INFO - Event Triggered: {"timestamp": 1776955515.4694474, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:17,427 - INFO - Event Triggered: {"timestamp": 1776955517.4276986, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:19,255 - INFO - Event Triggered: {"timestamp": 1776955519.2556145, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:50,924 - INFO - Event Triggered: {"timestamp": 1776955550.9249759, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:57,866 - INFO - Event Triggered: {"timestamp": 1776955557.8661819, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:59,716 - INFO - Event Triggered: {"timestamp": 1776955559.7161, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:15:59,961 - INFO - Event Triggered: {"timestamp": 1776955559.9603534, "source": "voice", "event": "EMERGENCY", "details": "Transcript: help", "reason": "Keyword identified: help", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:15:59,975 - INFO - 127.0.0.1 - - [23/Apr/2026 20:15:59] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:16:02,231 - INFO - Event Triggered: {"timestamp": 1776955562.2315388, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:03,608 - INFO - Event Triggered: {"timestamp": 1776955563.6089885, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:08,358 - INFO - Event Triggered: {"timestamp": 1776955568.3582346, "source": "voice", "event": "NORMAL", "details": "Transcript: ... (Unintelligible speech)", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:12,147 - INFO - Event Triggered: {"timestamp": 1776955572.1474667, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:14,194 - INFO - Event Triggered: {"timestamp": 1776955574.1943254, "source": "voice", "event": "NORMAL", "details": "Transcript: I am Sa", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:17,851 - INFO - Event Triggered: {"timestamp": 1776955577.8511822, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:21,566 - INFO - Event Triggered: {"timestamp": 1776955581.566957, "source": "voice", "event": "NORMAL", "details": "Transcript: I am safe I am", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:21,974 - INFO - Event Triggered: {"timestamp": 1776955581.9740195, "source": "system", "event": "ESCALATED_EMERGENCY", "details": "User Response: No response", "reason": "Escalation due to lack of safe confirmation", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:24,199 - INFO - Event Triggered: {"timestamp": 1776955584.1995008, "source": "face", "event": "NORMAL", "details": "", "reason": "No face in view", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:26,193 - INFO - Event Triggered: {"timestamp": 1776955586.1931887, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:27,507 - INFO - Event Triggered: {"timestamp": 1776955587.5076196, "source": "voice", "event": "NORMAL", "details": "Transcript: I am ok", "reason": "Observing speech", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:27,934 - INFO - Event Triggered: {"timestamp": 1776955587.9346533, "source": "system", "event": "VERIFYING", "details": "System is verifying user safety via voice.", "reason": "Waiting for user response...", "severity": "HIGH", "system_state": "EMERGENCY", "locked": true}
+2026-04-23 20:16:33,650 - INFO - Event Triggered: {"timestamp": 1776955593.6506882, "source": "system", "event": "SAFE_CONFIRMED", "details": "User verbally confirmed safety: i am ok", "reason": "Safe response received", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:16:33,661 - INFO - 127.0.0.1 - - [23/Apr/2026 20:16:33] "POST /api/speak HTTP/1.1" 200 -
+2026-04-23 20:16:43,651 - INFO - Event Triggered: {"timestamp": 1776955603.6506968, "source": "pose", "event": "POTENTIAL_FALL", "details": "", "reason": "Horizontal/Low-angle posture detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-23 20:16:45,800 - INFO - Event Triggered: {"timestamp": 1776955605.8003743, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:17:06,784 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:06] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-23 20:17:06,821 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:06] "GET /login HTTP/1.1" 200 -
+2026-04-23 20:17:06,863 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 20:17:15,155 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-23 20:17:15,171 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:15] "GET /doctor/dashboard HTTP/1.1" 200 -
+2026-04-23 20:17:15,210 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-23 20:17:15,264 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:15] "GET /api/get_patients HTTP/1.1" 200 -
+2026-04-23 20:17:16,272 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:16] "GET /events HTTP/1.1" 200 -
+2026-04-23 20:17:16,586 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:16] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:17:16,591 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:16] "GET /api/get_prescriptions?patient=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:16,597 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:16] "GET /api/doctor/notes?patient=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:16,603 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:16] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:16,605 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:16] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-23 20:17:16,657 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:16] "GET /static/snapshots/snapshot_1776955559.jpg HTTP/1.1" 200 -
+2026-04-23 20:17:20,260 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:20] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:25,277 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:25] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:30,295 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:30] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:35,267 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:35] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:40,279 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:40] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:45,821 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:45] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:50,821 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:50] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:17:55,840 - INFO - 127.0.0.1 - - [23/Apr/2026 20:17:55] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:18:00,889 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:00] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:18:05,828 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:05] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:18:10,836 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:10] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:18:11,041 - INFO - Event Triggered: {"timestamp": 1776955691.0410066, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:18:11,047 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:11] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:18:11,050 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:11] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-23 20:18:13,511 - INFO - Event Triggered: {"timestamp": 1776955693.5104973, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:18:13,518 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:13] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:18:13,519 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:13] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-23 20:18:15,436 - INFO - Event Triggered: {"timestamp": 1776955695.4363217, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:18:15,444 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:15] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:18:15,445 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:15] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-23 20:18:15,872 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:15] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:18:16,844 - INFO - Event Triggered: {"timestamp": 1776955696.8443975, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:18:16,852 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:16] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:18:16,854 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:16] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-23 20:18:18,577 - INFO - Event Triggered: {"timestamp": 1776955698.5773973, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:18:18,587 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:18] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:18:18,589 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:18] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-23 20:18:20,098 - INFO - Event Triggered: {"timestamp": 1776955700.0983336, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:18:20,105 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:20] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:18:20,106 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:20] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
+2026-04-23 20:18:20,832 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:20] "GET /api/messages?with=mannat HTTP/1.1" 200 -
+2026-04-23 20:18:22,365 - INFO - Event Triggered: {"timestamp": 1776955702.3652937, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-23 20:18:22,377 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:22] "GET /api/doctor/patient_history HTTP/1.1" 200 -
+2026-04-23 20:18:22,380 - INFO - 127.0.0.1 - - [23/Apr/2026 20:18:22] "GET /api/doctor/last_snapshot HTTP/1.1" 200 -
