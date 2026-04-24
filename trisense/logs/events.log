@@ -3144,3 +3144,63 @@ AttributeError: 'EventEngine' object has no attribute 'push_event'
 2026-04-24 01:42:41,790 - INFO - Event Triggered: {"timestamp": 1776975161.7903283, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
 2026-04-24 01:42:42,375 - INFO - Event Triggered: {"timestamp": 1776975162.3750815, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
 2026-04-24 01:42:42,966 - INFO - 127.0.0.1 - - [24/Apr/2026 01:42:42] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:21:20,694 - WARNING - From C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-04-24 12:21:37,709 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-04-24 12:21:37,710 - INFO - Using writeable comtypes cache directory: 'C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-04-24 12:21:58,450 - INFO - Event Triggered: {"timestamp": 1777013518.4507666, "source": "context", "event": "ROUTINE_ANOMALY", "details": "Wake-up time (12:21) significantly deviates from average (19:01).", "reason": "", "severity": "LOW", "system_state": "NORMAL", "locked": false}
+2026-04-24 12:22:00,350 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.103:5000
+2026-04-24 12:22:00,350 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-24 12:22:02,829 - INFO - Event Triggered: {"timestamp": 1777013522.8297162, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:22:07,445 - INFO - Event Triggered: {"timestamp": 1777013527.443561, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:22:11,480 - INFO - Event Triggered: {"timestamp": 1777013531.4785872, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:22:14,469 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:14] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-24 12:22:14,492 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:14] "GET /login HTTP/1.1" 200 -
+2026-04-24 12:22:14,611 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-24 12:22:14,900 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-24 12:22:19,596 - INFO - Event Triggered: {"timestamp": 1777013539.5968106, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:22:22,573 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-24 12:22:22,587 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:22] "GET / HTTP/1.1" 200 -
+2026-04-24 12:22:22,628 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-24 12:22:22,637 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:22] "GET /video_feed HTTP/1.1" 200 -
+2026-04-24 12:22:22,668 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:22] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-24 12:22:22,672 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:22] "GET /api/my_doctor HTTP/1.1" 200 -
+2026-04-24 12:22:22,675 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:22] "GET /api/patient/notes HTTP/1.1" 200 -
+2026-04-24 12:22:23,670 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:23] "GET /events HTTP/1.1" 200 -
+2026-04-24 12:22:24,673 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:24] "POST /api/speak HTTP/1.1" 200 -
+2026-04-24 12:22:24,682 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:24] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:26,672 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:26] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:28,672 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:28] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:30,691 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:30] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:32,675 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:32] "GET /api/patient/notes HTTP/1.1" 200 -
+2026-04-24 12:22:32,681 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:32] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:34,670 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:34] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:36,686 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:36] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:38,672 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:38] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:40,670 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:40] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:22:41,057 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:41] "GET /wellbeing HTTP/1.1" 200 -
+2026-04-24 12:22:41,098 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-24 12:22:41,122 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:41] "GET /wellbeing_stats HTTP/1.1" 200 -
+2026-04-24 12:22:41,237 - INFO - 127.0.0.1 - - [24/Apr/2026 12:22:41] "GET /wellbeing_feed HTTP/1.1" 200 -
+2026-04-24 12:22:43,996 - INFO - Event Triggered: {"timestamp": 1777013563.9955068, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:22:47,990 - INFO - Event Triggered: {"timestamp": 1777013567.9901156, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:22:55,999 - INFO - Event Triggered: {"timestamp": 1777013575.9999597, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:23:00,196 - INFO - Event Triggered: {"timestamp": 1777013580.1960542, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:23:04,093 - INFO - Event Triggered: {"timestamp": 1777013584.0932846, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:23:08,028 - INFO - Event Triggered: {"timestamp": 1777013588.027553, "source": "face", "event": "AUTHORIZED_USER", "details": "", "reason": "Face recognized", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:23:12,121 - INFO - Event Triggered: {"timestamp": 1777013592.1212778, "source": "face", "event": "UNKNOWN_PERSON", "details": "", "reason": "Unknown face detected", "severity": "MEDIUM", "system_state": "WARNING", "locked": false}
+2026-04-24 12:23:24,806 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:24] "GET / HTTP/1.1" 200 -
+2026-04-24 12:23:24,859 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-24 12:23:24,862 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:24] "GET /video_feed HTTP/1.1" 200 -
+2026-04-24 12:23:24,875 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:24] "GET /api/get_prescriptions HTTP/1.1" 200 -
+2026-04-24 12:23:24,875 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:24] "GET /api/patient/notes HTTP/1.1" 200 -
+2026-04-24 12:23:24,882 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:24] "GET /api/my_doctor HTTP/1.1" 200 -
+2026-04-24 12:23:25,875 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:25] "GET /events HTTP/1.1" 200 -
+2026-04-24 12:23:26,883 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:26] "POST /api/speak HTTP/1.1" 200 -
+2026-04-24 12:23:26,896 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:26] "GET /api/messages?with=admin HTTP/1.1" 200 -
+2026-04-24 12:23:26,965 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-24 12:23:26,984 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:26] "GET /login HTTP/1.1" 200 -
+2026-04-24 12:23:27,031 - INFO - 127.0.0.1 - - [24/Apr/2026 12:23:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

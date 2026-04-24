@@ -289,9 +289,12 @@ def wellbeing_stats():
             data = {
                 "score": round(score, 1),
                 "status": status,
-                "face_score": round(wellbeing_model.last_face_score, 1),
-                "voice_score": round(wellbeing_model.last_voice_score, 1),
-                "pose_score": round(wellbeing_model.last_pose_score, 1),
+                "state": wellbeing_model.state,
+                "confidence": round(wellbeing_model.confidence_score * 100, 1),
+                "face_score": round(np.mean(wellbeing_model.face_score_history) * 100 if wellbeing_model.face_score_history else 0, 1),
+                "voice_score": round(np.mean(wellbeing_model.voice_score_history) * 100 if wellbeing_model.voice_score_history else 0, 1),
+                "pose_score": round(np.mean(wellbeing_model.pose_score_history) * 100 if wellbeing_model.pose_score_history else 0, 1),
+                "inactivity_score": round(np.mean(wellbeing_model.inactivity_score_history) * 100 if wellbeing_model.inactivity_score_history else 0, 1),
                 "explanation": wellbeing_model.get_explanation()
             }
             yield f"data: {json.dumps(data)}\n\n"

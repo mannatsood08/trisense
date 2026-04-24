@@ -60,33 +60,47 @@
 
             <aside class="stats-sidebar">
                 <section class="glass-container score-display">
+                    <div id="calibration-zone" style="display:none; margin-bottom: 10px;">
+                        <span class="score-label" style="color: var(--color-info);">SYSTEM CALIBRATING...</span>
+                        <div class="metric-bar" style="margin-top: 10px;"><div id="calib-fill" class="metric-fill" style="width: 0%;"></div></div>
+                    </div>
                     <span class="score-label">Distress Probability</span>
                     <div id="distress-score" class="score-value">0%</div>
                     <div id="status-badge" class="status-badge status-normal">NORMAL</div>
+                    <div style="margin-top: 15px; font-size: 12px; color: #64748b;">
+                        Confidence: <span id="conf-val">0%</span>
+                    </div>
                 </section>
 
                 <section class="glass-container">
-                    <h3><i class="icon-analytics"></i> Emotion Metrics</h3>
+                    <h3><i class="icon-analytics"></i> Distress Indicators</h3>
                     <div class="metric-card" style="margin-top: 15px;">
                         <div class="metric-header">
-                            <span>Facial Indicators</span>
+                            <span>Facial Activity</span>
                             <span id="face-val-wb">0%</span>
                         </div>
                         <div class="metric-bar"><div id="face-fill" class="metric-fill"></div></div>
                     </div>
                     <div class="metric-card" style="margin-top: 15px;">
                         <div class="metric-header">
-                            <span>Vocal Indicators</span>
+                            <span>Vocal Energy</span>
                             <span id="voice-val-wb">0%</span>
                         </div>
                         <div class="metric-bar"><div id="voice-fill" class="metric-fill"></div></div>
                     </div>
                     <div class="metric-card" style="margin-top: 15px;">
                         <div class="metric-header">
-                            <span>Posture Indicators</span>
+                            <span>Posture Alignment</span>
                             <span id="pose-val-wb">0%</span>
                         </div>
-                        <div class="metric-bar"><div id="pose-fill" class="metric-fill" style="background: var(--color-warning);"></div></div>
+                        <div class="metric-bar"><div id="pose-fill" class="metric-fill"></div></div>
+                    </div>
+                    <div class="metric-card" style="margin-top: 15px;">
+                        <div class="metric-header">
+                            <span>Behavioral Stillness</span>
+                            <span id="inact-val-wb">0%</span>
+                        </div>
+                        <div class="metric-bar"><div id="inact-fill" class="metric-fill"></div></div>
                     </div>
                 </section>
 
@@ -98,6 +112,9 @@
                 </section>
             </aside>
         </main>
+        <footer style="text-align: center; padding: 20px; color: #64748b; font-size: 11px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 20px;">
+            <p><strong>IMPORTANT:</strong> This system provides behavioral monitoring for research purposes and is NOT a medical diagnostic tool. If you are experiencing a medical emergency, please contact emergency services immediately.</p>
+        </footer>
     </div>
 
     <script>
@@ -109,6 +126,11 @@
         const voiceFill = document.getElementById('voice-fill');
         const poseVal = document.getElementById('pose-val-wb');
         const poseFill = document.getElementById('pose-fill');
+        const inactVal = document.getElementById('inact-val-wb');
+        const inactFill = document.getElementById('inact-fill');
+        const calibZone = document.getElementById('calibration-zone');
+        const calibFill = document.getElementById('calib-fill');
+        const confVal = document.getElementById('conf-val');
         const explanationEl = document.getElementById('explanation-text');
 
         const eventSource = new EventSource('/wellbeing_stats');
@@ -116,8 +138,19 @@
         eventSource.onmessage = function(e) {
             const data = JSON.parse(e.data);
             
+            // Handle Calibration State
+            if (data.state === 'CALIBRATING') {
+                calibZone.style.display = 'block';
+                // Extract progress from explanation if possible, or just animate
+                const progressMatch = data.explanation.match(/(\d+)%/);
+                if (progressMatch) calibFill.style.width = progressMatch[1] + '%';
+            } else {
+                calibZone.style.display = 'none';
+            }
+
             // Update Score & Badge
             scoreEl.innerText = data.score + '%';
+            confVal.innerText = data.confidence + '%';
             badgeEl.innerText = data.status;
             badgeEl.className = 'status-badge ' + (data.status !== 'NORMAL' ? 'status-distress' : 'status-normal');
             
@@ -128,9 +161,11 @@
             voiceFill.style.width = data.voice_score + '%';
             poseVal.innerText = data.pose_score + '%';
             poseFill.style.width = data.pose_score + '%';
+            inactVal.innerText = data.inactivity_score + '%';
+            inactFill.style.width = data.inactivity_score + '%';
             
-            // Update Explanation
-            explanationEl.innerText = data.explanation;
+            // Update Explanation (with formatting for medical disclaimer)
+            explanationEl.innerHTML = data.explanation.replace(/\n/g, '<br>');
         };
     </script>
 </body>
